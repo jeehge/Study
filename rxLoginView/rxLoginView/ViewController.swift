@@ -54,9 +54,9 @@ class ViewController: UIViewController {
         
         // 더 간단하게 표현 가능
 //        Observable
-//            .combineLatest(emailObservable, passwordObservable).map { $0 && $1 }
-//            .bind(to: self.loginButton.isEnabled)
-        
+//            .combineLatest(emailObservable, passwordObservable) { $0 && $1 }
+//            .bind(to: loginButton.rx.isEnabled)
+//            .disposed(by: disposeBag)
         
     }
     
