@@ -7,6 +7,9 @@ Study 1주차
 https://blog.naver.com/taerg89/221588328980
 
 
+과제 : RxSwiftStudy/rxLoginView/rxLoginView/Second/
+
+
 ---
 
 Study 2주차
