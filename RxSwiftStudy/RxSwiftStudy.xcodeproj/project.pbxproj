@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8BC23199F66F1832B047477B /* Pods_RxSwiftStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AE86DC6ACCE2D769EA57E9 /* Pods_RxSwiftStudy.framework */; };
+		E9539EAA230A649E0061D948 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EA9230A649E0061D948 /* Issue.swift */; };
+		E9539EAC230A652B0061D948 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EAB230A652B0061D948 /* User.swift */; };
+		E9539EAE230A65A90061D948 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EAD230A65A90061D948 /* Comment.swift */; };
+		E9539EB1230A693F0061D948 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EB0230A693F0061D948 /* RepoViewController.swift */; };
+		E9539EB3230A96510061D948 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EB2230A96510061D948 /* PreferenceManager.swift */; };
+		E9539EB6230A97F20061D948 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EB5230A97F20061D948 /* API.swift */; };
+		E9539EB8230AA3810061D948 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EB7230AA3810061D948 /* App.swift */; };
+		E9539EBA230AA3CF0061D948 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EB9230AA3CF0061D948 /* LoginViewController.swift */; };
+		E9539EBC230AA7570061D948 /* ViewcontrollerFromStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9539EBB230AA7570061D948 /* ViewcontrollerFromStoryBoard.swift */; };
+		E9539EBE230AA7E40061D948 /* Issues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9539EBD230AA7E40061D948 /* Issues.storyboard */; };
 		E97865ED230A34CF001E7760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97865EC230A34CF001E7760 /* AppDelegate.swift */; };
-		E97865EF230A34CF001E7760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97865EE230A34CF001E7760 /* ViewController.swift */; };
+		E97865EF230A34CF001E7760 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97865EE230A34CF001E7760 /* MainViewController.swift */; };
 		E97865F2230A34CF001E7760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97865F0230A34CF001E7760 /* Main.storyboard */; };
 		E97865F4230A34D1001E7760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E97865F3230A34D1001E7760 /* Assets.xcassets */; };
 		E97865F7230A34D1001E7760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97865F5230A34D1001E7760 /* LaunchScreen.storyboard */; };
@@ -19,9 +29,19 @@
 		18431FE3DAA2383FBFF83844 /* Pods-RxSwiftStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftStudy/Pods-RxSwiftStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		D7AE86DC6ACCE2D769EA57E9 /* Pods_RxSwiftStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFBCC1849F0056A3747E40C4 /* Pods-RxSwiftStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftStudy/Pods-RxSwiftStudy.release.xcconfig"; sourceTree = "<group>"; };
+		E9539EA9230A649E0061D948 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		E9539EAB230A652B0061D948 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9539EAD230A65A90061D948 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		E9539EB0230A693F0061D948 /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		E9539EB2230A96510061D948 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		E9539EB5230A97F20061D948 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E9539EB7230AA3810061D948 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		E9539EB9230AA3CF0061D948 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E9539EBB230AA7570061D948 /* ViewcontrollerFromStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewcontrollerFromStoryBoard.swift; sourceTree = "<group>"; };
+		E9539EBD230AA7E40061D948 /* Issues.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Issues.storyboard; sourceTree = "<group>"; };
 		E97865E9230A34CF001E7760 /* RxSwiftStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E97865EC230A34CF001E7760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E97865EE230A34CF001E7760 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E97865EE230A34CF001E7760 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E97865F1230A34CF001E7760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E97865F3230A34D1001E7760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E97865F6230A34D1001E7760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +77,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E9539EA8230A64870061D948 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9539EA9230A649E0061D948 /* Issue.swift */,
+				E9539EAB230A652B0061D948 /* User.swift */,
+				E9539EAD230A65A90061D948 /* Comment.swift */,
+				E9539EB5230A97F20061D948 /* API.swift */,
+				E9539EB7230AA3810061D948 /* App.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9539EAF230A69150061D948 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9539EB0230A693F0061D948 /* RepoViewController.swift */,
+				E9539EB9230AA3CF0061D948 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9539EB4230A97C70061D948 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E9539EB2230A96510061D948 /* PreferenceManager.swift */,
+				E9539EBB230AA7570061D948 /* ViewcontrollerFromStoryBoard.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		E97865E0230A34CF001E7760 = {
 			isa = PBXGroup;
 			children = (
@@ -78,14 +128,26 @@
 		E97865EB230A34CF001E7760 /* RxSwiftStudy */ = {
 			isa = PBXGroup;
 			children = (
+				E97865FE230A35D7001E7760 /* IssuesApp */,
 				E97865EC230A34CF001E7760 /* AppDelegate.swift */,
-				E97865EE230A34CF001E7760 /* ViewController.swift */,
+				E97865EE230A34CF001E7760 /* MainViewController.swift */,
 				E97865F0230A34CF001E7760 /* Main.storyboard */,
 				E97865F3230A34D1001E7760 /* Assets.xcassets */,
 				E97865F5230A34D1001E7760 /* LaunchScreen.storyboard */,
 				E97865F8230A34D1001E7760 /* Info.plist */,
 			);
 			path = RxSwiftStudy;
+			sourceTree = "<group>";
+		};
+		E97865FE230A35D7001E7760 /* IssuesApp */ = {
+			isa = PBXGroup;
+			children = (
+				E9539EA8230A64870061D948 /* Model */,
+				E9539EAF230A69150061D948 /* View */,
+				E9539EB4230A97C70061D948 /* Manager */,
+				E9539EBD230AA7E40061D948 /* Issues.storyboard */,
+			);
+			path = IssuesApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9539EBE230AA7E40061D948 /* Issues.storyboard in Resources */,
 				E97865F7230A34D1001E7760 /* LaunchScreen.storyboard in Resources */,
 				E97865F4230A34D1001E7760 /* Assets.xcassets in Resources */,
 				E97865F2230A34CF001E7760 /* Main.storyboard in Resources */,
@@ -166,7 +229,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftStudy/Pods-RxSwiftStudy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -174,7 +244,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxKeyboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -212,8 +289,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97865EF230A34CF001E7760 /* ViewController.swift in Sources */,
+				E9539EBC230AA7570061D948 /* ViewcontrollerFromStoryBoard.swift in Sources */,
+				E9539EB8230AA3810061D948 /* App.swift in Sources */,
+				E9539EAE230A65A90061D948 /* Comment.swift in Sources */,
+				E9539EB3230A96510061D948 /* PreferenceManager.swift in Sources */,
+				E9539EAC230A652B0061D948 /* User.swift in Sources */,
+				E9539EB1230A693F0061D948 /* RepoViewController.swift in Sources */,
+				E97865EF230A34CF001E7760 /* MainViewController.swift in Sources */,
 				E97865ED230A34CF001E7760 /* AppDelegate.swift in Sources */,
+				E9539EB6230A97F20061D948 /* API.swift in Sources */,
+				E9539EBA230AA3CF0061D948 /* LoginViewController.swift in Sources */,
+				E9539EAA230A649E0061D948 /* Issue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

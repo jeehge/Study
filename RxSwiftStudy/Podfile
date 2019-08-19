@@ -8,5 +8,11 @@ target 'RxSwiftStudy' do
   # Pods for RxExample
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'OAuthSwift'
+  pod 'RxDataSources'
+  pod 'RxKeyboard'
+  pod 'RxAlamofire'
 
 end
