@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		57BB7751777F777BB5BAC42D /* Pods_rxLoginView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B9FEB8CAD43B2E9C5941A9 /* Pods_rxLoginView.framework */; };
 		E9213CB722E6D3BF00BF5257 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9213CB622E6D3BF00BF5257 /* LoginModel.swift */; };
-		E9213CB922E71D8A00BF5257 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9213CB822E71D8A00BF5257 /* LoginViewController.swift */; };
+		E9213CB922E71D8A00BF5257 /* SecondLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9213CB822E71D8A00BF5257 /* SecondLoginViewController.swift */; };
 		E9213CBB22E71EEC00BF5257 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9213CBA22E71EEC00BF5257 /* ValidationViewModel.swift */; };
 		E9213CBD22E722D000BF5257 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9213CBC22E722D000BF5257 /* LoginViewModel.swift */; };
 		E9213CBF22E723FB00BF5257 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9213CBE22E723FB00BF5257 /* PasswordViewModel.swift */; };
@@ -19,6 +19,9 @@
 		E9592A2A22CF4A60004C6AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9592A2822CF4A60004C6AB9 /* Main.storyboard */; };
 		E9592A2C22CF4A61004C6AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9592A2B22CF4A61004C6AB9 /* Assets.xcassets */; };
 		E9592A2F22CF4A61004C6AB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9592A2D22CF4A61004C6AB9 /* LaunchScreen.storyboard */; };
+		E9E1D0F7230D6B2300323CD8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E1D0F4230D6B2300323CD8 /* Login.storyboard */; };
+		E9E1D0F8230D6B2300323CD8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E1D0F5230D6B2300323CD8 /* LoginViewController.swift */; };
+		E9E1D0F9230D6B2300323CD8 /* LoginReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E1D0F6230D6B2300323CD8 /* LoginReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +29,7 @@
 		83B9FEB8CAD43B2E9C5941A9 /* Pods_rxLoginView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rxLoginView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F18E261D7BD373766CD0FC /* Pods-rxLoginView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rxLoginView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rxLoginView/Pods-rxLoginView.debug.xcconfig"; sourceTree = "<group>"; };
 		E9213CB622E6D3BF00BF5257 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		E9213CB822E71D8A00BF5257 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E9213CB822E71D8A00BF5257 /* SecondLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondLoginViewController.swift; sourceTree = "<group>"; };
 		E9213CBA22E71EEC00BF5257 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		E9213CBC22E722D000BF5257 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E9213CBE22E723FB00BF5257 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
@@ -38,6 +41,9 @@
 		E9592A2B22CF4A61004C6AB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9592A2E22CF4A61004C6AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9592A3022CF4A61004C6AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9E1D0F4230D6B2300323CD8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		E9E1D0F5230D6B2300323CD8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E9E1D0F6230D6B2300323CD8 /* LoginReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReactor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +89,6 @@
 				E9213CC222E7244B00BF5257 /* Model */,
 				E9213CC322E7245200BF5257 /* ViewModel */,
 				E9213CC422E7246500BF5257 /* ViewController */,
-				E9213CB822E71D8A00BF5257 /* LoginViewController.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 		E9213CC422E7246500BF5257 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E9213CB822E71D8A00BF5257 /* SecondLoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			children = (
 				E9213CC022E7240000BF5257 /* First  */,
 				E9213CC122E7242D00BF5257 /* Second */,
+				E9E1D0F3230D6AB200323CD8 /* Third */,
 				E9592A2422CF4A60004C6AB9 /* AppDelegate.swift */,
 				E9592A2822CF4A60004C6AB9 /* Main.storyboard */,
 				E9592A2B22CF4A61004C6AB9 /* Assets.xcassets */,
@@ -144,6 +151,16 @@
 				E9592A3022CF4A61004C6AB9 /* Info.plist */,
 			);
 			path = rxLoginView;
+			sourceTree = "<group>";
+		};
+		E9E1D0F3230D6AB200323CD8 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				E9E1D0F4230D6B2300323CD8 /* Login.storyboard */,
+				E9E1D0F5230D6B2300323CD8 /* LoginViewController.swift */,
+				E9E1D0F6230D6B2300323CD8 /* LoginReactor.swift */,
+			);
+			path = Third;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E1D0F7230D6B2300323CD8 /* Login.storyboard in Resources */,
 				E9592A2F22CF4A61004C6AB9 /* LaunchScreen.storyboard in Resources */,
 				E9592A2C22CF4A61004C6AB9 /* Assets.xcassets in Resources */,
 				E9592A2A22CF4A60004C6AB9 /* Main.storyboard in Resources */,
@@ -246,6 +264,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rxLoginView/Pods-rxLoginView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -254,6 +273,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -270,12 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9213CB922E71D8A00BF5257 /* LoginViewController.swift in Sources */,
+				E9E1D0F8230D6B2300323CD8 /* LoginViewController.swift in Sources */,
+				E9213CB922E71D8A00BF5257 /* SecondLoginViewController.swift in Sources */,
 				E9213CBF22E723FB00BF5257 /* PasswordViewModel.swift in Sources */,
 				E9213CC622E7255900BF5257 /* EmailIdViewModel.swift in Sources */,
 				E9592A2722CF4A60004C6AB9 /* ViewController.swift in Sources */,
 				E9213CBD22E722D000BF5257 /* LoginViewModel.swift in Sources */,
 				E9213CB722E6D3BF00BF5257 /* LoginModel.swift in Sources */,
+				E9E1D0F9230D6B2300323CD8 /* LoginReactor.swift in Sources */,
 				E9213CBB22E71EEC00BF5257 /* ValidationViewModel.swift in Sources */,
 				E9592A2522CF4A60004C6AB9 /* AppDelegate.swift in Sources */,
 			);

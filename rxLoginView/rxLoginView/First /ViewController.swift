@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         
         initLoginView()
         initTextField()
+        
+        
     }
     
     // MARK: - Initialize

@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 // 숙제 https://medium.com/swift2go/mvvm-with-rxswift-the-user-login-cc43df423c9e
-class LoginViewController: UIViewController {
+class SecondLoginViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var emailTextField: UITextField!

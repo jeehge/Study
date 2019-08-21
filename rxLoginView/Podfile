@@ -8,5 +8,5 @@ target 'rxLoginView' do
   # Pods for RxExample
   pod 'RxSwift'
   pod 'RxCocoa'
-
+  pod 'ReactorKit'
 end
