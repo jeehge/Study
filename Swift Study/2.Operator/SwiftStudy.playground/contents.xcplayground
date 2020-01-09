@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='CustomSum1'/>
+        <page name='CustomOperator1'/>
+        <page name='CustomOperator2'/>
+        <page name='CustomOperator3'/>
+    </pages>
+</playground>
