@@ -14,10 +14,13 @@
 ### 2주차. 코드 실습 및 이론
 
   * 순수함수
-  * 고차 함수
-  * 함수의 합성
+  * 익명함수
+  * 고차함수
+
+=> [함수](https://blog.naver.com/taerg89/221767954968)
 
 ### 3주차. 일급함수
+
   * Function composition (함수의 합성)
   * Async Result (비동기 반환)
   * Currying (커링)
