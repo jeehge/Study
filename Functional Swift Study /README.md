@@ -25,10 +25,6 @@
   * Memoization (메모이제이션)
 
 ### 4주차. Functor + Monad
-
-  * fizzBuzz
-  * Low-High
-  * Weather Forecast
   
 ### 5주차. Maybe와 Either
 
