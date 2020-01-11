@@ -114,8 +114,8 @@ operand2(3, newNumber)
 
 // FP 2-2.
 // 주어진 코드는 고차함수를 사용하여 짝수만의 합을 계산하는 코드입니다. 코드를 완성하세요
-let f: (Int) -> Bool = { } //함수 내부를 구현하세요
-let s: (Int, Int) -> Int = { } //함수 내부를 구현하세요
+//let f: (Int) -> Bool = { } //함수 내부를 구현하세요
+//let s: (Int, Int) -> Int = { } //함수 내부를 구현하세요
 
 func solution_Q_2_2(_ nums: [Int]) -> Int {
     print(nums)
@@ -128,6 +128,39 @@ let s: (Int, Int) -> Int = { $0 + $1 } //함수 내부를 구현하세요
 func mySsolution_Q_2_2(_ nums: [Int]) -> Int {
     return nums.filter(f).reduce(0, s)
 }
+
+
+/**
+ 익명함수
+ */
+
+func someFunction() {
+    print("Hello Word")
+}
+ 
+someFunction()
+ 
+({ ( ) -> Void in
+    print("Hello Word")
+})()
+
+
+func someFunction1(name: String) {
+    print("내 이름은 \(name)입니다.")
+}
+
+func someFunction2(num: Int) -> Int {
+    return num * 2
+}
+
+
+({(name: String) -> Void in
+    print("내 이름은 \(name)입니다.")
+})
+
+({(num: Int) -> Int in
+    return num * 2
+})
 
 
 
