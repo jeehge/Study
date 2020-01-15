@@ -27,6 +27,8 @@
   * Partial Application (부분 적용)
   * Memoization (메모이제이션)
 
+=> [일급함수](https://blog.naver.com/taerg89/221772965191)
+
 ### 4주차. Functor + Monad
   
 ### 5주차. Maybe와 Either
