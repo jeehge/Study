@@ -4,6 +4,50 @@ import UIKit
  일급함수
  */
 
+let adder: (Int, Int) -> Int = { $0 + $1 }
+
+func twice() -> (Int) -> Int {
+    return { value in
+        return value * 2
+    }
+}
+
+func LazyLog(_ message: () -> String) {
+    #if DEBUG
+    print(message())
+    #endif
+}
+
+
+
+
+
+func newNumber(param: Int) -> Int {
+    return param - 1
+}
+
+func add(a: Int, function fn: (Int) -> Int) -> Int {
+    return a + fn(a)
+}
+
+func subtraction(a: Int, function fn: (Int) -> Int) -> Int {
+    return a - fn(a)
+}
+
+func calculator(_ operand: String) -> (Int, ((Int) -> Int)) -> Int {
+    switch operand {
+    case "+":
+        return add
+    case "-":
+        return subtraction
+    default:
+        return add
+    }
+}
+
+let operand2 = calculator("-")
+operand2(3, newNumber)
+
 
 /**
  Function composition (함수의 합성)
