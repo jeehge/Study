@@ -339,13 +339,53 @@ print(cookingCurrying(["고기","양배추","토마토"]))
  Partial Application (부분 적용)
  */
 
+//
+//func newNumber(param: Int) -> Int {
+//    return param - 1
+//}
+
+func sub(a: Int, b: Int) -> Int {
+    return a - b
+}
 
 
+let operand2 = sub(a: newNumber(param: _), b: 10)
 
 
 /**
  Memoization (메모이제이션)
  */
+
+func memoize<T: Hashable, U>(_ body: @escaping ((T) -> U, T) -> U) -> (T) -> U {
+    var memo = [T: U]()
+    var result: ((T) -> U)!
+    result = { x in
+        if let q = memo[x] { return q }
+        let r = body(result, x)
+        memo[x] = r
+        return r
+    }
+    return result
+}
+let factorial = memoize { factorial, x in x == 0 ? 1 : x * factorial(x - 1) }
+
+//func memoize<T: Hashable, U>(_ function: @escaping (T) -> U) -> (T) -> U {
+//    var cache = [T: U]()
+//
+//    func memoizedFunction(x: T) -> U {
+//        if let cachedValue = cache[x] {
+//            return cachedValue
+//        }
+//
+//        let value = function(x)
+//        cache[x] = value
+//        return value
+//    }
+//
+//    return memoizedFunction
+//}
+
+//let memoizedClassfier = memoize(Classifier.isPerfect)
 
 func isPrime(_ n: Int) -> Bool {
     guard n > 1 else { return false }
@@ -379,3 +419,6 @@ let f = memoize(isPrime)
 repeater(3){ timeit {
     print(Array(1...30000).filter(f).count)
 }}
+
+    
+
