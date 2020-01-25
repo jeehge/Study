@@ -30,6 +30,8 @@
 => [일급함수](https://blog.naver.com/taerg89/221772965191)
 
 ### 4주차. Functor + Monad
+
+=> [Swift 모나드](https://blog.naver.com/taerg89/221785186231)
   
 ### 5주차. Maybe와 Either
 
