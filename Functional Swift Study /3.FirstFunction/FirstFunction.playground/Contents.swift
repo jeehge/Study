@@ -307,7 +307,36 @@ func solution_Q_2_4(_ nums: [Int], _ r: Int) -> Int {
 
 // 예제
 // 요리를 해보자!
-func 햄버거2(_ v1: [String], _ v2: String) -> String {
+func 햄버거2(_ n: String) -> ([String]) -> String {
+    return { x in
+        var s: String = ""
+        x.forEach({
+            switch $0 {
+            case 재료.고기.rawValue:
+                s.append("다진 고기 ")
+            case 재료.양배추.rawValue:
+                s.append("크게 자른 양배추 ")
+            case 재료.토마토.rawValue:
+                s.append("잘게 자른 토마토 ")
+            default:
+                print("test")
+            }
+        })
+
+        return "\(s)\n\(n)에 올려서 햄버거 완성!"
+    }
+}
+
+let cookingCurrying = 햄버거2("호밀빵")(["고기"])
+햄버거2("호밀빵")
+print(cookingCurrying)
+
+/**
+ Partial Application (부분 적용)
+ */
+
+// 요리를 해보자!
+func 햄버거3(_ v1: [String], _ v2: String) -> String {
     var s: String = ""
     v1.forEach({
         switch $0 {
@@ -325,31 +354,19 @@ func 햄버거2(_ v1: [String], _ v2: String) -> String {
     return "\(s)\n\(v2)에 올려서 햄버거 완성!"
 }
 
-func 빵선택(_ n: String) -> ([String]) -> String {
+func 빵선택2(_ n: String) -> ([String]) -> String {
     return { x in
-        햄버거2(x, n)
+        햄버거3(x, n)
     }
 }
 
-let cookingCurrying:([String]) -> String = 빵선택("호밀빵")
-print(cookingCurrying(["고기","양배추","토마토"]))
-
-
-/**
- Partial Application (부분 적용)
- */
-
+let cookingPartial:([String]) -> String = 빵선택2("호밀빵")
 //
-//func newNumber(param: Int) -> Int {
-//    return param - 1
-//}
-
-func sub(a: Int, b: Int) -> Int {
-    return a - b
-}
+//
+//
+cookingPartial(["고기","양배추","토마토"])
 
 
-let operand2 = sub(a: newNumber(param: _), b: 10)
 
 
 /**
@@ -367,7 +384,7 @@ func memoize<T: Hashable, U>(_ body: @escaping ((T) -> U, T) -> U) -> (T) -> U {
     }
     return result
 }
-let factorial = memoize { factorial, x in x == 0 ? 1 : x * factorial(x - 1) }
+//let factorial = memoize { factorial, x in x == 0 ? 1 : x * factorial(x - 1) }
 
 //func memoize<T: Hashable, U>(_ function: @escaping (T) -> U) -> (T) -> U {
 //    var cache = [T: U]()
@@ -387,38 +404,38 @@ let factorial = memoize { factorial, x in x == 0 ? 1 : x * factorial(x - 1) }
 
 //let memoizedClassfier = memoize(Classifier.isPerfect)
 
-func isPrime(_ n: Int) -> Bool {
-    guard n > 1 else { return false }
-    for k in 2..<n {
-        if n % k == 0 { return false }
-    }
-    return true
-}
-
-func timeit(_ f: () -> ()) {
-    let begin = Date()
-    f()
-    let elapsed: Int = Date.timeIntervalSince(begin) as! Int
-    print("time: \(elapsed * 1000)ms")
-}
-
-func repeater(_ count: Int, f: () -> ()) {
-    guard count > 0 else { return }
-    for _ in 0..<count { f() }
-}
-
-// 테스트 : 메모이제이션 없을 때
-repeater(3){
-    timeit{
-        print(Array(1...30000).filter(isPrime).count)
-    }
-}
-
-// 테스트: 메모이제이션 적용시
-let f = memoize(isPrime)
-repeater(3){ timeit {
-    print(Array(1...30000).filter(f).count)
-}}
+//func isPrime(_ n: Int) -> Bool {
+//    guard n > 1 else { return false }
+//    for k in 2..<n {
+//        if n % k == 0 { return false }
+//    }
+//    return true
+//}
+//
+//func timeit(_ f: () -> ()) {
+//    let begin = Date()
+//    f()
+//    let elapsed: Int = Date.timeIntervalSince(begin) as! Int
+//    print("time: \(elapsed * 1000)ms")
+//}
+//
+//func repeater(_ count: Int, f: () -> ()) {
+//    guard count > 0 else { return }
+//    for _ in 0..<count { f() }
+//}
+//
+//// 테스트 : 메모이제이션 없을 때
+//repeater(3){
+//    timeit{
+//        print(Array(1...30000).filter(isPrime).count)
+//    }
+//}
+//
+//// 테스트: 메모이제이션 적용시
+//let f = memoize(isPrime)
+//repeater(3){ timeit {
+//    print(Array(1...30000).filter(f).count)
+//}}
 
     
 
