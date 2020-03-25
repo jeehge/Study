@@ -31,13 +31,13 @@ RxJS Marbles : https://rxmarbles.com
 
 # 두번째 스터디
 
-2020.01.08
+2020.03.25
 
-매주 수요일 20:00
+매주 수요일 21:00
 
-장소 : 오프라인
+장소 : 헹아웃
 
-학습자료 : [Swift로 함수형 프로그래밍 시작하기(Swift4)](https://www.udemy.com/course/mastering-rxswift-in-ios/learn/lecture/13577704#overview)
+학습자료 : [Reactive Programming Using Swift Programming Language](https://www.udemy.com/course/mastering-rxswift-in-ios/learn/lecture/13577704#overview)
 
 ---------------
 
