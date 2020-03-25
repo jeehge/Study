@@ -1,5 +1,7 @@
 # RxSwiftStudy
 
+# 첫번째 스터디
+
 Study 1주차 
 190717
 
@@ -25,7 +27,10 @@ https://blog.naver.com/taerg89/221594492749
 RxJS Marbles : https://rxmarbles.com
 
 
-# Functional Swift Study
+
+
+# 두번째 스터디
+
 2020.01.08
 
 매주 수요일 20:00
