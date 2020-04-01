@@ -47,6 +47,11 @@ RxJS Marbles : https://rxmarbles.com
 
 ### 2주차. Observable,  Subject 
 
+=> [Observable] (https://blog.naver.com/taerg89/221884109179)
+
+=> [Subject] (https://blog.naver.com/taerg89/221885350667)
+
+
 ### 3주차. Image Filter App & Filtering Operator 
 
 ### 4주차. TODO List App & Transforming Operator
