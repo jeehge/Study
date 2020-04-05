@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Observable&Subject
+//  StudyProject
 //
-//  Created by JH on 2020/03/29.
+//  Created by JH on 2020/04/05.
 //  Copyright © 2020 JH. All rights reserved.
 //
 
