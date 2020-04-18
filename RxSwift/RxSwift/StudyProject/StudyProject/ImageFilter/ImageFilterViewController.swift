@@ -28,6 +28,7 @@ class ImageFilterViewController: UIViewController, ViewControllerFromStoryBoard 
             fatalError("Segue destination is not found")
         }
         
+        // selectedPhoto 이벤트가 발생하면 UI를 업데이트 해라!
         photosCVC.selectedPhoto.subscribe(onNext: { [weak self] photo in
             DispatchQueue.main.async {
                 self?.updateUI(with: photo)
@@ -36,9 +37,13 @@ class ImageFilterViewController: UIViewController, ViewControllerFromStoryBoard 
     }
     
     @IBAction func applyFilterButtonPressed() {
+        // self.photoImageView.image 가 nil 이라면 return
+        // guard let 조기탈출
+        // guard let 이 성능을 떨어트린다고 하니 사용할 때 한번 더 생각해 보자!
         guard let sourceImage = self.photoImageView.image else {
             return
         }
+        
         FiltersService().applyFilter(to: sourceImage)
             .subscribe(onNext: { filteredImage in
                 DispatchQueue.main.async {
@@ -54,6 +59,7 @@ class ImageFilterViewController: UIViewController, ViewControllerFromStoryBoard 
     }
     
     private func updateUI(with image: UIImage) {
+        // 이미지가 있을 때 필터를 적용하는 버튼도 보이도록
         self.photoImageView.image = image
         self.applyFileterButton.isHidden = false
     }
