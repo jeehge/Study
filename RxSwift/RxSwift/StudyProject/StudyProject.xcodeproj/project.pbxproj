@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D3877A8380CFE473CBF18DCC /* Pods_StudyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF3AF59203088D386686C47 /* Pods_StudyProject.framework */; };
+		E96C9CBA244AB87900AED2D4 /* FiltersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96C9CB9244AB87900AED2D4 /* FiltersService.swift */; };
 		E9BEA5472439B0B100F11F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEA5462439B0B100F11F32 /* AppDelegate.swift */; };
 		E9BEA5492439B0B100F11F32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEA5482439B0B100F11F32 /* SceneDelegate.swift */; };
 		E9BEA54B2439B0B100F11F32 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEA54A2439B0B100F11F32 /* MainListViewController.swift */; };
@@ -18,12 +19,14 @@
 		E9BEA5612439C0BB00F11F32 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEA5602439C0BB00F11F32 /* UIViewController+Extension.swift */; };
 		E9BEA5632439C0F000F11F32 /* ImageFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9BEA5622439C0F000F11F32 /* ImageFilter.storyboard */; };
 		E9BEA5652439C22900F11F32 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BEA5642439C22900F11F32 /* PhotosCollectionViewController.swift */; };
+		E9C2D765244AB0580063A6C4 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C2D764244AB0580063A6C4 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11AFF5260B7F18937D876720 /* Pods-StudyProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyProject.release.xcconfig"; path = "Target Support Files/Pods-StudyProject/Pods-StudyProject.release.xcconfig"; sourceTree = "<group>"; };
 		3FF3AF59203088D386686C47 /* Pods_StudyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E469F6C6611FCC336465734C /* Pods-StudyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyProject.debug.xcconfig"; path = "Target Support Files/Pods-StudyProject/Pods-StudyProject.debug.xcconfig"; sourceTree = "<group>"; };
+		E96C9CB9244AB87900AED2D4 /* FiltersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersService.swift; sourceTree = "<group>"; };
 		E9BEA5432439B0B100F11F32 /* StudyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BEA5462439B0B100F11F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BEA5482439B0B100F11F32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		E9BEA5602439C0BB00F11F32 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E9BEA5622439C0F000F11F32 /* ImageFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageFilter.storyboard; sourceTree = "<group>"; };
 		E9BEA5642439C22900F11F32 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		E9C2D764244AB0580063A6C4 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				E9BEA5622439C0F000F11F32 /* ImageFilter.storyboard */,
 				E9BEA55D2439C07200F11F32 /* ImageFilterViewController.swift */,
 				E9BEA5642439C22900F11F32 /* PhotosCollectionViewController.swift */,
+				E9C2D764244AB0580063A6C4 /* PhotoCollectionViewCell.swift */,
+				E96C9CB9244AB87900AED2D4 /* FiltersService.swift */,
 			);
 			path = ImageFilter;
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 				E9BEA5472439B0B100F11F32 /* AppDelegate.swift in Sources */,
 				E9BEA55E2439C07200F11F32 /* ImageFilterViewController.swift in Sources */,
 				E9BEA5652439C22900F11F32 /* PhotosCollectionViewController.swift in Sources */,
+				E9C2D765244AB0580063A6C4 /* PhotoCollectionViewCell.swift in Sources */,
+				E96C9CBA244AB87900AED2D4 /* FiltersService.swift in Sources */,
 				E9BEA5612439C0BB00F11F32 /* UIViewController+Extension.swift in Sources */,
 				E9BEA5492439B0B100F11F32 /* SceneDelegate.swift in Sources */,
 			);
