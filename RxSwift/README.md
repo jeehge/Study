@@ -54,6 +54,10 @@ RxJS Marbles : https://rxmarbles.com
 
 ### 3주차. Image Filter App & Filtering Operator 
 
+=> [Image Filter App] (https://blog.naver.com/taerg89/221915066080)
+
+=> [Filtering Operator] ()
+
 ### 4주차. TODO List App & Transforming Operator
   
 ### 5주차. News App &  Combining Operator
