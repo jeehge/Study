@@ -27,6 +27,7 @@
 		3FF3AF59203088D386686C47 /* Pods_StudyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E469F6C6611FCC336465734C /* Pods-StudyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyProject.debug.xcconfig"; path = "Target Support Files/Pods-StudyProject/Pods-StudyProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E96C9CB9244AB87900AED2D4 /* FiltersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersService.swift; sourceTree = "<group>"; };
+		E96C9CBB244AE28B00AED2D4 /* week2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = week2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E9BEA5432439B0B100F11F32 /* StudyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BEA5462439B0B100F11F32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9BEA5482439B0B100F11F32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 				E9BEA5542439B0B300F11F32 /* Info.plist */,
 				E9BEA55F2439C09F00F11F32 /* Utils */,
 				E9BEA55A2439B0DA00F11F32 /* week1.playground */,
+				E96C9CBB244AE28B00AED2D4 /* week2.playground */,
 			);
 			path = StudyProject;
 			sourceTree = "<group>";
