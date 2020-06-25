@@ -262,24 +262,24 @@ print(oddNumbers[0], oddNumbers[3], separator: ", ")
  배열 요소 추가 삭제
  */
 
-var students = ["A", "B", "C"]
-
-students.append("D")
-students.append(contentsOf: ["E", "F"])
-// ["A", "B", "C", "D", "E", "F"]
-
-students.insert("C&D", at: 3)
-// ["A", "B", "C", "C&D", "D", "E", "F"]
-
-students.remove(at: 0)
-// ["B", "C", "C&D", "D", "E", "F"]
-
-students.removeLast()
-// ["B", "C", "C&D", "D", "E"]
-
-if let i = students.firstIndex(of: "D") {
-    students[i] = "Max"
-}
+//var students = ["A", "B", "C"]
+//
+//students.append("D")
+//students.append(contentsOf: ["E", "F"])
+//// ["A", "B", "C", "D", "E", "F"]
+//
+//students.insert("C&D", at: 3)
+//// ["A", "B", "C", "C&D", "D", "E", "F"]
+//
+//students.remove(at: 0)
+//// ["B", "C", "C&D", "D", "E", "F"]
+//
+//students.removeLast()
+//// ["B", "C", "C&D", "D", "E"]
+//
+//if let i = students.firstIndex(of: "D") {
+//    students[i] = "Max"
+//}
 // ["B", "C", "C&D", "Max", "E"]
 
 /**
@@ -332,7 +332,7 @@ airports["APL"] = "애플 인터네셔널"
 
 // airports에서 "APL"을 제거
 airports["APL"] = nil
-
+print(airports)
 
 // 또는 removeValue (forKey :) 메소드를 사용하여 사전에서 키-값 쌍을 제거
 // 이 메소드는 키-값 쌍이 존재하는 경우이를 제거하고 제거 된 값을 리턴하거나 값이 존재하지 않으면 nil을 리턴
@@ -489,14 +489,21 @@ enum Numbers: Int {
     case zero
     case one
     case two
+    case two3
+    case tw4
+    case two5
+    case two6
+    case two7
+    case two8
+    case two9
     case ten = 10
+    case ten2
 }
 
 print(Numbers.zero.rawValue)
 print(Numbers.one.rawValue)
 print(Numbers.two.rawValue)
 print(Numbers.ten.rawValue)
-
 
 enum MainDish {
     case pasta(taste: String)
