@@ -318,6 +318,7 @@ var someInt = 3
 var anotherInt = 107
 swapTwoInts(&someInt, &anotherInt)
 print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+
 // Prints "someInt is now 107, and anotherInt is now 3"
 
 func chooseStepFunction(backward: Bool) -> (Int) -> Int {
@@ -327,7 +328,7 @@ func chooseStepFunction(backward: Bool) -> (Int) -> Int {
 }
 
 var currentValue = -4
-let moveNearerToZero = chooseStepFunction(backward: currentValue > 0)
+let moveNearerToZero: (Int) -> Int = chooseStepFunction(backward: currentValue > 0)
 // moveNearerToZero는 이제 중첩 돼 있는 stepForward() 함수를 가르킵니다.
 while currentValue != 0 {
     print("\(currentValue)... ")
