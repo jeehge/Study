@@ -184,3 +184,46 @@ if unknownUnit == nil {
 //        return someValue
 //    }()
 //}
+
+class Bank {
+    static var coinsInBank = 10_000
+    static func distribute(coins numberOfCoinsRequested: Int) -> Int {
+        let numberOfCoinsToVend = min(numberOfCoinsRequested, coinsInBank)
+        coinsInBank -= numberOfCoinsToVend
+        return numberOfCoinsToVend
+    }
+    static func receive(coins: Int) {
+        coinsInBank += coins
+    }
+}
+
+class Player {
+    var coinsInPurse: Int
+    init(coins: Int) {
+        coinsInPurse = Bank.distribute(coins: coins)
+    }
+    func win(coins: Int) {
+			  print("Player win \(coinsInPurse)")
+        coinsInPurse += Bank.distribute(coins: coins)
+    }
+    deinit {
+			  print("Player deinit \(coinsInPurse)")
+        Bank.receive(coins: coinsInPurse)
+    }
+}
+
+var playerOne: Player? = Player(coins: 100)
+print("새로운 플레이어가 \(playerOne!.coinsInPurse) 코인으로 게임에 합류했습니다")
+print("은행에  \(Bank.coinsInBank)의 코인이 남았습니다. ")
+
+
+playerOne!.win(coins: 2_000)
+print("PlayerOne은 게임에 이겨 2000코인을 획득했으며 이제 \(playerOne!.coinsInPurse) 코인을 보유하고 있습니다.")
+
+print("은행은 이제 \(Bank.coinsInBank) 코인 남았습니다.")
+
+playerOne = nil
+print("playerOne이 게임에서 나갔습니다.")
+
+print("은행은 이제 \(Bank.coinsInBank) 코인을 가지고 있습니다")
+
