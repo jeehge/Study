@@ -14,8 +14,6 @@ import UIKit
 //print(user)
 
 
-
-//
 //struct User {
 //    var id: String
 //    var level: Int
@@ -27,6 +25,8 @@ import UIKit
 //
 //let user02: User = User(id: "test02", level: 2)
 //print(user02)
+
+
 
 
 struct SomeStruct {
@@ -227,3 +227,48 @@ print("playerOne이 게임에서 나갔습니다.")
 
 print("은행은 이제 \(Bank.coinsInBank) 코인을 가지고 있습니다")
 
+
+class AClass {
+	let aValue: Int
+	
+	init(value: Int) {
+		aValue = value
+	}
+}
+
+class BClass: AClass {
+	init() {
+		super.init(value: 2)
+//		aValue = 3 // error
+	}
+}
+
+let c = BClass()
+c.aValue
+
+
+struct Chessboard {
+    let boardColors: [Bool] = {
+        var temporaryBoard = [Bool]()
+        var isBlack = false
+        for i in 1...8 {
+			print("i>\(i)")
+            for j in 1...8 {
+				print("j>\(j)")
+                temporaryBoard.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        return temporaryBoard
+    }()
+    func squareIsBlackAt(row: Int, column: Int) -> Bool {
+        return boardColors[(row * 8) + column]
+    }
+}
+
+let board = Chessboard()
+print(board.squareIsBlackAt(row: 0, column: 1))
+// Prints "true"
+print(board.squareIsBlackAt(row: 7, column: 7))
+// Prints "false"
