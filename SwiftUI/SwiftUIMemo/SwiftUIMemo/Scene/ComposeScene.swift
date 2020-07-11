@@ -17,6 +17,10 @@ struct ComposeScene: View {
 	
 	@Binding var showComposer: Bool
 	
+	// 메모가 전달되면 편집 모드
+	// 전달되지 않으면 쓰기 모드
+	var memo: Memo? = nil
+	
     var body: some View {
 		NavigationView {
 			VStack {
@@ -29,9 +33,13 @@ struct ComposeScene: View {
 					.background(Color.yellow) // swift ui에선 뷰를 중앙에 위치시킴
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity) // 사용가능한 최대 크기로 설정
-			.navigationBarTitle("새 메모", displayMode:  .inline)// 기본이 라지타이틀 displayMode를 사용해서 비활성화시킴
-			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer, content: $content))
-			
+				.navigationBarTitle(memo != nil ? "메모 편집" : "새 메모", displayMode:  .inline)// 기본이 라지타이틀 displayMode를 사용해서 비활성화시킴
+				.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer, content: $content, memo: memo))
+		}
+		.onAppear {
+			// 화면이 표시되는 시점에 초기화 코드를 구현하고 싶다면 여기서 구현합니다
+			// 메모가 전달되었다면 텍스트뷰에 편집할 내용을 표시하고 전달되지 않으면 빈 내용
+			self.content = self.memo?.content ?? ""
 		}
     }
 }
@@ -55,9 +63,16 @@ fileprivate struct SaveButton: View {
 	@EnvironmentObject var store: MemoStore
 	@Binding var content: String
 	
+	var memo: Memo? = nil
+	
 	var body: some View {
 		Button(action: {
-			self.store.insert(memo: self.content) // 호출할 때 접근하는 store가 초기화되어 있지 않아 에러 발생
+			if let memo = self.memo { // 편집 모드
+				self.store.update(memo: memo, content: self.content)
+			} else {
+				self.store.insert(memo: self.content) // 호출할 때 접근하는 store가 초기화되어 있지 않아 에러 발생
+			}
+			
 			
 			self.show = false
 		}, label: {
