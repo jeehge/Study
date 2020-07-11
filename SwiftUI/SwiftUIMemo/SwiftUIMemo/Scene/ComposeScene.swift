@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ComposeScene: View {
+	// 옵져버를 주입할 속성
+	@EnvironmentObject var keyboard: KeyboardObserver
 	@EnvironmentObject var store: MemoStore
 	// 입력한 속성 바인딩하는
 	@State private var content: String = ""
@@ -22,6 +24,8 @@ struct ComposeScene: View {
 				// To way binding
 				TextView(text: $content)
 					.frame(maxWidth: .infinity, maxHeight: .infinity)
+					.padding(.bottom, keyboard.context.height)
+					.animation( .easeInOut(duration: keyboard.context.animationDuration ))
 					.background(Color.yellow) // swift ui에선 뷰를 중앙에 위치시킴
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity) // 사용가능한 최대 크기로 설정
@@ -66,5 +70,6 @@ struct ComposeScene_Previews: PreviewProvider {
     static var previews: some View {
 		ComposeScene(showComposer: .constant(false))
 			.environmentObject(MemoStore())
+			.environmentObject(KeyboardObserver())
     }
 }

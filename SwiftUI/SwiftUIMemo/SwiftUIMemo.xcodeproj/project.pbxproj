@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E942337824BA257E00929FE0 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942337724BA257E00929FE0 /* TextView.swift */; };
+		E942337B24BA27DA00929FE0 /* keyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942337A24BA27DA00929FE0 /* keyboardObserver.swift */; };
 		E99E85CC24B9FF9E0066CB3B /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E85CB24B9FF9E0066CB3B /* MemoCell.swift */; };
 		E99E85CF24BA00A70066CB3B /* ComposeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E85CE24BA00A70066CB3B /* ComposeScene.swift */; };
 		E9E857E124B9FCEA00EF1304 /* DateFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		E942337724BA257E00929FE0 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		E942337A24BA27DA00929FE0 /* keyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardObserver.swift; sourceTree = "<group>"; };
 		E99E85CB24B9FF9E0066CB3B /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		E99E85CE24BA00A70066CB3B /* ComposeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeScene.swift; sourceTree = "<group>"; };
 		E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Memo.swift"; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E942337924BA27BB00929FE0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E942337A24BA27DA00929FE0 /* keyboardObserver.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		E99E85CA24B9FF830066CB3B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		E9FFA64D24B9D81F00211A74 /* SwiftUIMemo */ = {
 			isa = PBXGroup;
 			children = (
+				E942337924BA27BB00929FE0 /* Shared */,
 				E99E85CD24BA005E0066CB3B /* Scene */,
 				E9E857DF24B9FCCD00EF1304 /* Extension */,
 				E9FFA66524B9F63F00211A74 /* Model */,
@@ -202,6 +213,7 @@
 				E9FFA65424B9D81F00211A74 /* SwiftUIMemo.xcdatamodeld in Sources */,
 				E9FFA66924B9F7EE00211A74 /* MemoStore.swift in Sources */,
 				E9FFA64F24B9D81F00211A74 /* AppDelegate.swift in Sources */,
+				E942337B24BA27DA00929FE0 /* keyboardObserver.swift in Sources */,
 				E9E857E124B9FCEA00EF1304 /* DateFormatter+Memo.swift in Sources */,
 				E9FFA65624B9D81F00211A74 /* MemoListScene.swift in Sources */,
 				E9FFA65124B9D81F00211A74 /* SceneDelegate.swift in Sources */,

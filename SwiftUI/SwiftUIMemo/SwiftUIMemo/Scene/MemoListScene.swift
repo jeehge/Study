@@ -25,6 +25,7 @@ struct MemoListScene: View {
 			.sheet(isPresented: $showComposer, content: {
 				ComposeScene(showComposer: self.$showComposer) // 자동 주입되고 있지 않음
 					.environmentObject(self.store) //  주입되도록 코드 추가
+					.environmentObject(KeyboardObserver())
 			})
 		}
     }
