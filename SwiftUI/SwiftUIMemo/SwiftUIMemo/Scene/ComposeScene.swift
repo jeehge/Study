@@ -20,7 +20,8 @@ struct ComposeScene: View {
 			VStack {
 				// content 와 TextField 바인딩됨
 				// To way binding
-				TextField("", text: $content)
+				TextView(text: $content)
+					.frame(maxWidth: .infinity, maxHeight: .infinity)
 					.background(Color.yellow) // swift ui에선 뷰를 중앙에 위치시킴
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity) // 사용가능한 최대 크기로 설정
