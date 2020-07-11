@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E99E85CC24B9FF9E0066CB3B /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E85CB24B9FF9E0066CB3B /* MemoCell.swift */; };
+		E99E85CF24BA00A70066CB3B /* ComposeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E85CE24BA00A70066CB3B /* ComposeScene.swift */; };
 		E9E857E124B9FCEA00EF1304 /* DateFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */; };
 		E9FFA64F24B9D81F00211A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFA64E24B9D81F00211A74 /* AppDelegate.swift */; };
 		E9FFA65124B9D81F00211A74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFA65024B9D81F00211A74 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		E99E85CB24B9FF9E0066CB3B /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		E99E85CE24BA00A70066CB3B /* ComposeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeScene.swift; sourceTree = "<group>"; };
 		E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Memo.swift"; sourceTree = "<group>"; };
 		E9FFA64B24B9D81F00211A74 /* SwiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FFA64E24B9D81F00211A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E99E85CD24BA005E0066CB3B /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				E99E85CA24B9FF830066CB3B /* View */,
+				E9FFA65524B9D81F00211A74 /* MemoListScene.swift */,
+				E99E85CE24BA00A70066CB3B /* ComposeScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
 		E9E857DF24B9FCCD00EF1304 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,12 +94,11 @@
 		E9FFA64D24B9D81F00211A74 /* SwiftUIMemo */ = {
 			isa = PBXGroup;
 			children = (
-				E99E85CA24B9FF830066CB3B /* View */,
+				E99E85CD24BA005E0066CB3B /* Scene */,
 				E9E857DF24B9FCCD00EF1304 /* Extension */,
 				E9FFA66524B9F63F00211A74 /* Model */,
 				E9FFA64E24B9D81F00211A74 /* AppDelegate.swift */,
 				E9FFA65024B9D81F00211A74 /* SceneDelegate.swift */,
-				E9FFA65524B9D81F00211A74 /* MemoListScene.swift */,
 				E9FFA65724B9D82000211A74 /* Assets.xcassets */,
 				E9FFA65C24B9D82000211A74 /* LaunchScreen.storyboard */,
 				E9FFA65F24B9D82000211A74 /* Info.plist */,
@@ -193,6 +204,7 @@
 				E9FFA65124B9D81F00211A74 /* SceneDelegate.swift in Sources */,
 				E9FFA66724B9F65800211A74 /* Memo.swift in Sources */,
 				E99E85CC24B9FF9E0066CB3B /* MemoCell.swift in Sources */,
+				E99E85CF24BA00A70066CB3B /* ComposeScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
