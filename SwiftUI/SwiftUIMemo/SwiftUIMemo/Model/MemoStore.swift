@@ -19,19 +19,23 @@ class MemoStore: ObservableObject {
 		]
 	}
 	
+	// memo create
 	func insert(memo: String) {
 		list.insert(Memo(content: memo), at: 0)
 	}
 	
+	// memo update
 	func update(memo: Memo?, content: String) {
 		guard let memo = memo else { return }
 		memo.content = content
 	}
 	
+	// memo delete - memo 인스턴스를 받는 버전
 	func delete(memo: Memo) {
 		self.list.removeAll { $0 == memo }
 	}
 	
+	// memo delete - indexset을 받는 버전
 	func delete(set: IndexSet) {
 		for index in set {
 			self.list.remove(at: index)
