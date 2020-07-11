@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let contentView = MemoListScene()
 			.environment(\.managedObjectContext, context)
 			.environmentObject(store)
+			.environmentObject(DateFormatter.memoDateFormatter)
 	
 
 		// Use a UIHostingController as window root view controller.

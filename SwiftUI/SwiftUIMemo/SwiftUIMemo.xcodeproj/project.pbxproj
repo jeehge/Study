@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9E857E124B9FCEA00EF1304 /* DateFormatter+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */; };
 		E9FFA64F24B9D81F00211A74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFA64E24B9D81F00211A74 /* AppDelegate.swift */; };
 		E9FFA65124B9D81F00211A74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FFA65024B9D81F00211A74 /* SceneDelegate.swift */; };
 		E9FFA65424B9D81F00211A74 /* SwiftUIMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9FFA65224B9D81F00211A74 /* SwiftUIMemo.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Memo.swift"; sourceTree = "<group>"; };
 		E9FFA64B24B9D81F00211A74 /* SwiftUIMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FFA64E24B9D81F00211A74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9FFA65024B9D81F00211A74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9E857DF24B9FCCD00EF1304 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E9E857E024B9FCEA00EF1304 /* DateFormatter+Memo.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		E9FFA64224B9D81F00211A74 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		E9FFA64D24B9D81F00211A74 /* SwiftUIMemo */ = {
 			isa = PBXGroup;
 			children = (
+				E9E857DF24B9FCCD00EF1304 /* Extension */,
 				E9FFA66524B9F63F00211A74 /* Model */,
 				E9FFA64E24B9D81F00211A74 /* AppDelegate.swift */,
 				E9FFA65024B9D81F00211A74 /* SceneDelegate.swift */,
@@ -166,6 +177,7 @@
 				E9FFA65424B9D81F00211A74 /* SwiftUIMemo.xcdatamodeld in Sources */,
 				E9FFA66924B9F7EE00211A74 /* MemoStore.swift in Sources */,
 				E9FFA64F24B9D81F00211A74 /* AppDelegate.swift in Sources */,
+				E9E857E124B9FCEA00EF1304 /* DateFormatter+Memo.swift in Sources */,
 				E9FFA65624B9D81F00211A74 /* MemoListScene.swift in Sources */,
 				E9FFA65124B9D81F00211A74 /* SceneDelegate.swift in Sources */,
 				E9FFA66724B9F65800211A74 /* Memo.swift in Sources */,
