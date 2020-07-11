@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91BE2C024BA2F5500E96B7F /* DetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91BE2BF24BA2F5500E96B7F /* DetailScene.swift */; };
 		E942337824BA257E00929FE0 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942337724BA257E00929FE0 /* TextView.swift */; };
 		E942337B24BA27DA00929FE0 /* keyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E942337A24BA27DA00929FE0 /* keyboardObserver.swift */; };
 		E99E85CC24B9FF9E0066CB3B /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E85CB24B9FF9E0066CB3B /* MemoCell.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E91BE2BF24BA2F5500E96B7F /* DetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScene.swift; sourceTree = "<group>"; };
 		E942337724BA257E00929FE0 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		E942337A24BA27DA00929FE0 /* keyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardObserver.swift; sourceTree = "<group>"; };
 		E99E85CB24B9FF9E0066CB3B /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				E99E85CA24B9FF830066CB3B /* View */,
 				E9FFA65524B9D81F00211A74 /* MemoListScene.swift */,
 				E99E85CE24BA00A70066CB3B /* ComposeScene.swift */,
+				E91BE2BF24BA2F5500E96B7F /* DetailScene.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				E9FFA64F24B9D81F00211A74 /* AppDelegate.swift in Sources */,
 				E942337B24BA27DA00929FE0 /* keyboardObserver.swift in Sources */,
 				E9E857E124B9FCEA00EF1304 /* DateFormatter+Memo.swift in Sources */,
+				E91BE2C024BA2F5500E96B7F /* DetailScene.swift in Sources */,
 				E9FFA65624B9D81F00211A74 /* MemoListScene.swift in Sources */,
 				E9FFA65124B9D81F00211A74 /* SceneDelegate.swift in Sources */,
 				E9FFA66724B9F65800211A74 /* Memo.swift in Sources */,
