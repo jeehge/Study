@@ -23,7 +23,8 @@ struct MemoListScene: View {
 			.navigationBarTitle("내 메모")
 			.navigationBarItems(trailing: ModalButton(show: $showComposer)) // $ 값이 복사된게 아니라 바인딩이 전달됨 여기서 전달한 속성은 ModalButton show 에 바인딩이 저장됨 뷰 외부의 속성을 변경하고 싶을땐 뷰 바인딩으로 변경해야 한다
 			.sheet(isPresented: $showComposer, content: {
-				ComposeScene(showComposer: self.$showComposer)
+				ComposeScene(showComposer: self.$showComposer) // 자동 주입되고 있지 않음
+					.environmentObject(self.store) //  주입되도록 코드 추가
 			})
 		}
     }

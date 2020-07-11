@@ -17,15 +17,15 @@ struct ComposeScene: View {
 	
     var body: some View {
 		NavigationView {
-			
 			VStack {
 				// content 와 TextField 바인딩됨
 				// To way binding
 				TextField("", text: $content)
+					.background(Color.yellow) // swift ui에선 뷰를 중앙에 위치시킴
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity) // 사용가능한 최대 크기로 설정
 			.navigationBarTitle("새 메모", displayMode:  .inline)// 기본이 라지타이틀 displayMode를 사용해서 비활성화시킴
-			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer))
+			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer, content: $content))
 			
 		}
     }
@@ -46,8 +46,14 @@ fileprivate struct DismissButton: View {
 fileprivate struct SaveButton: View {
 	@Binding var show: Bool
 	
+	// 자동으로 주입
+	@EnvironmentObject var store: MemoStore
+	@Binding var content: String
+	
 	var body: some View {
 		Button(action: {
+			self.store.insert(memo: self.content) // 호출할 때 접근하는 store가 초기화되어 있지 않아 에러 발생
+			
 			self.show = false
 		}, label: {
 			Text("저장")
