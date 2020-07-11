@@ -13,14 +13,33 @@ struct MemoListScene: View {
 	@EnvironmentObject var store: MemoStore
 	@EnvironmentObject var formatter: DateFormatter
 	
+	@State var showComposer: Bool = false
+	
     var body: some View {
 		NavigationView {
 			List(store.list) { memo in
 				MemoCell(memo: memo)
 			}
 			.navigationBarTitle("내 메모")
+			.navigationBarItems(trailing: ModalButton(show: $showComposer)) // $ 값이 복사된게 아니라 바인딩이 전달됨 여기서 전달한 속성은 ModalButton show 에 바인딩이 저장됨 뷰 외부의 속성을 변경하고 싶을땐 뷰 바인딩으로 변경해야 한다
+			.sheet(isPresented: $showComposer, content: {
+				ComposeScene(showComposer: self.$showComposer)
+			})
 		}
     }
+}
+
+fileprivate struct ModalButton: View {
+	// 값을 직접 저장하는 속성이 아니라 다른 곳에 있는 속성을 바꾸기 위한 속성
+	@Binding var show: Bool
+	
+	var body: some View {
+		Button(action: {
+			self.show = true
+		}, label: {
+			Image(systemName: "plus")
+		})
+	}
 }
 
 struct MemoListScene_Previews: PreviewProvider {

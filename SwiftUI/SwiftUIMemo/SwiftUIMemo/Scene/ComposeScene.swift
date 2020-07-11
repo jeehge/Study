@@ -13,6 +13,8 @@ struct ComposeScene: View {
 	// 입력한 속성 바인딩하는
 	@State private var content: String = ""
 	
+	@Binding var showComposer: Bool
+	
     var body: some View {
 		NavigationView {
 			
@@ -23,16 +25,18 @@ struct ComposeScene: View {
 			}
 			.frame(maxWidth: .infinity, maxHeight: .infinity) // 사용가능한 최대 크기로 설정
 			.navigationBarTitle("새 메모", displayMode:  .inline)// 기본이 라지타이틀 displayMode를 사용해서 비활성화시킴
-			.navigationBarItems(leading: DismissButton(), trailing: SaveButton())
+			.navigationBarItems(leading: DismissButton(show: $showComposer), trailing: SaveButton(show: $showComposer))
 			
 		}
     }
 }
 
 fileprivate struct DismissButton: View {
+	@Binding var show: Bool
+	
 	var body: some View {
 		Button(action: {
-			//
+			self.show = false
 		}, label: {
 			Text("취소")
 		})
@@ -40,9 +44,11 @@ fileprivate struct DismissButton: View {
 }
 
 fileprivate struct SaveButton: View {
+	@Binding var show: Bool
+	
 	var body: some View {
 		Button(action: {
-			//
+			self.show = false
 		}, label: {
 			Text("저장")
 		})
@@ -51,7 +57,7 @@ fileprivate struct SaveButton: View {
 
 struct ComposeScene_Previews: PreviewProvider {
     static var previews: some View {
-        ComposeScene()
+		ComposeScene(showComposer: .constant(false))
 			.environmentObject(MemoStore())
     }
 }
