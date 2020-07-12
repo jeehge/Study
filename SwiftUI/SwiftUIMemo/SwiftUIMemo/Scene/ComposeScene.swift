@@ -11,7 +11,7 @@ import SwiftUI
 struct ComposeScene: View {
 	// 옵져버를 주입할 속성
 	@EnvironmentObject var keyboard: KeyboardObserver
-	@EnvironmentObject var store: MemoStore
+	@EnvironmentObject var store: CoreDataManager
 	// 입력한 속성 바인딩하는
 	@State private var content: String = ""
 	
@@ -19,7 +19,7 @@ struct ComposeScene: View {
 	
 	// 메모가 전달되면 편집 모드
 	// 전달되지 않으면 쓰기 모드
-	var memo: Memo? = nil
+	var memo: MemoEntity? = nil
 	
     var body: some View {
 		NavigationView {
@@ -60,17 +60,17 @@ fileprivate struct SaveButton: View {
 	@Binding var show: Bool
 	
 	// 자동으로 주입
-	@EnvironmentObject var store: MemoStore
+	@EnvironmentObject var store: CoreDataManager
 	@Binding var content: String
 	
-	var memo: Memo? = nil
+	var memo: MemoEntity? = nil
 	
 	var body: some View {
 		Button(action: {
 			if let memo = self.memo { // 편집 모드
 				self.store.update(memo: memo, content: self.content)
 			} else {
-				self.store.insert(memo: self.content) // 호출할 때 접근하는 store가 초기화되어 있지 않아 에러 발생
+				self.store.addMemo(content: self.content) // 호출할 때 접근하는 store가 초기화되어 있지 않아 에러 발생
 			}
 			
 			
@@ -84,7 +84,7 @@ fileprivate struct SaveButton: View {
 struct ComposeScene_Previews: PreviewProvider {
     static var previews: some View {
 		ComposeScene(showComposer: .constant(false))
-			.environmentObject(MemoStore())
+			.environmentObject(CoreDataManager.shared)
 			.environmentObject(KeyboardObserver())
     }
 }

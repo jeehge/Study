@@ -11,10 +11,10 @@ import SwiftUI
 struct DetailScene: View {
 	// 이전 화면에서 전달한 메모를 저장하는 속성
 	// 퍼블리시드 선언된 속성이 바뀔때마다 뷰를 자동으로 업데이트합니다
-	@ObservedObject var memo: Memo
+	@ObservedObject var memo: MemoEntity
 	
 	// 주입할 속성
-	@EnvironmentObject var store: MemoStore
+	@EnvironmentObject var store: CoreDataManager
 	@EnvironmentObject var formatter: DateFormatter
 	
 	@State private var showEditSheet = false
@@ -29,13 +29,13 @@ struct DetailScene: View {
 			ScrollView { // 스크롤뷰가 VStack 임베디드 되어 있다
 				VStack { // 기본 수직
 					HStack {
-						Text(self.memo.content)
+						Text(self.memo.content ?? "")
 							.padding() // 기본 여백 추가
 						
 						Spacer()
 					}
 					
-					Text("\(self.memo.insertDate, formatter: formatter)")
+					Text("\(self.memo.insertDate ?? Date(), formatter: formatter)")
 						.padding()
 						.font(.footnote)
 						.foregroundColor(Color(UIColor.secondaryLabel))
@@ -85,8 +85,8 @@ struct DetailScene: View {
 
 struct DetailScene_Previews: PreviewProvider {
     static var previews: some View {
-		DetailScene(memo: Memo(content: "SwiftUI"))
-			.environmentObject(MemoStore())
+		DetailScene(memo: MemoEntity(context: CoreDataManager.mainContext))
+			.environmentObject(CoreDataManager.shared)
 			.environmentObject(DateFormatter.memoDateFormatter)
     }
 }

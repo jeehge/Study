@@ -24,12 +24,6 @@ class CoreDataManager: ObservableObject {
 		saveContext()
 	}
 	
-	// 속성에 적용할 특성
-	@FetchRequest(entity: MemoEntity.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \MemoEntity.insertDate, ascending: false)])
-	// 목록을 저장할 속성
-	// 속성이 초기화되는 시점에 데이터를 읽어와서 여기에 자동으로 저장
-	// 데이터가 업데이트 되면 배열의 업데이트도 자동으로 업데이트됨
-	var memoList: FetchedResults<MemoEntity>
 	
 	func update(memo: MemoEntity?, content: String) {
 		memo?.content = content
