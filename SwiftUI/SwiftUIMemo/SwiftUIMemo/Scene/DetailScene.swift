@@ -18,7 +18,11 @@ struct DetailScene: View {
 	@EnvironmentObject var formatter: DateFormatter
 	
 	@State private var showEditSheet = false
+	@State private var showDeleteAlert = false
 	
+	// presentationMode 속성에 화면전화을 관리하는 객체가 저장됨
+	// 네비게이션 챕터에서 자세히 배움
+	@Environment(\.presentationMode) var presentationMode
 	
     var body: some View {
 		VStack {
@@ -40,6 +44,25 @@ struct DetailScene: View {
 			
 			HStack {
 				Button(action: {
+					// 경고창 표시하고 삭제여부 표시
+					self.showDeleteAlert.toggle()
+				}, label: {
+					Image(systemName: "trash")
+						.foregroundColor(Color(UIColor.systemRed))
+				})
+				.padding()
+					.alert(isPresented: $showDeleteAlert, content: {
+						Alert(title: Text("삭제 확인"), message: Text("메모를 삭제할까요?"),
+							  primaryButton: .destructive(Text("삭제"), action: {
+								self.store.delete(memo: self.memo)
+								self.presentationMode.wrappedValue.dismiss()
+							}),
+							secondaryButton: .cancel())
+					})
+				
+				Spacer() // 버튼이 양쪽끝에 배치됨
+				
+				Button(action: {
 					// 모달로 표현
 					self.showEditSheet.toggle()
 				}, label: {
@@ -52,6 +75,8 @@ struct DetailScene: View {
 					.environmentObject(KeyboardObserver())
 				})
 			}
+			.padding(.leading)
+			.padding(.trailing)
 		}
 		.navigationBarTitle("메모 보기")
     }

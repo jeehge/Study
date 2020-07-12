@@ -32,7 +32,9 @@ class MemoStore: ObservableObject {
 	
 	// memo delete - memo 인스턴스를 받는 버전
 	func delete(memo: Memo) {
-		self.list.removeAll { $0 == memo }
+		DispatchQueue.main.async {
+			self.list.removeAll { $0 == memo }
+		}
 	}
 	
 	// memo delete - indexset을 받는 버전

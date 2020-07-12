@@ -17,11 +17,14 @@ struct MemoListScene: View {
 	
     var body: some View {
 		NavigationView {
-			List(store.list) { memo in
-				// 네비게이션 링크를 사용해야함 - 네비게이션 뷰와 사용하는 특별한 뷰 뷰를 터치하면 새로운 화면을 표시
-				NavigationLink(destination: DetailScene(memo: memo), label: {
-					MemoCell(memo: memo)
-				})
+			List {
+				ForEach(store.list) { memo in
+					// 네비게이션 링크를 사용해야함 - 네비게이션 뷰와 사용하는 특별한 뷰 뷰를 터치하면 새로운 화면을 표시
+					NavigationLink(destination: DetailScene(memo: memo), label: {
+						MemoCell(memo: memo)
+					})
+				}
+				.onDelete(perform: store.delete)
 			}
 			.navigationBarTitle("내 메모")
 			.navigationBarItems(trailing: ModalButton(show: $showComposer)) // $ 값이 복사된게 아니라 바인딩이 전달됨 여기서 전달한 속성은 ModalButton show 에 바인딩이 저장됨 뷰 외부의 속성을 변경하고 싶을땐 뷰 바인딩으로 변경해야 한다
