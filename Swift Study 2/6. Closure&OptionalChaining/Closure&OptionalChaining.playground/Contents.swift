@@ -197,3 +197,95 @@ doSomething()
 func execute(handler: (() -> Void)?) {
 	
 }
+
+// 옵셔널 체이닝
+
+class Sauce {
+	var name: String
+	
+	init(name: String) {
+		self.name = name
+	}
+}
+
+class Bread {
+	var name: String
+	var sauce: Sauce?
+	
+	init(name: String) {
+		self.name = name
+	}
+}
+
+struct Sandwich {
+	var name: String
+	var bread: Bread?
+	
+	func fullSandwich() -> String? {
+		var sandwich: String? = nil
+		
+		if let bread: Bread = self.bread {
+			sandwich = bread.name
+		}
+		
+		if let s = sandwich {
+			var result: String = name
+			result += " " + s
+			return result
+		} else {
+			return nil
+		}
+	}
+	
+	func printSandwich() {
+		if let sandwich: String = self.fullSandwich() {
+			print(sandwich)
+		}
+	}
+}
+
+
+class MyLunch {
+	var sandwich: Sandwich?
+}
+
+
+let todayLunch: MyLunch = MyLunch()
+let lunchOptionalChaining: String? = todayLunch.sandwich?.bread?.sauce?.name
+//let lunchOptionalUnwraping: String = todayLunch.sandwich!.bread!.sauce!.name
+
+
+if let sandwich = todayLunch.sandwich {
+	if let bread = sandwich.bread {
+		if let sauceName = bread.sauce {
+			print(sauceName)
+		}
+	}
+}
+
+if let lunch = todayLunch.sandwich?.bread?.sauce?.name {
+	print(lunch)
+} else {
+	print("pass")
+}
+
+
+todayLunch.sandwich?.bread?.sauce?.name = "허니머스타드"
+print(todayLunch.sandwich?.bread?.sauce?.name)
+
+todayLunch.sandwich = Sandwich(name: "계란마요", bread: nil)
+todayLunch.sandwich?.bread = Bread(name: "호밀")
+todayLunch.sandwich?.bread?.sauce = Sauce(name: "허니머스타드")
+
+print(todayLunch.sandwich?.bread?.sauce?.name)
+
+todayLunch.sandwich?.fullSandwich()?.isEmpty
+todayLunch.sandwich?.printSandwich()
+
+
+let optionalArray: [Int]? = [1, 2, 3]
+optionalArray?[1] // 2
+var optionalDictionary: [String: [Int]]? = [String: [Int]]()
+optionalDictionary?["numberArray"] = optionalArray
+optionalDictionary?["numberArray"]?[2] // 3
+
