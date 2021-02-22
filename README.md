@@ -27,6 +27,6 @@
 
 <br>
 
-### 다섯 번ㅉ 스터디
+### 다섯 번째 스터디
 
 [Swift UI](https://github.com/jeehge/Study/tree/master/SwiftUI)
