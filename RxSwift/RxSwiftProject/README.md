@@ -14,7 +14,7 @@
 
 [ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift)
 
-    → webSocket을 이용한 업비트 시세 수신 👉 [링크](https://docs.upbit.com/docs/upbit-quotation-websocket)
+→ webSocket을 이용한 업비트 시세 수신 👉 [링크](https://docs.upbit.com/docs/upbit-quotation-websocket)
 
 
 [업비트 개발자 센터](https://docs.upbit.com/reference)
