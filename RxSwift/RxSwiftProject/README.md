@@ -16,8 +16,13 @@
 
 → webSocket을 이용한 업비트 시세 수신 👉 [링크](https://docs.upbit.com/docs/upbit-quotation-websocket)
 
-
 [업비트 개발자 센터](https://docs.upbit.com/reference)
+
+<br>
+
+### 참고사이트
+
+[WebSocket?](https://blog.rocketinsights.com/state-of-swift-websockets)
 
 <br>
 
@@ -32,5 +37,7 @@
 # 프로젝트 기획 및 기술
 
 RxSwift + MVVM
+
+
 
 
