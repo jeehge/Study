@@ -42,19 +42,29 @@ MVVM
 
 websocket <- 라이브러리를 써야할까요?
 
-
+<br>
 
 # WebSocket
 
 [WebSocket과 Socket.io](https://d2.naver.com/helloworld/1336)
+
+
 [An Introduction to WebSockets](https://www.raywenderlich.com/13209594-an-introduction-to-websockets)
 
+<br>
+
 WebSocket이 무엇일까요? 
+
 실시간으로 상호작용하는 웹 서비스를 만드는 표준 기술이라고 합니다.
 
+<br>
+
 이름에서도 알 수 있듯이 소켓을 이용하여 데이터를 주고 받습니다.
+
 즉, 기존의 요청-응답 관계 방식보다 더 쉽게 데이터를 교환할 수 있습니다.
 
-**소켓통신이란
+
+** 소켓통신이란
+
 네트워크를 통해 (서버-클라이언트) 양쪽에 링크를 생성하고 그 링크를 통해 데이터를 주고 받음
 
