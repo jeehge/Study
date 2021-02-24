@@ -51,11 +51,18 @@ websocket <- 라이브러리를 써야할까요?
 
 [An Introduction to WebSockets](https://www.raywenderlich.com/13209594-an-introduction-to-websockets)
 
+
+[How to use the URLSessionWebSocketTask in Swift. Post WWDC deep-dive review.](https://appspector.com/blog/websockets-in-ios-using-urlsessionwebsockettask)
+
 <br>
 
 WebSocket이 무엇일까요? 
 
 실시간으로 상호작용하는 웹 서비스를 만드는 표준 기술이라고 합니다.
+
+서버와 클라이언트 간의 양방향 통신을 허용하는 네트워크 프로토콜입니다.
+
+요청 및 응답 패턴을 사용하는 HTTP와 달리 WebSocket은 어느 시점에서든 양방향으로 데이터를 보낼 수 있습니다.
 
 <br>
 
