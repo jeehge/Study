@@ -38,6 +38,7 @@
 
 RxSwift
 RxCocoa
+RxStarscream
 MVVM
 
 websocket <- 라이브러리를 써야할까요?
