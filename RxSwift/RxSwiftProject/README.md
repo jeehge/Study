@@ -35,8 +35,11 @@
 # 프로젝트 기획 및 기술
 
 RxSwift
+
 RxCocoa
+
 [RxStarscream](https://github.com/RxSwiftCommunity/RxStarscream)
+
 MVVM
 
 <br>
