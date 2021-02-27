@@ -12,8 +12,6 @@
 
 ### 실제로 프로젝트를 RxSwift를 사용하여 만듭니다.
 
-[ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift)
-
 → webSocket을 이용한 업비트 시세 수신 👉 [링크](https://docs.upbit.com/docs/upbit-quotation-websocket)
 
 [업비트 개발자 센터](https://docs.upbit.com/reference)
@@ -38,10 +36,8 @@
 
 RxSwift
 RxCocoa
-RxStarscream
+[RxStarscream](https://github.com/RxSwiftCommunity/RxStarscream)
 MVVM
-
-websocket <- 라이브러리를 써야할까요?
 
 <br>
 
