@@ -6,7 +6,8 @@ target 'RxSwiftProject' do
   use_frameworks!
 
   # Pods for RxExample
-  pod 'RxSwift'
-  pod 'RxCocoa'
+	pod 'RxSwift'
+	pod 'RxCocoa'
+	pod 'RxStarscream'
 
 end
