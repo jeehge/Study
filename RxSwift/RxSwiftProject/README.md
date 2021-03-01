@@ -44,6 +44,16 @@ MVVM
 
 <br>
 
+# 화면 구상
+
+참고 앱 > 미니스탁, 업비트
+
+
+고민해서 화면 고민까지 추가하기!
+
+
+<br>
+
 # WebSocket
 
 [WebSocket과 Socket.io](https://d2.naver.com/helloworld/1336)
@@ -74,12 +84,7 @@ WebSocket이 무엇일까요?
 <br>
 
 
-
 ** 소켓통신이란
 
 네트워크를 통해 (서버-클라이언트) 양쪽에 링크를 생성하고 그 링크를 통해 데이터를 주고 받음
-
-<br>
-
-UI 화면 고민하기
 
