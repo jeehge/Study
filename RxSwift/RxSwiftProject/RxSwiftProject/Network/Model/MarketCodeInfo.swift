@@ -1,5 +1,5 @@
 //
-//  Responses.swift
+//  MarketCodeInfo.swift
 //  RxSwiftProject
 //
 //  Created by JH on 2021/03/02.
@@ -20,11 +20,11 @@ struct MarketCodeInfo: Decodable {
 		case marketWarning = "market_warning"
 	}
 	
-//	init(from decoder: Decoder) throws {
-//		let container = try decoder.container(keyedBy: CodingKeys.self)
-//		market = try container.decode(String.self, forKey: .market)
-//		koreanName = try container.decode(String.self, forKey: .koreanName)
-//		englishName = try container.decode(String.self, forKey: .englishName)
-//		marketWarning = try container.decode(String.self, forKey: .marketWarning)
-//	}
+	init(from decoder: Decoder) throws {
+		let container = try decoder.container(keyedBy: CodingKeys.self)
+		market = try container.decode(String.self, forKey: .market)
+		koreanName = try container.decode(String.self, forKey: .koreanName)
+		englishName = try container.decode(String.self, forKey: .englishName)
+		marketWarning = try container.decode(String.self, forKey: .marketWarning)
+	}
 }

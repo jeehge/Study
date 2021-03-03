@@ -81,9 +81,54 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWj-yv-cBy">
                                 <rect key="frame" x="0.0" y="88" width="414" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsm-sy-BMd">
+                                        <rect key="frame" x="16" y="4" width="40" height="37"/>
+                                        <state key="normal" title="KRW"/>
+                                        <connections>
+                                            <action selector="actionGetKRW:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zkc-JS-vkc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZ5-ZG-R8t">
+                                        <rect key="frame" x="56" y="4" width="40" height="37"/>
+                                        <state key="normal" title="BTC"/>
+                                        <connections>
+                                            <action selector="actionGetBTC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kz9-Fc-CBz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-ei-jpL">
+                                        <rect key="frame" x="96" y="4" width="40" height="37"/>
+                                        <state key="normal" title="USDT"/>
+                                        <connections>
+                                            <action selector="actionGetUSDT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNV-TX-0LV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjk-ve-676">
+                                        <rect key="frame" x="136" y="4" width="40" height="37"/>
+                                        <state key="normal" title="관심"/>
+                                        <connections>
+                                            <action selector="actionGetInterest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMd-qt-dWv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="HZ5-ZG-R8t" firstAttribute="leading" secondItem="Jsm-sy-BMd" secondAttribute="trailing" id="Brw-yW-92Q"/>
                                     <constraint firstAttribute="height" constant="45" id="Df0-gU-nOK"/>
+                                    <constraint firstAttribute="bottom" secondItem="wjk-ve-676" secondAttribute="bottom" constant="4" id="F9q-Fc-abi"/>
+                                    <constraint firstItem="wjk-ve-676" firstAttribute="leading" secondItem="1fx-ei-jpL" secondAttribute="trailing" id="Hmi-R7-3i3"/>
+                                    <constraint firstItem="HZ5-ZG-R8t" firstAttribute="top" secondItem="AWj-yv-cBy" secondAttribute="top" constant="4" id="KeJ-3f-8Uu"/>
+                                    <constraint firstItem="Jsm-sy-BMd" firstAttribute="width" secondItem="HZ5-ZG-R8t" secondAttribute="width" id="RdI-dM-zHc"/>
+                                    <constraint firstItem="wjk-ve-676" firstAttribute="top" secondItem="AWj-yv-cBy" secondAttribute="top" constant="4" id="Xlf-Te-9H5"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jsm-sy-BMd" secondAttribute="bottom" constant="4" id="Yb1-6j-ujw"/>
+                                    <constraint firstItem="Jsm-sy-BMd" firstAttribute="top" secondItem="AWj-yv-cBy" secondAttribute="top" constant="4" id="bdo-ic-vT6"/>
+                                    <constraint firstItem="1fx-ei-jpL" firstAttribute="top" secondItem="AWj-yv-cBy" secondAttribute="top" constant="4" id="cKy-VQ-93O"/>
+                                    <constraint firstItem="Jsm-sy-BMd" firstAttribute="width" secondItem="1fx-ei-jpL" secondAttribute="width" id="nsG-zb-4tR"/>
+                                    <constraint firstItem="Jsm-sy-BMd" firstAttribute="leading" secondItem="AWj-yv-cBy" secondAttribute="leading" constant="16" id="r0h-uH-od9"/>
+                                    <constraint firstAttribute="bottom" secondItem="1fx-ei-jpL" secondAttribute="bottom" constant="4" id="tCT-r3-qd7"/>
+                                    <constraint firstItem="1fx-ei-jpL" firstAttribute="leading" secondItem="HZ5-ZG-R8t" secondAttribute="trailing" id="tDh-k2-Lce"/>
+                                    <constraint firstItem="Jsm-sy-BMd" firstAttribute="width" secondItem="wjk-ve-676" secondAttribute="width" id="w5M-3a-Wxc"/>
+                                    <constraint firstAttribute="bottom" secondItem="HZ5-ZG-R8t" secondAttribute="bottom" constant="4" id="ztP-0e-XWM"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -11,18 +11,45 @@ final class MainViewController: BaseViewController {
 	// MARK: - Properties
 	@IBOutlet private weak var tableView: UITableView!
 	
-	private var list: [MarketCodeInfo] = []
+	private var resultList: [MarketCodeInfo] = []
+	private var list: [MarketCodeInfo] = [] {
+		didSet {
+			tableView.reloadData()
+		}
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		initTableView()
+		requestMarketInfoList()
+	}
+	
+	// MARK: - Initialize
+	private func initTableView() {
 		tableView.delegate = self
 		tableView.dataSource = self
-		requestMarketInfoList()
+	}
+	
+	// MARK: - IBAction
+	@IBAction private func actionGetKRW(_ sender: UIButton) {
+		list = resultList.filter { $0.market.contains("KRW") }
+	}
+	
+	@IBAction private func actionGetBTC(_ sender: UIButton) {
+		list = resultList.filter { $0.market.contains("BTC") }
+	}
+	
+	@IBAction private func actionGetUSDT(_ sender: UIButton) {
+		list = resultList.filter { $0.market.contains("USDT") }
+	}
+	
+	@IBAction private func actionGetInterest(_ sender: UIButton) {
 		
 	}
 	
 	// MARK: - Request
+	// 시세 종목 조회 - 마켓 코드 조회
 	private func requestMarketInfoList() {
 		let parameters: [String: String] = [
 			"isDetails": "true"
@@ -32,13 +59,15 @@ final class MainViewController: BaseViewController {
 			guard let self = self else { return }
 			switch reuslt {
 			case .success(let result):
-				self.list = result
-				self.tableView.reloadData()
+				self.resultList = result
+				self.list = self.resultList.filter { $0.market.contains("KRW") }
 			case .failure(let error):
 				print(error)
 			}
 		}
 	}
+	
+	// 시세 Ticker 조회 - 현재가 정보
 	
 	// MARK: - Test code
 	func getTestData() {
@@ -61,7 +90,6 @@ final class MainViewController: BaseViewController {
 					}
 				}
 			}
-			
 			dataTask?.resume()
 		}
 	}
