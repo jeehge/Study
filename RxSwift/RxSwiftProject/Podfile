@@ -9,5 +9,6 @@ target 'RxSwiftProject' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
 	pod 'RxStarscream'
+	pod 'SwiftLint'
 
 end
