@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1E98E20F43D7633B088AC5BB /* Pods_RxSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A5DF714A86F838EC8C766F /* Pods_RxSwiftProject.framework */; };
+		E9084EAB25EFF10C006CBC39 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E9084EAA25EFF10C006CBC39 /* .swiftlint.yml */; };
 		E90DA29825EFD7EF00A94C3A /* TicketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA29725EFD7EF00A94C3A /* TicketInfo.swift */; };
+		E90DA2B025EFDFD400A94C3A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA2AF25EFDFD400A94C3A /* ListViewModel.swift */; };
+		E90DA2C025EFE39400A94C3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA2BF25EFE39400A94C3A /* APIService.swift */; };
 		E91020EB25E3DD7500BB083A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91020EA25E3DD7500BB083A /* AppDelegate.swift */; };
 		E91020ED25E3DD7500BB083A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91020EC25E3DD7500BB083A /* SceneDelegate.swift */; };
 		E91020EF25E3DD7500BB083A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91020EE25E3DD7500BB083A /* MainViewController.swift */; };
@@ -32,7 +35,10 @@
 		964A6FC0EEE59BE6E3039CA0 /* Pods-RxSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftProject.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftProject/Pods-RxSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		DC7C5A907526EE294A30F4B5 /* Pods-RxSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftProject/Pods-RxSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A5DF714A86F838EC8C766F /* Pods_RxSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9084EAA25EFF10C006CBC39 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E90DA29725EFD7EF00A94C3A /* TicketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfo.swift; sourceTree = "<group>"; };
+		E90DA2AF25EFDFD400A94C3A /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		E90DA2BF25EFE39400A94C3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E91020E725E3DD7500BB083A /* RxSwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91020EA25E3DD7500BB083A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E91020EC25E3DD7500BB083A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 		E91020DE25E3DD7500BB083A = {
 			isa = PBXGroup;
 			children = (
+				E9084EAA25EFF10C006CBC39 /* .swiftlint.yml */,
 				E91020E925E3DD7500BB083A /* RxSwiftProject */,
 				E91020E825E3DD7500BB083A /* Products */,
 				C8BDF9E4DE6C50C3BC3967B2 /* Pods */,
@@ -122,6 +129,7 @@
 		E9C5FD0025E6848A009039E2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E90DA2AF25EFDFD400A94C3A /* ListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 				E9F361FD25ECB005007C67A8 /* NetworkManager.swift */,
 				E9F3621525ED38FF007C67A8 /* API.swift */,
 				E9F3621825ED3CD3007C67A8 /* APIError.swift */,
+				E90DA2BF25EFE39400A94C3A /* APIService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -274,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9084EAB25EFF10C006CBC39 /* .swiftlint.yml in Resources */,
 				E91020F725E3DD7500BB083A /* LaunchScreen.storyboard in Resources */,
 				E91020F425E3DD7500BB083A /* Assets.xcassets in Resources */,
 				E91020F225E3DD7500BB083A /* Main.storyboard in Resources */,
@@ -342,8 +352,10 @@
 				E91020EB25E3DD7500BB083A /* AppDelegate.swift in Sources */,
 				E91020ED25E3DD7500BB083A /* SceneDelegate.swift in Sources */,
 				E9F3620425ECB0B3007C67A8 /* BaseViewController.swift in Sources */,
+				E90DA2C025EFE39400A94C3A /* APIService.swift in Sources */,
 				E9F3621325ED38D9007C67A8 /* CellIdentifierable.swift in Sources */,
 				E9F3621925ED3CD3007C67A8 /* APIError.swift in Sources */,
+				E90DA2B025EFDFD400A94C3A /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

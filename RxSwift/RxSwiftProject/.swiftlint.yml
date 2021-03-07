@@ -1,0 +1,17 @@
+disabled_rules: # rule identifiers turned on by default to exclude from running
+  - unused_optional_binding
+  - unused_closure_parameter
+  - force_cast
+included: # paths to include during linting. `--path` is ignored if present.
+  #- Source
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  #- Source/ExcludedFolder
+  #- Source/ExcludedFile.swift
+  #- Source/*/ExcludedFile.swift # Exclude files with a wildcard
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 250
