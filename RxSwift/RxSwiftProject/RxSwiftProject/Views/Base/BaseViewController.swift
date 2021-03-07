@@ -7,10 +7,19 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
 
 class BaseViewController: UIViewController, ViewControllerFromStoryBoard {
-	// MARK: - Properties
-	let disposeBag: DisposeBag = DisposeBag()
-
+	
+	var disposeBag = DisposeBag()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		setup()
+		bind()
+	}
+	
+	func setup() {}
+	
+	func bind() {}
 }

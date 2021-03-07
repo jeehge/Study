@@ -85,30 +85,18 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsm-sy-BMd">
                                         <rect key="frame" x="16" y="4" width="40" height="37"/>
                                         <state key="normal" title="KRW"/>
-                                        <connections>
-                                            <action selector="actionGetKRW:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zkc-JS-vkc"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZ5-ZG-R8t">
                                         <rect key="frame" x="56" y="4" width="40" height="37"/>
                                         <state key="normal" title="BTC"/>
-                                        <connections>
-                                            <action selector="actionGetBTC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kz9-Fc-CBz"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fx-ei-jpL">
                                         <rect key="frame" x="96" y="4" width="40" height="37"/>
                                         <state key="normal" title="USDT"/>
-                                        <connections>
-                                            <action selector="actionGetUSDT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNV-TX-0LV"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjk-ve-676">
                                         <rect key="frame" x="136" y="4" width="40" height="37"/>
                                         <state key="normal" title="관심"/>
-                                        <connections>
-                                            <action selector="actionGetInterest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QMd-qt-dWv"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
