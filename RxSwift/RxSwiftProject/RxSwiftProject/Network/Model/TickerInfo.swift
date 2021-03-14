@@ -1,5 +1,5 @@
 //
-//  TicketInfo.swift
+//  TickerInfo.swift
 //  RxSwiftProject
 //
 //  Created by JH on 2021/03/03.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TicketInfo: Decodable {
+struct TickerInfo: Decodable {
 	let market: String 				// 종목 구분 코드
 	let tradeDate: String			// 최근 거래 일자(UTC)
 	let tradeTime: String			// 최근 거래 시각(UTC)

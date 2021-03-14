@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E98E20F43D7633B088AC5BB /* Pods_RxSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A5DF714A86F838EC8C766F /* Pods_RxSwiftProject.framework */; };
 		E9084EAB25EFF10C006CBC39 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = E9084EAA25EFF10C006CBC39 /* .swiftlint.yml */; };
-		E90DA29825EFD7EF00A94C3A /* TicketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA29725EFD7EF00A94C3A /* TicketInfo.swift */; };
+		E90DA29825EFD7EF00A94C3A /* TickerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA29725EFD7EF00A94C3A /* TickerInfo.swift */; };
 		E90DA2B025EFDFD400A94C3A /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA2AF25EFDFD400A94C3A /* ListViewModel.swift */; };
 		E90DA2C025EFE39400A94C3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90DA2BF25EFE39400A94C3A /* APIService.swift */; };
 		E91020EB25E3DD7500BB083A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91020EA25E3DD7500BB083A /* AppDelegate.swift */; };
@@ -36,7 +36,7 @@
 		DC7C5A907526EE294A30F4B5 /* Pods-RxSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftProject/Pods-RxSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A5DF714A86F838EC8C766F /* Pods_RxSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9084EAA25EFF10C006CBC39 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		E90DA29725EFD7EF00A94C3A /* TicketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfo.swift; sourceTree = "<group>"; };
+		E90DA29725EFD7EF00A94C3A /* TickerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerInfo.swift; sourceTree = "<group>"; };
 		E90DA2AF25EFDFD400A94C3A /* ListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		E90DA2BF25EFE39400A94C3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E91020E725E3DD7500BB083A /* RxSwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				E9F3622425EE6E08007C67A8 /* MarketCodeInfo.swift */,
-				E90DA29725EFD7EF00A94C3A /* TicketInfo.swift */,
+				E90DA29725EFD7EF00A94C3A /* TickerInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,7 +347,7 @@
 				E9F3623625EFC2F6007C67A8 /* MarketInfoCell.swift in Sources */,
 				E9F3621625ED38FF007C67A8 /* API.swift in Sources */,
 				E9F3622525EE6E08007C67A8 /* MarketCodeInfo.swift in Sources */,
-				E90DA29825EFD7EF00A94C3A /* TicketInfo.swift in Sources */,
+				E90DA29825EFD7EF00A94C3A /* TickerInfo.swift in Sources */,
 				E9F361FE25ECB005007C67A8 /* NetworkManager.swift in Sources */,
 				E91020EB25E3DD7500BB083A /* AppDelegate.swift in Sources */,
 				E91020ED25E3DD7500BB083A /* SceneDelegate.swift in Sources */,
