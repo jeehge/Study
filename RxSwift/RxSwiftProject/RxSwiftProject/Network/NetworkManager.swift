@@ -17,7 +17,7 @@ final class NetworkManager {
 	private var socket = WebSocket(url: URL(string: "wss://echo.websocket.org")!)
 	private let writeSubject = PublishSubject<String>()
 	
-	static func request<T: Decodable>(api: API, parameters: [String: String], completion: @escaping (Result<[T], Error>) -> Void) {
+	static func request<T: Decodable>(api: API, parameters: [String: String], completion: @escaping (Result<T, Error>) -> Void) {
 		guard let request: URLRequest = getFinalURL(api: api,
 													parameters: parameters) else { return }
 		URLSession.shared.dataTask(with: request) {(data, response, error) in
@@ -36,7 +36,7 @@ final class NetworkManager {
 					do {
 //						let response = try JSONSerialization.jsonObject(with: responseData, options: [])
 //						print(response)
-						let result = try JSONDecoder().decode([T].self, from: responseData)
+						let result = try JSONDecoder().decode(T.self, from: responseData)
 						completion(.success(result))
 					} catch {
 						completion(.failure(APIError.parseError))

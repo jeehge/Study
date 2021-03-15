@@ -24,20 +24,20 @@ struct TickerInfo: Decodable {
 	FALL : 하락
 	*/
 	let change: String
-	let changePrice: Double			// 변화액의 절대값
-	let changeRate: Double			// 변화율의 절대값
-	let signedChangePrice: Double	// 부호가 있는 변화액
-	let signedChangeRate: Double	// 부호가 있는 변화율
-	let tradeVolume: Double			// 가장 최근 거래량
-	let accTradePrice: Double		// 누적 거래대금(UTC 0시 기준)
-	let accTradePrice24h: Double	// 24시간 누적 거래대금
-	let accTradeVolume: Double		// 누적 거래량(UTC 0시 기준)
-	let accTradeVolume24h: Double	// 24시간 누적 거래량
-	let highest52weekPrice: Double	// 52주 신고가
-	let highest52weekDate: String	// 52주 신고가 달성일
-	let lowest52weekPrice: Double	// 52주 신저가
-	let lowest52weekDate: String	// 52주 신저가 달성일
-	let timestamp: Float			// 타임스탬프
+	let changePrice: Double?			// 변화액의 절대값
+	let changeRate: Double?			// 변화율의 절대값
+	let signedChangePrice: Double?	// 부호가 있는 변화액
+	let signedChangeRate: Double?	// 부호가 있는 변화율
+	let tradeVolume: Double?		// 가장 최근 거래량
+	let accTradePrice: Double?		// 누적 거래대금(UTC 0시 기준)
+	let accTradePrice24h: Double?	// 24시간 누적 거래대금
+	let accTradeVolume: Double?		// 누적 거래량(UTC 0시 기준)
+	let accTradeVolume24h: Double?	// 24시간 누적 거래량
+	let highest52weekPrice: Double?	// 52주 신고가
+	let highest52weekDate: String?	// 52주 신고가 달성일
+	let lowest52weekPrice: Double?	// 52주 신저가
+	let lowest52weekDate: String?	// 52주 신저가 달성일
+	let timestamp: Float?			// 타임스탬프
 	
 	private enum CodingKeys: String, CodingKey {
 		case market
@@ -80,19 +80,19 @@ struct TickerInfo: Decodable {
 		tradePrice = try container.decode(Double.self, forKey: .tradePrice)
 		prevClosingPrice = try container.decode(Double.self, forKey: .prevClosingPrice)
 		change  = try container.decode(String.self, forKey: .change)
-		changePrice = try container.decode(Double.self, forKey: .changePrice)
-		changeRate = try container.decode(Double.self, forKey: .changeRate)
-		signedChangePrice = try container.decode(Double.self, forKey: .signedChangePrice)
-		signedChangeRate = try container.decode(Double.self, forKey: .signedChangeRate)
-		tradeVolume = try container.decode(Double.self, forKey: .tradeVolume)
-		accTradePrice = try container.decode(Double.self, forKey: .accTradePrice)
-		accTradePrice24h = try container.decode(Double.self, forKey: .accTradePrice24h)
-		accTradeVolume = try container.decode(Double.self, forKey: .accTradeVolume)
-		accTradeVolume24h = try container.decode(Double.self, forKey: .accTradeVolume24h)
-		highest52weekPrice = try container.decode(Double.self, forKey: .highest52weekPrice)
-		highest52weekDate  = try container.decode(String.self, forKey: .highest52weekDate)
-		lowest52weekPrice = try container.decode(Double.self, forKey: .lowest52weekPrice)
-		lowest52weekDate  = try container.decode(String.self, forKey: .lowest52weekDate)
-		timestamp  = try container.decode(Float.self, forKey: .timestamp)
+		changePrice = try? container.decodeIfPresent(Double.self, forKey: .changePrice)
+		changeRate = try? container.decodeIfPresent(Double.self, forKey: .changeRate)
+		signedChangePrice = try? container.decodeIfPresent(Double.self, forKey: .signedChangePrice)
+		signedChangeRate = try? container.decodeIfPresent(Double.self, forKey: .signedChangeRate)
+		tradeVolume = try? container.decodeIfPresent(Double.self, forKey: .tradeVolume)
+		accTradePrice = try? container.decodeIfPresent(Double.self, forKey: .accTradePrice)
+		accTradePrice24h = try? container.decodeIfPresent(Double.self, forKey: .accTradePrice24h)
+		accTradeVolume = try? container.decodeIfPresent(Double.self, forKey: .accTradeVolume)
+		accTradeVolume24h = try? container.decodeIfPresent(Double.self, forKey: .accTradeVolume24h)
+		highest52weekPrice = try? container.decodeIfPresent(Double.self, forKey: .highest52weekPrice)
+		highest52weekDate  = try? container.decodeIfPresent(String.self, forKey: .highest52weekDate)
+		lowest52weekPrice = try? container.decodeIfPresent(Double.self, forKey: .lowest52weekPrice)
+		lowest52weekDate  = try? container.decodeIfPresent(String.self, forKey: .lowest52weekDate)
+		timestamp  = try? container.decodeIfPresent(Float.self, forKey: .timestamp)
 	}
 }
