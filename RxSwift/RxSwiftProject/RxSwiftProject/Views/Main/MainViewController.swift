@@ -32,7 +32,6 @@ final class MainViewController: BaseViewController {
 	// MARK: - Initialize
 	private func initTableView() {
 		tableView.delegate = self
-//		tableView.dataSource = self
 	}
 	
 	// MARK: - Test code
@@ -65,13 +64,4 @@ extension MainViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 50
 	}
-//	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//		return list.count
-//	}
-//
-//	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//		let cell = tableView.dequeueReusableCell(withIdentifier: MarketInfoCell.identifier, for: indexPath) as! MarketInfoCell
-//		cell.setMarketInfoCell(info: list[indexPath.row])
-//		return cell
-//	}
 }
