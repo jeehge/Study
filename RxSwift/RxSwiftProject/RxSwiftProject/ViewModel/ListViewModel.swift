@@ -9,10 +9,10 @@ import RxSwift
 import RxCocoa
 
 final class ListViewModel {
-	private var resultList: [MarketCodeInfo] = []
-	private var list: BehaviorRelay<[MarketCodeInfo]> = BehaviorRelay(value: [])
+	private var list: PublishSubject<[MarketCodeInfo]> = PublishSubject<[MarketCodeInfo]>()
 	
-	let service: APIService = APIService()
+	private let service: APIService = APIService()
+	
 	let disposeBag: DisposeBag = DisposeBag()
 	
 	var listObservable: Observable<[MarketCodeInfo]> {
@@ -32,8 +32,8 @@ final class ListViewModel {
 	}
 	
 	func subscribeMarketInfoList() {
-		service.listResponse.bind(to: list).disposed(by: disposeBag)
 		service.requestMarketInfoList()
+		service.markeListResponse.bind(to: list).disposed(by: disposeBag)
 	}
 }
 
