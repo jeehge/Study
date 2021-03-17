@@ -33,16 +33,13 @@ final class APIService {
 	}
 	
 	// 시세 Ticker 조회
-	private func requestTickerInfo() {
-		markeListResponse.concatMap { $0 }.next
-
-		markeListResponse.subscribe(onNext: <#T##(([MarketCodeInfo]) -> Void)?##(([MarketCodeInfo]) -> Void)?##([MarketCodeInfo]) -> Void#>, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>).disposed(by: dis)
+	private func requestTickerInfo(info: MarketCodeInfo) {
 		let parameters: [String: String] = [
 			"markets": info.market
 		]
 
 		return NetworkManager.request(api: .ticker, parameters: parameters) { [weak self] (reuslt: Result<[TickerInfo], Error>) in
-			guard let self = self else s{ return }
+			guard let self = self else { return }
 			switch reuslt {
 			case .success(let info):
 				self.tickerResponse.onNext(info)
