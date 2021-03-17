@@ -17,6 +17,12 @@ final class NetworkManager {
 	private var socket = WebSocket(url: URL(string: "wss://echo.websocket.org")!)
 	private let writeSubject = PublishSubject<String>()
 	
+	static let shared = NetworkManager()
+	
+	var webSocket: WebSocket?
+	
+	private init() { }
+	
 	static func request<T: Decodable>(api: API, parameters: [String: String], completion: @escaping (Result<T, Error>) -> Void) {
 		guard let request: URLRequest = getFinalURL(api: api,
 													parameters: parameters) else { return }
@@ -59,14 +65,18 @@ final class NetworkManager {
 		return request
 	}
 	
-	func setup() {
-		socket = WebSocket(url: URL(string: "ws://localhost:8080/")!)
-		socket.connect()
+	func connect() {
+		let url = "wss://api.upbit.com/websocket/v1"
+		
+		var request = URLRequest(url: URL(string: url)!)
+		request.timeoutInterval = 10
+		webSocket = WebSocket(request: request)
+		webSocket?.delegate = self
+		webSocket?.connect()
 	}
-	
-	func disconnent() {
-		socket.disconnect(forceTimeout: 0)
-		socket.delegate = nil
+	 
+	func disconnect() {
+		webSocket?.disconnect()
 	}
 }
 
@@ -81,9 +91,13 @@ extension NetworkManager: WebSocketDelegate {
 	
 	func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
 		//
+		print(text)
+		
 	}
 	
 	func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
 		//
+		let response = try? JSONSerialization.jsonObject(with: data, options: [])
+		print(response)
 	}
 }

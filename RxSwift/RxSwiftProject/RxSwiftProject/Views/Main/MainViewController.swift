@@ -19,6 +19,8 @@ final class MainViewController: BaseViewController {
 		super.viewDidLoad()
 		
 		initTableView()
+		
+		NetworkManager.shared.connect()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
