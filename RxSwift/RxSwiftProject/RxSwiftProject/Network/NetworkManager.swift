@@ -7,21 +7,25 @@
 
 import UIKit
 import Starscream
-import RxStarscream
 import RxSwift
 
-import Foundation
-
-final class NetworkManager {
+class NetworkManager {
 	private let disposeBag = DisposeBag()
-	private var socket = WebSocket(url: URL(string: "wss://echo.websocket.org")!)
+	private var socket: WebSocket?
 	private let writeSubject = PublishSubject<String>()
 	
 	static let shared = NetworkManager()
 	
-	var webSocket: WebSocket?
+	private init() {
+		var request = URLRequest(url: URL(string: "wss://api.upbit.com/websocket/v1")!)
+		request.timeoutInterval = 5
+		socket = WebSocket(request: request)
+		socket?.delegate = self
+	}
 	
-	private init() { }
+	deinit {
+		socket?.disconnect()
+	}
 	
 	static func request<T: Decodable>(api: API, parameters: [String: String], completion: @escaping (Result<T, Error>) -> Void) {
 		guard let request: URLRequest = getFinalURL(api: api,
@@ -66,38 +70,46 @@ final class NetworkManager {
 	}
 	
 	func connect() {
-		let url = "wss://api.upbit.com/websocket/v1"
-		
-		var request = URLRequest(url: URL(string: url)!)
-		request.timeoutInterval = 10
-		webSocket = WebSocket(request: request)
-		webSocket?.delegate = self
-		webSocket?.connect()
+		socket?.connect()
+		print("web socket start")
+	}
+	
+	func write(message: String) {
+		if let data = message.data(using: .utf8) {
+			socket?.write(data: data)
+		}
 	}
 	 
 	func disconnect() {
-		webSocket?.disconnect()
+		socket?.disconnect()
 	}
 }
 
 extension NetworkManager: WebSocketDelegate {
-	func websocketDidConnect(socket: WebSocketClient) {
-		//
-	}
-	
-	func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-		//
-	}
-	
-	func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
-		//
-		print(text)
-		
-	}
-	
-	func websocketDidReceiveData(socket: WebSocketClient, data: Data) {
-		//
-		let response = try? JSONSerialization.jsonObject(with: data, options: [])
-		print(response)
+	func didReceive(event: WebSocketEvent, client: WebSocket) {
+		switch event {
+		case .connected(let headers):
+			print("websocket is connected: \(headers)")
+		case .disconnected(let reason, let code):
+			print("websocket is disconnected: \(reason) with code: \(code)")
+		case .text(let string):
+			print("Received text: \(string)")
+		case .binary(let data):
+			let response = try? JSONSerialization.jsonObject(with: data, options: [])
+			print(response)
+		case .ping(_):
+			break
+		case .pong(_):
+			break
+		case .viabilityChanged(_):
+			break
+		case .reconnectSuggested(_):
+			break
+		case .cancelled:
+			break
+		case .error(let error):
+			print(error?.localizedDescription)
+			break
+		}
 	}
 }

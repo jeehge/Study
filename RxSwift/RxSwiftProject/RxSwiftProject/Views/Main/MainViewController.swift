@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Starscream
 
 final class MainViewController: BaseViewController {
 	// MARK: - Properties
