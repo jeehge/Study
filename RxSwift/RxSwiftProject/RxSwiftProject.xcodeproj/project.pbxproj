@@ -18,6 +18,7 @@
 		E91020F225E3DD7500BB083A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91020F025E3DD7500BB083A /* Main.storyboard */; };
 		E91020F425E3DD7500BB083A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91020F325E3DD7500BB083A /* Assets.xcassets */; };
 		E91020F725E3DD7500BB083A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91020F525E3DD7500BB083A /* LaunchScreen.storyboard */; };
+		E98135752608CAE300A39A28 /* WebSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98135742608CAE300A39A28 /* WebSocketService.swift */; };
 		E9F361F325E69A63007C67A8 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F361F225E69A63007C67A8 /* Ticker.swift */; };
 		E9F361FE25ECB005007C67A8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F361FD25ECB005007C67A8 /* NetworkManager.swift */; };
 		E9F3620425ECB0B3007C67A8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3620325ECB0B3007C67A8 /* BaseViewController.swift */; };
@@ -47,6 +48,7 @@
 		E91020F325E3DD7500BB083A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E91020F625E3DD7500BB083A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91020F825E3DD7500BB083A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98135742608CAE300A39A28 /* WebSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketService.swift; sourceTree = "<group>"; };
 		E9F361F225E69A63007C67A8 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		E9F361FD25ECB005007C67A8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E9F3620325ECB0B3007C67A8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				E9F3621525ED38FF007C67A8 /* API.swift */,
 				E9F3621825ED3CD3007C67A8 /* APIError.swift */,
 				E90DA2BF25EFE39400A94C3A /* APIService.swift */,
+				E98135742608CAE300A39A28 /* WebSocketService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				E9F361F325E69A63007C67A8 /* Ticker.swift in Sources */,
 				E9F3623625EFC2F6007C67A8 /* MarketInfoCell.swift in Sources */,
 				E9F3621625ED38FF007C67A8 /* API.swift in Sources */,
+				E98135752608CAE300A39A28 /* WebSocketService.swift in Sources */,
 				E9F3622525EE6E08007C67A8 /* MarketCodeInfo.swift in Sources */,
 				E90DA29825EFD7EF00A94C3A /* TickerInfo.swift in Sources */,
 				E9F361FE25ECB005007C67A8 /* NetworkManager.swift in Sources */,

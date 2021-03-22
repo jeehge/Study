@@ -6,26 +6,15 @@
 //
 
 import UIKit
-import Starscream
 import RxSwift
 
-class NetworkManager {
+final class NetworkManager {
 	private let disposeBag = DisposeBag()
-	private var socket: WebSocket?
 	private let writeSubject = PublishSubject<String>()
 	
 	static let shared = NetworkManager()
 	
-	private init() {
-		var request = URLRequest(url: URL(string: "wss://api.upbit.com/websocket/v1")!)
-		request.timeoutInterval = 5
-		socket = WebSocket(request: request)
-		socket?.delegate = self
-	}
-	
-	deinit {
-		socket?.disconnect()
-	}
+	private init() { }
 	
 	static func request<T: Decodable>(api: API, parameters: [String: String], completion: @escaping (Result<T, Error>) -> Void) {
 		guard let request: URLRequest = getFinalURL(api: api,
@@ -67,49 +56,5 @@ class NetworkManager {
 		var request = URLRequest(url: url)
 		request.httpMethod = api.method.rawValue
 		return request
-	}
-	
-	func connect() {
-		socket?.connect()
-		print("web socket start")
-	}
-	
-	func write(message: String) {
-		if let data = message.data(using: .utf8) {
-			socket?.write(data: data)
-		}
-	}
-	 
-	func disconnect() {
-		socket?.disconnect()
-	}
-}
-
-extension NetworkManager: WebSocketDelegate {
-	func didReceive(event: WebSocketEvent, client: WebSocket) {
-		switch event {
-		case .connected(let headers):
-			print("websocket is connected: \(headers)")
-		case .disconnected(let reason, let code):
-			print("websocket is disconnected: \(reason) with code: \(code)")
-		case .text(let string):
-			print("Received text: \(string)")
-		case .binary(let data):
-			let response = try? JSONSerialization.jsonObject(with: data, options: [])
-			print(response)
-		case .ping(_):
-			break
-		case .pong(_):
-			break
-		case .viabilityChanged(_):
-			break
-		case .reconnectSuggested(_):
-			break
-		case .cancelled:
-			break
-		case .error(let error):
-			print(error?.localizedDescription)
-			break
-		}
 	}
 }

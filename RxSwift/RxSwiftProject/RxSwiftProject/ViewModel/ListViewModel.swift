@@ -12,6 +12,7 @@ final class ListViewModel {
 	private var list: PublishSubject<[MarketCodeInfo]> = PublishSubject<[MarketCodeInfo]>()
 	
 	private let service: APIService = APIService()
+	private let webSocketService: WebSocketService = WebSocketService()
 	
 	let disposeBag: DisposeBag = DisposeBag()
 	
@@ -35,8 +36,7 @@ final class ListViewModel {
 		service.requestMarketInfoList()
 		service.markeListResponse.bind(to: list).disposed(by: disposeBag)
 	}
+	
+	
 }
 
-// TODO: -
-// 왜 이렇게 했나 ?
-//
