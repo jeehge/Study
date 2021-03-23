@@ -16,7 +16,7 @@ final class WebSocketService {
 	private var socket: WebSocket?
 	private let disposeBag = DisposeBag()
 	
-	init() {
+	private init() {
 		var request = URLRequest(url: URL(string: "wss://api.upbit.com/websocket/v1")!)
 		request.timeoutInterval = 5
 		socket = WebSocket(request: request)
