@@ -11,7 +11,10 @@ import RxCocoa
 import Starscream
 
 final class WebSocketService {
+	static let shared = WebSocketService()
+	
 	private var socket: WebSocket?
+	private let disposeBag = DisposeBag()
 	
 	init() {
 		var request = URLRequest(url: URL(string: "wss://api.upbit.com/websocket/v1")!)
