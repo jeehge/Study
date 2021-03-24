@@ -10,8 +10,13 @@ import RxCocoa
 
 final class APIService {
 	// MARK: - Properties
-	var markeListResponse: PublishSubject<[MarketCodeInfo]> = PublishSubject<[MarketCodeInfo]>()
-	var tickerResponse: PublishSubject<[TickerInfo]> = PublishSubject<[TickerInfo]>()
+	private var markeListResponse: PublishSubject<[MarketCodeInfo]> = PublishSubject<[MarketCodeInfo]>()
+	private var tickerResponse: PublishSubject<[TickerInfo]> = PublishSubject<[TickerInfo]>()
+	private let disposeBag = DisposeBag()
+	
+	var markeList: Observable<[MarketCodeInfo]> {
+		return markeListResponse.asObserver()
+	}
 
 	// MARK: - Request
 	// 시세 종목 조회 - 마켓 코드 조회
@@ -26,19 +31,31 @@ final class APIService {
 			case .success(let result):
 				self.markeListResponse.onNext(result)
 				self.markeListResponse.onCompleted()
+				self.getTickerInfo()
 			case .failure(let error):
 				print(error)
 			}
 		}
 	}
 	
+	func getTickerInfo() {
+		let r = self.markeList.map { list in
+			print(list.count)
+			list.forEach { info in
+				self.requestTickerInfo(markets: info.market)
+			}
+		}
+		
+		print(r)
+	}
+	
 	// 시세 Ticker 조회
-	private func requestTickerInfo(info: MarketCodeInfo) {
+	private func requestTickerInfo(markets: String) {
 		let parameters: [String: String] = [
-			"markets": info.market
+			"markets": markets
 		]
 
-		return NetworkManager.request(api: .ticker, parameters: parameters) { [weak self] (reuslt: Result<[TickerInfo], Error>) in
+		NetworkManager.request(api: .ticker, parameters: parameters) { [weak self] (reuslt: Result<[TickerInfo], Error>) in
 			guard let self = self else { return }
 			switch reuslt {
 			case .success(let info):
