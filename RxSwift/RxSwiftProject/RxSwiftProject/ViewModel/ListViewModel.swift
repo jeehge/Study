@@ -33,8 +33,11 @@ final class ListViewModel {
 	}
 	
 	func subscribeMarketInfoList() {
-		service.requestMarketInfoList()
-		service.markeList.bind(to: list).disposed(by: disposeBag)
+//		service.requestMarketInfoList()
+//		service.markeList.bind(to: list).disposed(by: disposeBag)
+		
+		service.requestTickerInfo()
+		print(service.tickerList)
 	}
 }
 

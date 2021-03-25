@@ -17,6 +17,10 @@ final class APIService {
 	var markeList: Observable<[MarketCodeInfo]> {
 		return markeListResponse.asObserver()
 	}
+	
+	var tickerList: Observable<[TickerInfo]> {
+		return tickerResponse.asObserver()
+	}
 
 	// MARK: - Request
 	// 시세 종목 조회 - 마켓 코드 조회
@@ -39,7 +43,7 @@ final class APIService {
 	}
 	
 	func getTickerInfo() {
-		let r = self.markeList.map { list in
+		let r = markeListResponse.map { list in
 			print(list.count)
 			list.forEach { info in
 				self.requestTickerInfo(markets: info.market)
@@ -50,7 +54,7 @@ final class APIService {
 	}
 	
 	// 시세 Ticker 조회
-	private func requestTickerInfo(markets: String) {
+	func requestTickerInfo(markets: String = "KRW-BTC") {
 		let parameters: [String: String] = [
 			"markets": markets
 		]
