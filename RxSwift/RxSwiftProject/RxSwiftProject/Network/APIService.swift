@@ -35,22 +35,10 @@ final class APIService {
 			case .success(let result):
 				self.markeListResponse.onNext(result)
 				self.markeListResponse.onCompleted()
-				self.getTickerInfo()
 			case .failure(let error):
 				print(error)
 			}
 		}
-	}
-	
-	func getTickerInfo() {
-		let r = markeListResponse.map { list in
-			print(list.count)
-			list.forEach { info in
-				self.requestTickerInfo(markets: info.market)
-			}
-		}
-		
-		print(r)
 	}
 	
 	// 시세 Ticker 조회
