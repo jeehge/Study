@@ -1,32 +1,22 @@
-# Study
+# No부담 개발 서적 독서 스터디
 
 
+## 읽을 책 
 
-### 첫 번째 스터디
+[객체지향의 사실과 오해](https://book.naver.com/bookdb/book_detail.nhn?bid=9145968)
 
 
-[Swift Study](https://github.com/jeehge/Study/tree/master/Swift%20Study)
+### 1주차
+
 
 <br>
 
-### 두 번째 스터디
+### 2주차
 
-[Functional Swift Study](https://github.com/jeehge/Study/tree/master/Functional%20Swift%20Study%20)
-
-<br>
-
-### 세 번째 스터디
-
-[RxSwift Study](https://github.com/jeehge/Study/tree/master/RxSwift)
 
 <br>
 
-### 네 번째 스터디
+### 3주차
 
-[Swift Study](https://github.com/jeehge/Study/tree/master/Swift%20Study%202)
 
 <br>
-
-### 다섯 번째 스터디
-
-[Swift UI](https://github.com/jeehge/Study/tree/master/SwiftUI)
