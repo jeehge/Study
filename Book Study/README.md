@@ -10,7 +10,10 @@
 
 01 / 협력하는 객체들의 공동체
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-11-22-53-13.jpeg" alt="">
+<img width="300" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-11-22-53-13.jpeg" alt="">
+<img width="300" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-11-22-53-07.jpeg" alt="">
+<img width="300" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-11-22-53-00.jpeg" alt="">
+
 
 02 / 이상한 나라의 객체 
 
