@@ -16,7 +16,7 @@
 
 02 / 이상한 나라의 객체 
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-13-09-30-02.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-13-09-30-23.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-14-10-02-19.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-13-09-30-02.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-13-09-30-23.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-15-12-03-07.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-15-12-03-11.jpeg" alt="">
 
 <br>
 
