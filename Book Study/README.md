@@ -54,6 +54,10 @@
 
 04 / 역할, 책임, 협력
 
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-17-01-49-34.jpeg" alt="">
+
+<br>
+
 05 / 책임과 메시지
 
 06 / 객체 지도
