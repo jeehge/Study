@@ -54,13 +54,28 @@
 
 04 / 역할, 책임, 협력
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-17-01-49-34.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-17-01-49-34.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-19-19-49-18.jpeg" alt="">
 
 <br>
 
 05 / 책임과 메시지
 
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt="">
+
 06 / 객체 지도
+
+
+<br>
+
+
+### 2주차 - 책을 읽고
+
+개발하면서 많이 놓쳤던 부분에 대해서 알아가는 것 같다
+
+매번 책에서 이렇게 설계하는 건 나쁜거야 라고말하는 걸 그대로 하고 있었다 ..
+
+그러다 보니 원래는 책 읽기 습관을 들이기 위해 가볍게 시작했던 책 읽기가 설계할 때 내 모습에 대한 고민을 다시 하게 만들었다
+
 
 <br>
 
