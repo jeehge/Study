@@ -60,7 +60,8 @@
 
 05 / 책임과 메시지
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-21-09-44-04.jpeg" alt="">
+
 
 06 / 객체 지도
 
