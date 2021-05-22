@@ -60,7 +60,7 @@
 
 05 / 책임과 메시지
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-22-15-47-47.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-22-15-47-51.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-23-02-04-16.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-22-15-47-51.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-22-15-47-47.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-22-15-47-51.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-23-02-04-16.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-23-02-04-11.jpeg" alt="">
 
 
 
@@ -73,11 +73,17 @@
 
 ### 2주차 - 책을 읽고
 
-개발하면서 많이 놓쳤던 부분에 대해서 알아가는 것 같다
+개발하면서 많이 놓쳤던 부분에 대해서 알아가는 것 같다.
 
 매번 책에서 이렇게 설계하는 건 나쁜거야 라고말하는 걸 그대로 하고 있었다 ..
 
-그러다 보니 원래는 책 읽기 습관을 들이기 위해 가볍게 시작했던 책 읽기가 설계할 때 내 모습에 대한 고민을 다시 하게 만들었다
+그러다 보니 원래는 책 읽기 습관을 들이기 위해 가볍게 시작했던 책 읽기가 설계할 때 내 모습에 대한 고민을 다시 하게 만들었다.
+
+그리고 중요한 이야기를 반복적으로 이야기를 해주고 있어서 앞에서 이해가 안되었어도 그냥 진행해서 읽었을 때 나중에 아하! 하는 부분이 생겨서 좋다. 👍 
+
+이번 주 읽어야 할 부분에선 역할, 책임, 협력이 중요하기 때문에 메시지와 책임에 대해서 이야기 하고 있다. 
+
+그 중 기억에 남는건 
 
 
 <br>
