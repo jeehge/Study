@@ -67,6 +67,10 @@
 
 06 / 객체 지도
 
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page1.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page2.jpg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page3.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page4.jpg" alt="">
+
+
 
 <br>
 
