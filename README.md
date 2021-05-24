@@ -33,6 +33,6 @@
 
 <br>
 
-### 여섯 
+### 여섯 번째 스터디
 
 [부담 없는 개발 독서 스터디](https://github.com/jeehge/Study/tree/master/Book%20Study)
