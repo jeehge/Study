@@ -69,8 +69,6 @@
 
 <img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page1.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page2.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page3.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/Page4-1.jpg" alt="">
 
-
-
 <br>
 
 
@@ -100,6 +98,11 @@
 ### 3주차
 
 07 / 함께 모으기
+
+
+<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/Images/KakaoTalk_Photo_2021-05-24-09-23-36.jpeg" alt="">
+
+<br>
 
 부록 A / 추상화 기법
 
