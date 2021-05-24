@@ -33,6 +33,6 @@
 
 <br>
 
-### 부담 없는 개발 독서 
+### 여섯 
 
-[객체지향의 사실과 오해](https://github.com/jeehge/Study/tree/master/Book%20Study)
+[부담 없는 개발 독서 스터디](https://github.com/jeehge/Study/tree/master/Book%20Study)
