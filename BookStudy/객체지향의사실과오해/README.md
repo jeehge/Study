@@ -7,7 +7,7 @@
 ### 1주차
 
 01 / 협력하는 객체들의 공동체
-https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/4FCA7C9E-D0B2-4F0E-8A4E-1B93BBAE3B0F_1_105_c.jpeg
+
 <img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-13.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-07.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-00.jpeg" alt="">
 
 <br>
