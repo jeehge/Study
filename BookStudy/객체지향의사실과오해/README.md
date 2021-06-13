@@ -7,20 +7,20 @@
 ### 1주차
 
 01 / 협력하는 객체들의 공동체
-
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-13.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-07.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-00.jpeg" alt="">
+https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/4FCA7C9E-D0B2-4F0E-8A4E-1B93BBAE3B0F_1_105_c.jpeg
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-13.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-07.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-11-22-53-00.jpeg" alt="">
 
 <br>
 
 02 / 이상한 나라의 객체 
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-13-09-30-02.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-13-09-30-23.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-15-12-03-07.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4//Images/KakaoTalk_Photo_2021-05-15-12-03-11.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-16-01-51-07.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-13-09-30-02.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-13-09-30-23.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-15-12-03-07.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4//Images/KakaoTalk_Photo_2021-05-15-12-03-11.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudyy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-16-01-51-07.jpeg" alt="">
 
 <br>
 
 03 / 타입과 추상화
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-16-01-50-01.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-16-01-50-04.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-16-01-50-01.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-16-01-50-04.jpeg" alt="">
 
 <br>
 
@@ -52,20 +52,20 @@
 
 04 / 역할, 책임, 협력
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-17-01-49-34.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-19-19-49-18.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-17-01-49-34.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-19-19-49-18.jpeg" alt="">
 
 <br>
 
 05 / 책임과 메시지
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-22-15-47-47.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-22-15-47-51.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-23-02-04-16.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-23-02-04-11.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-18-23-40-22.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-22-15-47-47.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-22-15-47-51.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-23-02-04-16.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-23-02-04-11.jpeg" alt="">
 
 
 
 
 06 / 객체 지도
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page1.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page2.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page3.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page4-1.jpg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page1.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page2.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page3.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page4-1.jpg" alt="">
 
 <br>
 
@@ -98,13 +98,13 @@
 07 / 함께 모으기
 
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-25-08-35-26.jpeg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/KakaoTalk_Photo_2021-05-25-08-35-26.jpeg" alt="">
 
 <br>
 
 부록 A / 추상화 기법
 
-<img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/DE0C02C5-FE04-40A3-B2F0-1D0F4655751B_1_105_c.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/4FCA7C9E-D0B2-4F0E-8A4E-1B93BBAE3B0F_1_105_c.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/Book%20Study/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page3-1.jpg" alt="">
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/DE0C02C5-FE04-40A3-B2F0-1D0F4655751B_1_105_c.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/4FCA7C9E-D0B2-4F0E-8A4E-1B93BBAE3B0F_1_105_c.jpeg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%EC%82%AC%EC%8B%A4%EA%B3%BC%EC%98%A4%ED%95%B4/Images/Page3-1.jpg" alt="">
 
 
 부록 B / 참고 문헌
