@@ -20,6 +20,17 @@
 - 뛰어난 선생에 대한 미신
 - 나홀로 전문가에 대한 미신
 
+<br>
+
+<img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%E1%84%8C%E1%85%A1%E1%84%85%E1%85%A1%E1%84%80%E1%85%B51.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%E1%84%8C%E1%85%A1%E1%84%85%E1%85%A1%E1%84%80%E1%85%B52.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%E1%84%8C%E1%85%A1%E1%84%85%E1%85%A1%E1%84%80%E1%85%B53.jpg" alt=""><img width="100" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%E1%84%8C%E1%85%A1%E1%84%85%E1%85%A1%E1%84%80%E1%85%B54.jpg" alt="">
+
+<br>
+
+### 1주차 책을 읽고
+
+..
+
+<br>
 
 ### 2주차
 
