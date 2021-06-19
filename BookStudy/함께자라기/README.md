@@ -22,13 +22,40 @@
 
 <br>
 
-<img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page1.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page2.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page3.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page4.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page5.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page6.jpg" alt="">
+<img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page1.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page2.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page3.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page4.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page5.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page6.jpg" alt=""><img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/01%EC%9E%90%EB%9D%BC%EA%B8%B0Page7.jpg" alt="">
 
 <br>
 
 ### 1주차 책을 읽고
 
-내용이 술술 읽혀야 하는데 너무 좋은 내용이 많아서 메모하다보니 책을 읽는 시간이 점점 늘어나고 있드악!
+내용이 술술 읽혀야 하는데 너무 좋은 내용이 많아서 메모하다보니 책을 읽는 시간이 점점 늘어나고 있드악! :) 
+
+책을 읽다 보면 잠깐 눈을 비비고 다시 읽는 부분들이 너무 많다
+
+나중에 누군가 지금 나와 비슷한 고민을 학고 있다면 꼭 이 책을 추천해줘야 겠다 (마음 속 깊은 곳에 간직) 
+
+지금까지 자라기 위해 내가 하고 있는 것들이 과연 올바른 길로 가는 걸까?
+
+이 일이 당장 눈에 안 보이지만 언젠가 나에게 도움을 주겠지?
+
+지금 내가 하고 있는 나를 위한 모든 일들이 약간 의문형이 었다면 느낌표로 바뀌었습니다.
+
+분명 도움이 될 거고, 도움을 줄거야! 
+
+이 책을 읽음으로써 확신과 동기부여가 생겼다.
+
+책의 내용 하나하나가 다 넘 주옥같고 좋지만 최근에 내가 갖고 있던 고민
+
+잘하고 싶다! 잘해야 해! 잘 좀 하자!! 난 언제쯤 잘하게 될까?
+
+이런 고민을 하고 있었는데 이 책에선 성장하라고 한다.
+
+잘하는 것도 중요하지만 내가 성장해야 한다고 ..
+
+그 중 복리 조직이 일하는 구조에서 난 정말 느낌표 백만개가 찍히면서 너무 좋은 내용이라 정리해서 주변에 공유했더니 나와 비슷한 생각을 하고 있는 개발자들이 많이 있었던 것 같다. :)
+
+"잘하자 ㄴㄴ 자라자 ㄱㄱ"
+
 
 
 
