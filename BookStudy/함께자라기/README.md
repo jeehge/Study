@@ -77,6 +77,10 @@
 
 <br>
 
+<img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/02%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A61.JPG" alt="">
+
+<br>
+
 ### 2주차 책을 읽고
 
 나는 아직 함께보다 자라기 단계에서 배울게 많은 개발자인가 보다
