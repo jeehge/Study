@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		E9828F1A26995A2200BB074F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9828F1826995A2200BB074F /* LaunchScreen.storyboard */; };
 		E9828F2526995D7A00BB074F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F2426995D7A00BB074F /* SignUpViewController.swift */; };
 		E9828F2726995D8400BB074F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F2626995D8400BB074F /* MainViewController.swift */; };
+		E9828F2A2699606200BB074F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F292699606200BB074F /* BaseViewController.swift */; };
+		E9828F2D2699611500BB074F /* CellIdentifierable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F2C2699611500BB074F /* CellIdentifierable.swift */; };
+		E9828F302699632900BB074F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9828F2F2699632900BB074F /* SnapKit */; };
+		E9828F332699634800BB074F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E9828F322699634800BB074F /* Then */; };
+		E9828F362699639200BB074F /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = E9828F352699639200BB074F /* SwiftLintFramework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,8 @@
 		E9828F1B26995A2200BB074F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9828F2426995D7A00BB074F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E9828F2626995D8400BB074F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E9828F292699606200BB074F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E9828F2C2699611500BB074F /* CellIdentifierable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifierable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9828F302699632900BB074F /* SnapKit in Frameworks */,
+				E9828F332699634800BB074F /* Then in Frameworks */,
+				E9828F362699639200BB074F /* SwiftLintFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,7 @@
 		E9828F0C26995A2000BB074F /* Project01 */ = {
 			isa = PBXGroup;
 			children = (
+				E9828F2B269960E700BB074F /* Common */,
 				E9828F2126995D4B00BB074F /* ViewController */,
 				E9828F0D26995A2000BB074F /* AppDelegate.swift */,
 				E9828F0F26995A2000BB074F /* SceneDelegate.swift */,
@@ -75,6 +86,7 @@
 		E9828F2126995D4B00BB074F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E9828F282699605500BB074F /* Base */,
 				E9828F2326995D5700BB074F /* SignUp */,
 				E9828F2226995D5200BB074F /* Main */,
 			);
@@ -97,6 +109,22 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		E9828F282699605500BB074F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E9828F292699606200BB074F /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E9828F2B269960E700BB074F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E9828F2C2699611500BB074F /* CellIdentifierable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,6 +141,11 @@
 			dependencies = (
 			);
 			name = Project01;
+			packageProductDependencies = (
+				E9828F2F2699632900BB074F /* SnapKit */,
+				E9828F322699634800BB074F /* Then */,
+				E9828F352699639200BB074F /* SwiftLintFramework */,
+			);
 			productName = Project01;
 			productReference = E9828F0A26995A2000BB074F /* Project01.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +173,11 @@
 				Base,
 			);
 			mainGroup = E9828F0126995A1F00BB074F;
+			packageReferences = (
+				E9828F2E2699632900BB074F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E9828F312699634800BB074F /* XCRemoteSwiftPackageReference "Then" */,
+				E9828F342699639200BB074F /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = E9828F0B26995A2000BB074F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,10 +206,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9828F1226995A2000BB074F /* ViewController.swift in Sources */,
+				E9828F2D2699611500BB074F /* CellIdentifierable.swift in Sources */,
 				E9828F0E26995A2000BB074F /* AppDelegate.swift in Sources */,
 				E9828F2526995D7A00BB074F /* SignUpViewController.swift in Sources */,
 				E9828F1026995A2000BB074F /* SceneDelegate.swift in Sources */,
 				E9828F2726995D8400BB074F /* MainViewController.swift in Sources */,
+				E9828F2A2699606200BB074F /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +413,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9828F2E2699632900BB074F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		E9828F312699634800BB074F /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+		E9828F342699639200BB074F /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.43.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9828F2F2699632900BB074F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9828F2E2699632900BB074F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E9828F322699634800BB074F /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9828F312699634800BB074F /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		E9828F352699639200BB074F /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9828F342699639200BB074F /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9828F0226995A1F00BB074F /* Project object */;
 }
