@@ -113,7 +113,7 @@
 
 <br>
 
-<img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/03%20%E1%84%8B%E1%85%A2%E1%84%8C%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF.jpg" alt="">
+<img width="200" src="https://github.com/jeehge/Study/blob/master/BookStudy/%ED%95%A8%EA%BB%98%EC%9E%90%EB%9D%BC%EA%B8%B0/Images/03%EC%95%A0%EC%9E%90%EC%9D%BC.jpg" alt="함께자라기">
 
 <br>
 
