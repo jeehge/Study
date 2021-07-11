@@ -9,4 +9,8 @@ import UIKit
 
 final class MainViewController: BaseViewController {
     
+    // MARK: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
