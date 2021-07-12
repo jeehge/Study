@@ -13,9 +13,8 @@ final class SignUpViewController: BaseViewController {
     
     // MARK: - UI
     private let infoLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 16, weight: .bold)
+        $0.font = .systemFont(ofSize: 20, weight: .bold)
         $0.numberOfLines = 2
-        $0.text = "휴대폰 번호를 입력해주세요"
     }
     
     private let inputTextField: SignUpInputView = SignUpInputView()
@@ -24,14 +23,25 @@ final class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        setupView()
     }
     
     private func setupView() {
-        view.addSubviews(infoLabel)
+        view.addSubviews(infoLabel, inputTextField)
         
         infoLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(32)
+            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).inset(16)
+        }
+        
+        infoLabel.text = "휴대폰번호를\n입력해주세요"
+        
+        inputTextField.snp.makeConstraints {
+            $0.top.equalTo(infoLabel.snp.bottom).offset(32)
+            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).inset(16)
+            $0.height.equalTo(72)
         }
     }
 }
