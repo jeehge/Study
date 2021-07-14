@@ -1,15 +1,15 @@
 //
-//  SignUpTextField.swift
+//  SignUpTableViewCell.swift
 //  Project01
 //
-//  Created by JH on 2021/07/10.
+//  Created by JH on 2021/07/14.
 //
 
 import UIKit
+import SnapKit
 
-@IBDesignable
-final class SignUpInputView: UIView {
-    
+final class SignUpTableViewCell: UITableViewCell {
+
     // MARK: - UI
     
     private let boderView = UIView().then {
@@ -30,32 +30,25 @@ final class SignUpInputView: UIView {
         $0.font = .systemFont(ofSize: 18, weight: .medium)
         $0.textColor = .black
     }
-    
-    // MARK: - Initialization
-    
+
+    // MARRK: - Initalize
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        setupView()
+    }
+
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupView()
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    convenience init(text: String) {
-        self.init(frame: CGRect.zero)
-        
+
+    func configure(text: String) {
         inputLabel.text = text
-        setupView()
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        setupView()
     }
 }
 
-extension SignUpInputView {
+extension SignUpTableViewCell {
     private func setupView() {
         self.addSubviews(boderView, inputLabel, inputTextField)
         

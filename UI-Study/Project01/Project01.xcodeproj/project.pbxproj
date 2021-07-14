@@ -24,6 +24,8 @@
 		E9828F4226996C6200BB074F /* ViewControllerFromStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F4126996C6200BB074F /* ViewControllerFromStoryBoard.swift */; };
 		E9828F4426996C9900BB074F /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F4326996C9900BB074F /* StoryboardName.swift */; };
 		E9828F472699B17300BB074F /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F462699B17300BB074F /* SignUpInputView.swift */; };
+		E9F93093269F216C00FFB391 /* SignUpStepType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F93092269F216C00FFB391 /* SignUpStepType.swift */; };
+		E9F93095269F286100FFB391 /* SignUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F93094269F286100FFB391 /* SignUpTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		E9828F4126996C6200BB074F /* ViewControllerFromStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFromStoryBoard.swift; sourceTree = "<group>"; };
 		E9828F4326996C9900BB074F /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
 		E9828F462699B17300BB074F /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
+		E9F93092269F216C00FFB391 /* SignUpStepType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepType.swift; sourceTree = "<group>"; };
+		E9F93094269F286100FFB391 /* SignUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			children = (
 				E9828F452699B15A00BB074F /* SubViews */,
 				E9828F2426995D7A00BB074F /* SignUpViewController.swift */,
+				E9F93092269F216C00FFB391 /* SignUpStepType.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				E9828F462699B17300BB074F /* SignUpInputView.swift */,
+				E9F93094269F286100FFB391 /* SignUpTableViewCell.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -248,12 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F93093269F216C00FFB391 /* SignUpStepType.swift in Sources */,
 				E9828F1226995A2000BB074F /* ViewController.swift in Sources */,
 				E9828F4426996C9900BB074F /* StoryboardName.swift in Sources */,
 				E9828F2D2699611500BB074F /* CellIdentifierable.swift in Sources */,
 				E9828F472699B17300BB074F /* SignUpInputView.swift in Sources */,
 				E9828F0E26995A2000BB074F /* AppDelegate.swift in Sources */,
 				E9828F4026996BD800BB074F /* UIView+Extension.swift in Sources */,
+				E9F93095269F286100FFB391 /* SignUpTableViewCell.swift in Sources */,
 				E9828F2526995D7A00BB074F /* SignUpViewController.swift in Sources */,
 				E9828F1026995A2000BB074F /* SceneDelegate.swift in Sources */,
 				E9828F2726995D8400BB074F /* MainViewController.swift in Sources */,
