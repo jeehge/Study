@@ -8,8 +8,14 @@
 import UIKit
 import SnapKit
 
+protocol SignUpTableViewCellDelegate: AnyObject {
+    func textFieldDidChange(_ textField: UITextField)
+}
+
 final class SignUpTableViewCell: UITableViewCell {
 
+    weak var cellDelegate: SignUpTableViewCellDelegate?
+    
     // MARK: - UI
     
     private let boderView = UIView().then {
@@ -22,7 +28,6 @@ final class SignUpTableViewCell: UITableViewCell {
     private let inputLabel = UILabel().then {
         $0.textColor = .lightGray
         $0.font = .systemFont(ofSize: 12, weight: .regular)
-        $0.text = "휴대폰번호"
     }
     
     private let inputTextField = UITextField().then {
@@ -65,5 +70,14 @@ extension SignUpTableViewCell {
             $0.top.equalTo(inputLabel.snp.bottom).offset(4)
             $0.leading.trailing.equalToSuperview().inset(16)
         }
+        
+        inputTextField.becomeFirstResponder()
+        inputTextField.delegate = self
+    }
+}
+
+extension SignUpTableViewCell: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        cellDelegate?.textFieldDidChange(textField)
     }
 }
