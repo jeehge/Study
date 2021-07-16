@@ -12,6 +12,7 @@ import SnapKit
 final class SignUpViewController: BaseViewController {
     
     // MARK: - UI
+    
     private let infoLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 20, weight: .bold)
         $0.numberOfLines = 2
@@ -23,7 +24,7 @@ final class SignUpViewController: BaseViewController {
                     forCellReuseIdentifier: SignUpTableViewCell.identifier)
         $0.dataSource = self
         $0.delegate = self
-
+        
         $0.separatorStyle = .none
     }
     
@@ -31,11 +32,14 @@ final class SignUpViewController: BaseViewController {
     
     private var types: [String] = []
     private var shouldAnimateFirstRow = false
+    private var currentType: SignUpStepType = .phoneNumber
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1.0)
         
         setupView()
     }
@@ -63,33 +67,36 @@ final class SignUpViewController: BaseViewController {
         switch type {
         case .phoneNumber:
             infoLabel.text = "휴대폰번호를\n입력해주세요"
+            currentType = .phoneNumber
         case .residentRegistrationNumber:
             infoLabel.text = "주민번호 앞 7자리를\n입력해주세요"
+            currentType = .residentRegistrationNumber
         case .newsAgency:
             infoLabel.text = "통신사를\n선택해주세요"
+            currentType = .newsAgency
         case .name:
             infoLabel.text = "이름을\n입력해주세요"
+            currentType = .name
         }
-//        types.append()
         
-        let animationDuration = 0.9
-        // http://easings.net/#easeOutCirc
         let easeOutCirc = CAMediaTimingFunction(controlPoints: 0.075, 0.82, 0.0, 1)
-
-        UIView.beginAnimations("addRow", context: nil)
-        UIView.setAnimationDuration(animationDuration)
+        
         CATransaction.begin()
         CATransaction.setAnimationTimingFunction(easeOutCirc)
-
+        
         tableView.beginUpdates()
         types.insert(type.title, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .none)
         shouldAnimateFirstRow = true
         tableView.endUpdates()
-
+        
         CATransaction.commit()
-        UIView.commitAnimations()
+    }
+    
+    func isPhone(candidate: String) -> Bool {
+        let regex = "^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: candidate)
     }
 }
 
@@ -100,8 +107,8 @@ extension SignUpViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SignUpTableViewCell.identifier,
-                                                       for: indexPath) as! SignUpTableViewCell
-
+                                                 for: indexPath) as! SignUpTableViewCell
+        
         cell.cellDelegate = self
         cell.selectionStyle = .none
         cell.configure(text: types[indexPath.item])
@@ -111,15 +118,28 @@ extension SignUpViewController: UITableViewDataSource {
 
 extension SignUpViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 72
+        return 85
     }
 }
 
 extension SignUpViewController: SignUpTableViewCellDelegate {
     func textFieldDidChange(_ textField: UITextField) {
-        if textField.text?.count == 11 {
-            signUpStepType(type: .residentRegistrationNumber)
-            
+        switch currentType {
+        case .phoneNumber:
+            if textField.text?.count == 11 { // 정규식으로 바꾸는게 좋을
+                signUpStepType(type: .residentRegistrationNumber)
+            }
+        case .residentRegistrationNumber:
+            if textField.text?.count == 7 { // 정규식으로 바꾸는게 좋을
+                signUpStepType(type: .newsAgency)
+            }
+        case .newsAgency:
+            //
+            print("newsAgency")
+        case .name:
+            //
+            print("name")
         }
+        
     }
 }

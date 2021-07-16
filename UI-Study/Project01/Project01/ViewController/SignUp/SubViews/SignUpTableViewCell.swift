@@ -18,8 +18,15 @@ final class SignUpTableViewCell: UITableViewCell {
     
     // MARK: - UI
     
-    private let boderView = UIView().then {
+    private let cellView = UIView().then {
+        $0.layer.masksToBounds = true
         $0.backgroundColor = .clear
+        $0.layer.cornerRadius = 18
+    }
+    
+    private let boderView = UIView().then {
+        $0.clipsToBounds = true
+        $0.backgroundColor = .white
         $0.layer.borderWidth = 2
         $0.layer.borderColor = UIColor.black.cgColor
         $0.layer.cornerRadius = 18
@@ -50,15 +57,26 @@ final class SignUpTableViewCell: UITableViewCell {
 
     func configure(text: String) {
         inputLabel.text = text
+        
+        boderView.isHidden = false
     }
 }
 
 extension SignUpTableViewCell {
     private func setupView() {
-        self.addSubviews(boderView, inputLabel, inputTextField)
+        self.backgroundColor = .clear
+        contentView.addSubview(cellView)
+        
+        cellView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(8)
+        }
+        
+        cellView.addSubviews(boderView, inputLabel, inputTextField)
         
         boderView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(8)
         }
         
         inputLabel.snp.makeConstraints {
