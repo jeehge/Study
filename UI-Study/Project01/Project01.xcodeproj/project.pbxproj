@@ -24,6 +24,8 @@
 		E9828F4226996C6200BB074F /* ViewControllerFromStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F4126996C6200BB074F /* ViewControllerFromStoryBoard.swift */; };
 		E9828F4426996C9900BB074F /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F4326996C9900BB074F /* StoryboardName.swift */; };
 		E9828F472699B17300BB074F /* SignUpInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9828F462699B17300BB074F /* SignUpInputView.swift */; };
+		E9B7E50126A3DB8200B92909 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9B7E50026A3DB8200B92909 /* Common.storyboard */; };
+		E9B7E50326A3DCA000B92909 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7E50226A3DCA000B92909 /* BottomSheetViewController.swift */; };
 		E9F93093269F216C00FFB391 /* SignUpStepType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F93092269F216C00FFB391 /* SignUpStepType.swift */; };
 		E9F93095269F286100FFB391 /* SignUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F93094269F286100FFB391 /* SignUpTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		E9828F4126996C6200BB074F /* ViewControllerFromStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFromStoryBoard.swift; sourceTree = "<group>"; };
 		E9828F4326996C9900BB074F /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
 		E9828F462699B17300BB074F /* SignUpInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInputView.swift; sourceTree = "<group>"; };
+		E9B7E50026A3DB8200B92909 /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
+		E9B7E50226A3DCA000B92909 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		E9F93092269F216C00FFB391 /* SignUpStepType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpStepType.swift; sourceTree = "<group>"; };
 		E9F93094269F286100FFB391 /* SignUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				E9828F452699B15A00BB074F /* SubViews */,
-				E9828F2426995D7A00BB074F /* SignUpViewController.swift */,
 				E9F93092269F216C00FFB391 /* SignUpStepType.swift */,
+				E9828F2426995D7A00BB074F /* SignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -139,6 +143,8 @@
 				E9828F2C2699611500BB074F /* CellIdentifierable.swift */,
 				E9828F4126996C6200BB074F /* ViewControllerFromStoryBoard.swift */,
 				E9828F4326996C9900BB074F /* StoryboardName.swift */,
+				E9B7E50026A3DB8200B92909 /* Common.storyboard */,
+				E9B7E50226A3DCA000B92909 /* BottomSheetViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9828F1A26995A2200BB074F /* LaunchScreen.storyboard in Resources */,
+				E9B7E50126A3DB8200B92909 /* Common.storyboard in Resources */,
 				E9828F1726995A2200BB074F /* Assets.xcassets in Resources */,
 				E9828F1526995A2000BB074F /* Main.storyboard in Resources */,
 			);
@@ -267,6 +274,7 @@
 				E9828F2726995D8400BB074F /* MainViewController.swift in Sources */,
 				E9828F4226996C6200BB074F /* ViewControllerFromStoryBoard.swift in Sources */,
 				E9828F2A2699606200BB074F /* BaseViewController.swift in Sources */,
+				E9B7E50326A3DCA000B92909 /* BottomSheetViewController.swift in Sources */,
 				E9828F3C26996AF700BB074F /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
