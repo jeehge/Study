@@ -25,4 +25,17 @@ enum SignUpStepType: CaseIterable {
             return "이름"
         }
     }
+    
+    var text: String {
+        switch self {
+        case .phoneNumber:
+            return "휴대폰번호를\n입력해주세요"
+        case .residentRegistrationNumber:
+            return "주민번호 앞 7자리를\n입력해주세요"
+        case .newsAgency:
+            return "통신사를\n선택해주세요"
+        case .name:
+            return "이름을\n입력해주세요"
+        }
+    }
 }
