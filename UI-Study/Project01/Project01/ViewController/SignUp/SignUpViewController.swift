@@ -14,6 +14,7 @@ final class SignUpViewController: BaseViewController {
     // MARK: - UI
     
     private let infoLabel = UILabel().then {
+        $0.textColor = .black
         $0.font = .systemFont(ofSize: 20, weight: .bold)
         $0.numberOfLines = 2
     }
@@ -28,11 +29,20 @@ final class SignUpViewController: BaseViewController {
         $0.separatorStyle = .none
     }
     
+    private let boderView = UIView().then {
+        $0.clipsToBounds = true
+        $0.backgroundColor = .clear
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor.black.cgColor
+        $0.layer.cornerRadius = 18
+    }
+    
     // MARK: - Variable
     
     private var types: [String] = []
     private var shouldAnimateFirstRow = false
     private var currentType: SignUpStepType = .phoneNumber
+    private let cellSize: CGSize = CGSize(width: UIScreen.main.bounds.width - 32, height: 77)
     
     // MARK: - Life Cycle
     
@@ -44,40 +54,11 @@ final class SignUpViewController: BaseViewController {
         setupView()
     }
     
-    private func setupView() {
-        
-        view.addSubviews(infoLabel, tableView)
-        
-        infoLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(32)
-            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
-            $0.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).inset(16)
-        }
-        
-        tableView.snp.makeConstraints {
-            $0.top.equalTo(infoLabel.snp.bottom).offset(16)
-            $0.leading.trailing.equalTo(infoLabel)
-            $0.bottom.equalToSuperview()
-        }
-        
-        signUpStepType(type: .phoneNumber)
-    }
+    // MARK: - Private Method
     
     private func signUpStepType(type: SignUpStepType) {
-        switch type {
-        case .phoneNumber:
-            infoLabel.text = "휴대폰번호를\n입력해주세요"
-            currentType = .phoneNumber
-        case .residentRegistrationNumber:
-            infoLabel.text = "주민번호 앞 7자리를\n입력해주세요"
-            currentType = .residentRegistrationNumber
-        case .newsAgency:
-            infoLabel.text = "통신사를\n선택해주세요"
-            currentType = .newsAgency
-        case .name:
-            infoLabel.text = "이름을\n입력해주세요"
-            currentType = .name
-        }
+        currentType = type
+        setInfoLabel(text: type.text)
         
         let easeOutCirc = CAMediaTimingFunction(controlPoints: 0.075, 0.82, 0.0, 1)
         
@@ -97,6 +78,46 @@ final class SignUpViewController: BaseViewController {
     func isPhone(candidate: String) -> Bool {
         let regex = "^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: candidate)
+    }
+    
+    func setInfoLabel(text: String) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.infoLabel.alpha = 0.5
+            self.loadViewIfNeeded()
+        }, completion: { _ in
+            self.infoLabel.text = text
+            UIView.animate(withDuration: 0.4, animations: {
+                self.infoLabel.alpha = 1.0
+                self.loadViewIfNeeded()
+            }, completion: nil)
+        })
+    }
+}
+
+extension SignUpViewController {
+    private func setupView() {
+        view.addSubviews(infoLabel, tableView)
+        
+        tableView.addSubview(boderView)
+        
+        boderView.snp.makeConstraints {
+            $0.width.equalTo(cellSize.width)
+            $0.height.equalTo(cellSize.height)
+        }
+        
+        infoLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(32)
+            $0.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).inset(16)
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(infoLabel.snp.bottom).offset(16)
+            $0.leading.trailing.equalTo(infoLabel)
+            $0.bottom.equalToSuperview()
+        }
+        
+        signUpStepType(type: .phoneNumber)
     }
 }
 
@@ -118,7 +139,17 @@ extension SignUpViewController: UITableViewDataSource {
 
 extension SignUpViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return cellSize.height + 8
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! SignUpTableViewCell
+        
+        boderView.snp.remakeConstraints {
+            $0.width.equalTo(cellSize.width)
+            $0.height.equalTo(cellSize.height)
+            $0.top.leading.trailing.equalTo(cell)
+        }
     }
 }
 
