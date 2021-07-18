@@ -7,4 +7,5 @@
 
 enum StoryboardName: String {
     case main = "Main"
+    case common = "Common"
 }
