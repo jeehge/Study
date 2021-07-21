@@ -16,19 +16,8 @@
 
 ### 세번째 책
 
-[프로젝트가 서쪽으로 간 까닭은](http://www.yes24.com/Product/Goods/3600609)
+[프로젝트가 서쪽으로 간 까닭은](https://github.com/jeehge/Study/tree/master/BookStudy/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B0%80%EC%84%9C%EC%AA%BD%EC%9C%BC%EB%A1%9C%EA%B0%84%EA%B9%8C%EB%8B%AD%EC%9D%80)
 
 ### 네번째 책
 
-[오늘은 이만 좀 쉴게요](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791162141786)
-
-→ 사람이 매일 일정한 속도로 달릴 수 있다면 그것만큼 이상적인 것은 없을 것 같다..
-책을 열어 프롤로그를 읽자마자 '쿵'하고 맘이 내려앉았다 
-.
-.
-.
-너무 내 이야기 같아서
-.
-.
-.
-"오늘은 이만 좀 쉴게요.." 
+[오늘은 이만 좀 쉴게요](https://github.com/jeehge/Study/tree/master/BookStudy/%EC%98%A4%EB%8A%98%EC%9D%80%EC%9D%B4%EB%A7%8C%EC%A2%80%EC%89%B4%EA%B2%8C%EC%9A%94)
