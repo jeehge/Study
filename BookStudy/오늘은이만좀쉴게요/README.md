@@ -3,17 +3,15 @@
 
 [오늘은 이만 좀 쉴게요](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791162141786)
 
+<br>
 
 ### 차례
 
 01 모두를 사랑할 수 없듯 모두로부터 사랑받을 수 없다
 
-
 02 자존감에 대한 엉터리 각본 다시 쓰기
 
-
 03 눈물과 후회의 사랑이 나를 성숙하게 한다
-
 
 04 인생은 좋았고 때로 나빳을 뿐이다
 
