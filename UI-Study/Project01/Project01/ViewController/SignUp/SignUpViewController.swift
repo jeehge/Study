@@ -165,12 +165,10 @@ extension SignUpViewController: SignUpTableViewCellDelegate {
                 signUpStepType(type: .newsAgency)
             }
         case .newsAgency:
-            //
-            print("newsAgency")
+            break
         case .name:
             //
             print("name")
         }
-        
     }
 }
