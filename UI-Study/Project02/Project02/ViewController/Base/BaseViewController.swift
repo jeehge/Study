@@ -5,4 +5,8 @@
 //  Created by JH on 2021/07/27.
 //
 
-import Foundation
+import UIKit
+
+class BaseViewController: UIViewController, ViewControllerFromStoryBoard {
+    
+}
