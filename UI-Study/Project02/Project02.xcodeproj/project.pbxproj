@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,14 @@
 		E9A7BBCC26ADA10900FD94C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A7BBCA26ADA10900FD94C6 /* Main.storyboard */; };
 		E9A7BBCE26ADA10A00FD94C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A7BBCD26ADA10A00FD94C6 /* Assets.xcassets */; };
 		E9A7BBD126ADA10A00FD94C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A7BBCF26ADA10A00FD94C6 /* LaunchScreen.storyboard */; };
+		E9A7BBDA26B04AA300FD94C6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9A7BBD926B04AA300FD94C6 /* SnapKit */; };
+		E9A7BBDD26B04B1600FD94C6 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E9A7BBDC26B04B1600FD94C6 /* Then */; };
+		E9A7BBE226B04E8C00FD94C6 /* CellIdentifierable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBE126B04E8C00FD94C6 /* CellIdentifierable.swift */; };
+		E9A7BBE426B04E9F00FD94C6 /* ViewControllerFromStoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBE326B04E9F00FD94C6 /* ViewControllerFromStoryBoard.swift */; };
+		E9A7BBE626B04EB000FD94C6 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBE526B04EB000FD94C6 /* StoryboardName.swift */; };
+		E9A7BBEB26B04F2B00FD94C6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBEA26B04F2B00FD94C6 /* BaseViewController.swift */; };
+		E9A7BBEE26B04F4B00FD94C6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBED26B04F4B00FD94C6 /* UIView+Extension.swift */; };
+		E9A7BBF126B04FCC00FD94C6 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = E9A7BBF026B04FCC00FD94C6 /* Tabman */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,11 @@
 		E9A7BBCD26ADA10A00FD94C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9A7BBD026ADA10A00FD94C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9A7BBD226ADA10A00FD94C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9A7BBE126B04E8C00FD94C6 /* CellIdentifierable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifierable.swift; sourceTree = "<group>"; };
+		E9A7BBE326B04E9F00FD94C6 /* ViewControllerFromStoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFromStoryBoard.swift; sourceTree = "<group>"; };
+		E9A7BBE526B04EB000FD94C6 /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
+		E9A7BBEA26B04F2B00FD94C6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E9A7BBED26B04F4B00FD94C6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A7BBDA26B04AA300FD94C6 /* SnapKit in Frameworks */,
+				E9A7BBDD26B04B1600FD94C6 /* Then in Frameworks */,
+				E9A7BBF126B04FCC00FD94C6 /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +72,84 @@
 		E9A7BBC326ADA10800FD94C6 /* Project02 */ = {
 			isa = PBXGroup;
 			children = (
+				E9A7BBDE26B04CB800FD94C6 /* Common */,
+				E9A7BBDF26B04E2600FD94C6 /* ViewController */,
+				E9A7BBE026B04E3000FD94C6 /* Util */,
 				E9A7BBC426ADA10800FD94C6 /* AppDelegate.swift */,
 				E9A7BBC626ADA10800FD94C6 /* SceneDelegate.swift */,
-				E9A7BBC826ADA10800FD94C6 /* ViewController.swift */,
-				E9A7BBCA26ADA10900FD94C6 /* Main.storyboard */,
 				E9A7BBCD26ADA10A00FD94C6 /* Assets.xcassets */,
 				E9A7BBCF26ADA10A00FD94C6 /* LaunchScreen.storyboard */,
 				E9A7BBD226ADA10A00FD94C6 /* Info.plist */,
 			);
 			path = Project02;
+			sourceTree = "<group>";
+		};
+		E9A7BBDE26B04CB800FD94C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7BBE126B04E8C00FD94C6 /* CellIdentifierable.swift */,
+				E9A7BBE326B04E9F00FD94C6 /* ViewControllerFromStoryBoard.swift */,
+				E9A7BBE526B04EB000FD94C6 /* StoryboardName.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E9A7BBDF26B04E2600FD94C6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7BBE826B04EDA00FD94C6 /* Base */,
+				E9A7BBE726B04ED300FD94C6 /* Intro */,
+				E9A7BBE926B04EDF00FD94C6 /* Main */,
+				E9A7BBF226B052F100FD94C6 /* Search */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E9A7BBE026B04E3000FD94C6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7BBEC26B04F3B00FD94C6 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E9A7BBE726B04ED300FD94C6 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		E9A7BBE826B04EDA00FD94C6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7BBEA26B04F2B00FD94C6 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E9A7BBE926B04EDF00FD94C6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7BBC826ADA10800FD94C6 /* ViewController.swift */,
+				E9A7BBCA26ADA10900FD94C6 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E9A7BBEC26B04F3B00FD94C6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E9A7BBED26B04F4B00FD94C6 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E9A7BBF226B052F100FD94C6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +168,11 @@
 			dependencies = (
 			);
 			name = Project02;
+			packageProductDependencies = (
+				E9A7BBD926B04AA300FD94C6 /* SnapKit */,
+				E9A7BBDC26B04B1600FD94C6 /* Then */,
+				E9A7BBF026B04FCC00FD94C6 /* Tabman */,
+			);
 			productName = Project02;
 			productReference = E9A7BBC126ADA10800FD94C6 /* Project02.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +200,11 @@
 				Base,
 			);
 			mainGroup = E9A7BBB826ADA10800FD94C6;
+			packageReferences = (
+				E9A7BBD826B04AA300FD94C6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E9A7BBDB26B04B1600FD94C6 /* XCRemoteSwiftPackageReference "Then" */,
+				E9A7BBEF26B04FCC00FD94C6 /* XCRemoteSwiftPackageReference "Tabman" */,
+			);
 			productRefGroup = E9A7BBC226ADA10800FD94C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +234,11 @@
 			files = (
 				E9A7BBC926ADA10800FD94C6 /* ViewController.swift in Sources */,
 				E9A7BBC526ADA10800FD94C6 /* AppDelegate.swift in Sources */,
+				E9A7BBEE26B04F4B00FD94C6 /* UIView+Extension.swift in Sources */,
+				E9A7BBE426B04E9F00FD94C6 /* ViewControllerFromStoryBoard.swift in Sources */,
+				E9A7BBE626B04EB000FD94C6 /* StoryboardName.swift in Sources */,
+				E9A7BBE226B04E8C00FD94C6 /* CellIdentifierable.swift in Sources */,
+				E9A7BBEB26B04F2B00FD94C6 /* BaseViewController.swift in Sources */,
 				E9A7BBC726ADA10800FD94C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +441,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E9A7BBD826B04AA300FD94C6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		E9A7BBDB26B04B1600FD94C6 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+		E9A7BBEF26B04FCC00FD94C6 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E9A7BBD926B04AA300FD94C6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9A7BBD826B04AA300FD94C6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E9A7BBDC26B04B1600FD94C6 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9A7BBDB26B04B1600FD94C6 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		E9A7BBF026B04FCC00FD94C6 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9A7BBEF26B04FCC00FD94C6 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9A7BBB926ADA10800FD94C6 /* Project object */;
 }
