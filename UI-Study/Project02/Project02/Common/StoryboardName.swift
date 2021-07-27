@@ -5,4 +5,7 @@
 //  Created by JH on 2021/07/27.
 //
 
-import Foundation
+enum StoryboardName: String {
+    case main = "Main"
+    case common = "Common"
+}
