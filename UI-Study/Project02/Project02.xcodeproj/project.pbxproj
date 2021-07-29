@@ -23,6 +23,7 @@
 		E9A7BBF126B04FCC00FD94C6 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = E9A7BBF026B04FCC00FD94C6 /* Tabman */; };
 		E9A7BBF426B053F300FD94C6 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBF326B053F300FD94C6 /* SearchTextField.swift */; };
 		E9A7BBF626B054BE00FD94C6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7BBF526B054BE00FD94C6 /* String+Extension.swift */; };
+		E9F06A4326B19A14002D612D /* HorizontalMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F06A4226B19A14002D612D /* HorizontalMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E9A7BBED26B04F4B00FD94C6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E9A7BBF326B053F300FD94C6 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		E9A7BBF526B054BE00FD94C6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		E9F06A4226B19A14002D612D /* HorizontalMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				E9A7BBC826ADA10800FD94C6 /* HomeViewController.swift */,
 				E9A7BBCA26ADA10900FD94C6 /* Main.storyboard */,
+				E9F06A4226B19A14002D612D /* HorizontalMenu.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F06A4326B19A14002D612D /* HorizontalMenu.swift in Sources */,
 				E9A7BBC926ADA10800FD94C6 /* HomeViewController.swift in Sources */,
 				E9A7BBC526ADA10800FD94C6 /* AppDelegate.swift in Sources */,
 				E9A7BBEE26B04F4B00FD94C6 /* UIView+Extension.swift in Sources */,
