@@ -18,75 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7Q-xR-phD">
-                                <rect key="frame" x="298" y="60" width="100" height="52"/>
+                                <rect key="frame" x="318" y="60" width="80" height="45"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="LK4-4Q-qgL"/>
+                                    <constraint firstAttribute="width" constant="80" id="LK4-4Q-qgL"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDY-H7-49F" customClass="SearchTextField" customModule="Project02" customModuleProvider="target">
-                                <rect key="frame" x="16" y="60" width="274" height="52"/>
+                                <rect key="frame" x="16" y="60" width="294" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="gUg-c0-zEe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8jV-sa-5wf">
-                                <rect key="frame" x="0.0" y="169" width="414" height="644"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="644" id="U2d-ha-kUp"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jgx-Os-GsV">
-                                    <size key="itemSize" width="364" height="605"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="vgs-K5-KA8" customClass="ColorsCell" customModule="Project02" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="19.5" width="364" height="605"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="364" height="605"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zMK-O8-FWZ"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="RYJ-SI-HEw"/>
-                                </connections>
-                            </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gq-8r-bLV" customClass="HorizontalMenu" customModule="Project02" customModuleProvider="target">
-                                <rect key="frame" x="8" y="118" width="377" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9gq-8r-bLV" secondAttribute="height" multiplier="13:1" id="3Wx-ha-no4"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="doa-CD-ZuY"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="qNA-TA-bBs"/>
-                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8jV-sa-5wf" secondAttribute="bottom" id="2Tn-1r-PVD"/>
-                            <constraint firstItem="9gq-8r-bLV" firstAttribute="top" secondItem="bDY-H7-49F" secondAttribute="bottom" constant="4" id="Eav-xX-7MQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9gq-8r-bLV" secondAttribute="trailing" id="OjZ-hy-HYm"/>
-                            <constraint firstItem="9gq-8r-bLV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Otc-0k-cJD"/>
                             <constraint firstItem="T7Q-xR-phD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="P02-Yj-f5d"/>
-                            <constraint firstItem="8jV-sa-5wf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QZh-e0-bJF"/>
                             <constraint firstItem="bDY-H7-49F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Voa-co-8Ud"/>
                             <constraint firstItem="bDY-H7-49F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XDf-jb-VcR"/>
                             <constraint firstItem="T7Q-xR-phD" firstAttribute="leading" secondItem="bDY-H7-49F" secondAttribute="trailing" constant="8" id="jYF-mn-aTC"/>
-                            <constraint firstItem="8jV-sa-5wf" firstAttribute="top" secondItem="9gq-8r-bLV" secondAttribute="bottom" constant="22" id="oDj-To-DfG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="T7Q-xR-phD" secondAttribute="trailing" constant="16" id="oyY-nr-rWd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8jV-sa-5wf" secondAttribute="trailing" id="rO3-kB-q7I"/>
                             <constraint firstItem="T7Q-xR-phD" firstAttribute="height" secondItem="bDY-H7-49F" secondAttribute="height" id="zqh-jb-hH5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="kUU-Cy-uUk"/>
                     <connections>
-                        <outlet property="collectionView" destination="8jV-sa-5wf" id="7ju-Cr-dq4"/>
-                        <outlet property="menu" destination="9gq-8r-bLV" id="Qiu-2f-7IQ"/>
                         <outlet property="searchTextField" destination="bDY-H7-49F" id="vkU-Ck-mKG"/>
                     </connections>
                 </viewController>
@@ -113,6 +72,11 @@
             <point key="canvasLocation" x="0.0" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="bDY-H7-49F">
+            <size key="intrinsicContentSize" width="115" height="19.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">

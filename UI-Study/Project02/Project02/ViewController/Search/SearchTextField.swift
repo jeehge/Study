@@ -39,7 +39,7 @@ final class SearchTextField: UITextField {
         
         leftViewMode = .always
         rightViewMode = .whileEditing
-        layer.cornerRadius = 20
+        layer.cornerRadius = 16
         borderStyle = .none
         backgroundColor = .gray
     }
