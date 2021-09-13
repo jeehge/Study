@@ -41,6 +41,6 @@
 
 ### 일곱 번째 스터디
 
-[영어 아티클 읽기]()
+[영어 아티클 읽기](https://github.com/jeehge/Study/tree/master/Article)
 
 <br>
