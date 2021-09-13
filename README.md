@@ -36,3 +36,11 @@
 ### 여섯 번째 스터디
 
 [부담 없는 개발 독서 스터디](https://github.com/jeehge/Study/tree/master/BookStudy)
+
+<br>
+
+### 일곱 번째 스터디
+
+[영어 아티클 읽기]()
+
+<br>
