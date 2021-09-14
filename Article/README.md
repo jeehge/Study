@@ -6,13 +6,9 @@
 
 <br>
 
-### 2021.09.03
-
 [Support Universal Links](https://github.com/jeehge/Study/blob/master/Article/Text/SupportUniversalLinks.md)
 
 <br>
-
-### 2021.09.13
 
 [iOS 15 SDK Upgrade Guide - braze](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_15/)
 
