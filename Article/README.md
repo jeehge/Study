@@ -4,7 +4,7 @@
 
 ### 2021.09.03
 
-[Support Universal Links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
+[Support Universal Links](https://github.com/jeehge/Study/blob/master/Article/Text/SupportUniversalLinks.md)
 
 <br>
 
