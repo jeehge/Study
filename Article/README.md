@@ -16,7 +16,8 @@
 
 ## 읽어야 할 아티클
 
-[How To Write Awesome Tech Specs]([https://eng.lyft.com/awesome-tech-specs-86eea8e45bb9](https://eng.lyft.com/awesome-tech-specs-86eea8e45bb9))
+[How To Write Awesome Tech Specs](https://eng.lyft.com/awesome-tech-specs-86eea8e45bb9)
+
 
 [Using Structs over Classes in Swift Isn’t as Safe as You Think It is](https://medium.com/devgauge/using-structs-over-classes-in-swift-isnt-as-safe-as-you-think-it-is-a59794d10c31)
 
