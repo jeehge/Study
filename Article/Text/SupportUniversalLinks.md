@@ -1,13 +1,21 @@
 
-universal link
 
-언제 지원 ? 
+원문 👉👉 [Support Universal Links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
+
+
+### universal link
+
+언제 지원하나 ? 
+
+<br>
 
 iOS 사용자가 웹사이트를 탭 했을 때 
 
 사파리를 통하지 않고 설치된 앱으로 리다이렉트 시킬 때
 
 앱이 설치되어 있지 않으면 태깅 된 링크, 너의 웹사이트를 사파리에서 열어줌
+
+<br>
 
 Unique → custom URL scheme와 달리 universal link는 다른 앱에 의해 요청되지 않을 수 있기 때문에 표준 HTTP 또는 HTTPS 사용해야 함
 
@@ -19,6 +27,8 @@ Simple → 하나의 URL로 웹사이트와 앱 모두 작동 가능
 
 Private → 다른 앱들은 앱이 설치되어 있는지 알 필요 없이 통신할 수 있음
 
+<br>
+
 note.
 
 universal link는 사용자가 WKWebView, UIWebView 의 view나 safari 페이지에서 웹사이트 링크를 탭해서 메일, 메시지 및 기타 앱에서 실행되는 것과 같이 앱을 열 수 있습니다.
@@ -28,6 +38,8 @@ universal link는 사용자가 WKWebView, UIWebView 의 view나 safari 페이지
 만약 사용자가 다른 도메인 URL의 universal link를 탭했을 때 iOS는 앱 내에서 link를 열 수 있습니다.
 
 9.0 이전 버전의 iOS를 사용중인 사용자의 경우 웹사이트에 대한 universal link를 탭하면 safari에서 링크가 열립니다.
+
+<br>
 
 universal links 지원은 간단합니다.
 
@@ -39,6 +51,8 @@ universal links 지원은 간단합니다.
 
 universal link를 기기에서 테스트할 수 있습니다!
 
+<br>
+
 Association File 업로드 및 생성
 
 웹사이트와 앱 간의 안전한 연결을 만들어서, 신뢰 관계와 팀을 확고히 합니다.
@@ -48,7 +62,7 @@ Association File 업로드 및 생성
 - 웹사이트에 apple-app-site-association 파일 추가
 - 앱에 com.apple.developer.associated-domains entitlement 추가 (Preparing Your App to Handle Universal Links에서 서술되었습니다)
 
- 
+<br>
 
 앱이 지원하는 유니크한 컨텐츠가 포함된 각각의 도메인에 대한 별도의 apple-app-site-association 파일을 제공해야 합니다.
 
@@ -65,6 +79,8 @@ app-site-association 파일에서, universal link로 처리되어야 하는 path
 Listing 6-1은 universal link로 처리해야 하는 세 가지 경로를 식별하는 apple-app-site-association 파일의  예시를 보여줍니다.
 
 ![스크린샷 2021-09-06 오전 12.12.14.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec76108f-ab52-499a-9367-a094b487c300/스크린샷_2021-09-06_오전_12.12.14.png)
+
+<br>
 
 note.
 
@@ -99,6 +115,9 @@ apple-app-site-association 파일에서 웹 사이트 경로를 지정하는 방
 - 전체 웹 사이트를 지정하려면 *를 사용합니다.
 - /wwdc/news/ 와 같은 특정 링크를 지정하려면 URL을 포함해야 합니다.
 - /videos/wwdc/2015/*와 같은 특정 URL에 *를 추가하여 웹 사이트의 부분을 지정한다. *를 사용하여 하위 문자열을 일치시킬 뿐만 아니라 ?를 사용하여 단일 문자를 일치시킬 수도 있다. /foo/*/bar/201?/mypage 와 같은 단일 경로에서 두 와일드카드를 결합할 수 있습니다.
+
+
+<br>
 
 ** 단어
 
