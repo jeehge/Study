@@ -6,7 +6,7 @@
 
 <br>
 
-[Support Universal Links](https://github.com/jeehge/Study/blob/master/Article/Text/SupportUniversalLinks.md)
+[Support Universal Links](https://github.com/jeehge/Study/blob/master/Article/Text/SupportUniversalLinks)
 
 <br>
 
@@ -14,7 +14,7 @@
 
 <br>
 
-[Swift Tip: Enum Initializers](https://www.objc.io/blog/2018/03/13/mutable-self/)
+[Swift Tip: Enum Initializers](https://github.com/jeehge/Study/blob/master/Article/Text/EnumInitializers)
 
 ## 읽어야 할 아티클
 
