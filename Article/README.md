@@ -14,6 +14,8 @@
 
 <br>
 
+[Swift Tip: Enum Initializers](https://www.objc.io/blog/2018/03/13/mutable-self/)
+
 ## 읽어야 할 아티클
 
 [How To Write Awesome Tech Specs](https://eng.lyft.com/awesome-tech-specs-86eea8e45bb9)
