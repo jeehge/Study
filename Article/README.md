@@ -10,7 +10,7 @@
 
 <br>
 
-[iOS 15 SDK Upgrade Guide - braze](https://www.braze.com/docs/developer_guide/platform_integration_guides/ios/ios_15/)
+[iOS 15 SDK Upgrade Guide - braze](https://github.com/jeehge/Study/blob/master/Article/Text/iOS15SDKUpgradeGuide)
 
 <br>
 
