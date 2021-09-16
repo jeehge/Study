@@ -6,15 +6,15 @@
 
 <br>
 
-[Support Universal Links](https://github.com/jeehge/Study/blob/master/Article/Text/SupportUniversalLinks)
+[Support Universal Links](https://github.com/jeehge/Study/blob/master/Article/Text/SupportUniversalLinks.md)
 
 <br>
 
-[iOS 15 SDK Upgrade Guide - braze](https://github.com/jeehge/Study/blob/master/Article/Text/iOS15SDKUpgradeGuide)
+[iOS 15 SDK Upgrade Guide - braze](https://github.com/jeehge/Study/blob/master/Article/Text/iOS15SDKUpgradeGuide.md)
 
 <br>
 
-[Swift Tip: Enum Initializers](https://github.com/jeehge/Study/blob/master/Article/Text/EnumInitializers)
+[Swift Tip: Enum Initializers](https://github.com/jeehge/Study/blob/master/Article/Text/EnumInitializers.md)
 
 ## 읽어야 할 아티클
 
