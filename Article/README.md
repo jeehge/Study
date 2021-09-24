@@ -49,3 +49,7 @@
 
 **video
 [Advances in UI Data Sources](https://developer.apple.com/videos/play/wwdc2019/220)
+
+<br>
+
+[Swift — Enums](https://jllnmercier.medium.com/swift-enums-b68a1015e2ce)
