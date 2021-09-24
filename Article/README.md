@@ -52,4 +52,3 @@
 
 <br>
 
-[Swift — Enums](https://jllnmercier.medium.com/swift-enums-b68a1015e2ce)
