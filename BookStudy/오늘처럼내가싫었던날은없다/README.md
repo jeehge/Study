@@ -1,13 +1,15 @@
 
 ## 읽을 책 
 
-[아무것도아닌지금은없다](http://www.yes24.com/Product/Goods/44178849?pid=123487&cosemkid=go15014628167819901&gclid=Cj0KCQjwl_SHBhCQARIsAFIFRVXUphmEED1xURx8uiZCO-wmKJX_j8MPHDbIiscM1MoWi434Kumy3eoaAnvgEALw_wcB)
+[오늘처럼 내가 싫었던 날은 없다](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788950976514)
 
 <br>
 
 ### 차례
 
-## 01 아무 것도 늦지 않았다. 꿈을 꾸는 사람이 되기에
+프롤로그 세상에 하나뿐인 고민상담소 4
+
+## PART 1 내가 왜 이렇게 미울까
 
 021 ••• 삶에 의욕이 없을 때는 억지로 힘내지 않아도 된다 🌼
 
