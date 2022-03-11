@@ -12,4 +12,10 @@
 
 [프로젝트가 서쪽으로 간 까닭은](https://github.com/jeehge/Study/tree/master/BookStudy/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B0%80%EC%84%9C%EC%AA%BD%EC%9C%BC%EB%A1%9C%EA%B0%84%EA%B9%8C%EB%8B%AD%EC%9D%80)
 
+<br>
 
+[UX/UI의 10가지 심리학 법칙]()
+
+👉 [책 링크](http://www.yes24.com/Product/Goods/92426632)
+
+<br>
