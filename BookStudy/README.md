@@ -14,8 +14,7 @@
 
 <br>
 
-[UX/UI의 10가지 심리학 법칙]()
+[UX/UI의 10가지 심리학 법칙](https://github.com/jeehge/Study/tree/master/BookStudy/UX:UI%EC%9D%9810%EA%B0%80%EC%A7%80%EC%8B%AC%EB%A6%AC%ED%95%99%EB%B2%95%EC%B9%99)
 
-👉 [책 링크](http://www.yes24.com/Product/Goods/92426632)
 
 <br>
