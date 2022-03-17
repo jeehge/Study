@@ -6,7 +6,7 @@
 
 https://lawsofux.com
 
-
+ 
 <br>
 
 1장. 제이콥의 법칙
