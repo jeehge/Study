@@ -1,73 +1,32 @@
-# RxSwiftStudy
+# Concurrency Study
 
-# 첫번째 스터디
+[Modern Concurrency: Getting Started](https://www.kodeco.com/28434449-modern-concurrency-getting-started)
 
-Study 1주차 
-190717
+스위프트 5.5 | iOS 15 | Xcode 13.4
 
-스터디 정리 (개인복습 필요)
-https://blog.naver.com/taerg89/221588328980
+목차
 
-
-과제 : RxSwiftStudy/rxLoginView/rxLoginView/Second/
-
-
----
-
-Study 2주차
-190724
-
-스터디 정리
-https://blog.naver.com/taerg89/221594492749
+Part 1: Asynchronous Code
+- [ ] Introduction (7:45)
+- [ ] Getting Started (11:27)
+- [ ] Your First Asynchronous App (9:04)
+- [ ] Asynchronous Sequences (13:14)
+- [ ] Using AsyncSequence in Views (10:51)
+- [ ] Additional Error Handling (2:44)
+- [ ] Conclusion (1:22)
 
 
----
+Part 2: Asynchronous Sequences
 
-알아두면 좋으 사이트
-RxJS Marbles : https://rxmarbles.com
-
-
-<br>
-
-<br>
-
-# 두번째 스터디
-
-2020.03.25
-
-매주 수요일 21:00
-
-장소 : 헹아웃
-
-학습자료 : [Reactive Programming Using Swift Programming Language](https://www.udemy.com/course/mastering-rxswift-in-ios/learn/lecture/13577704#overview)
-
----------------
-
-### 1주차. OT
-
-### 2주차. Observable,  Subject 
-
-=> [Observable](https://blog.naver.com/taerg89/221884109179)
-
-=> [Subject](https://blog.naver.com/taerg89/221885350667)
-
-
-### 3주차. Image Filter App & Filtering Operator 
-
-=> [Image Filter App](https://blog.naver.com/taerg89/221915066080)
-
-=> [Filtering Operator](https://blog.naver.com/taerg89/221927587948)
-
-### 4주차. TODO List App & Transforming Operator
-  
-### 5주차. News App &  Combining Operator
-
-### 6주차. Open WeatherMap App 
-
-### 7주차. Beginning RxCocoa
-
-### 8주차. Error Handling &  MVVM with RxSwift
-
-
+- [ ] Introduction (1:34)
+- [ ] Your Second Asynchronous App (5:56)
+- [ ] Concurrency With async let (4:10)
+- [ ] Using Asynchronous Methods in Views (7:51)
+- [ ] Displaying a Progress View (1:42)
+- [ ] Downloading Chunks (8:56)
+- [ ] Canceling Tasks (7:27)
+- [ ] Using Combine (4:59)
+- [ ] Concurrent Downloads (6:10)
+- [ ] Conclusion (2:19)
 
 
