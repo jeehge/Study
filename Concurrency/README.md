@@ -7,7 +7,7 @@
 목차
 
 Part 1: Asynchronous Code
-- [ ] Introduction (7:45)
+- [x] Introduction (7:45)
 - [ ] Getting Started (11:27)
 - [ ] Your First Asynchronous App (9:04)
 - [ ] Asynchronous Sequences (13:14)
