@@ -1,6 +1,7 @@
 # Concurrency Study
 
 [Modern Concurrency: Getting Started](https://www.kodeco.com/28434449-modern-concurrency-getting-started)
+[Modern Concurrency in Swift 디스크립션](https://www.kodeco.com/books/modern-concurrency-in-swift/v1.0/chapters/i-what-you-need)
 
 스위프트 5.5 | iOS 15 | Xcode 13.4
 
