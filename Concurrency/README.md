@@ -10,7 +10,7 @@
 
 Part 1: Asynchronous Code
 - [x] Introduction (7:45)
-- [ ] Getting Started (11:27)
+- [x] Getting Started (11:27)
 - [ ] Your First Asynchronous App (9:04)
 - [ ] Asynchronous Sequences (13:14)
 - [ ] Using AsyncSequence in Views (10:51)
