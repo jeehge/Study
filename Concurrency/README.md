@@ -45,6 +45,7 @@ Part 2: Asynchronous Sequences
 - How to read this book
 
 <br>
+
 ## Section I: Modern Concurrency in Swift
 ### Section 1: 11 chapters
 
