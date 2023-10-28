@@ -81,6 +81,8 @@ Part 2: Asynchronous Sequences
 - [ ] 2.14 Challenges
 - [ ] 2.15 Key points
 
+<br>
+
 - [ ] 3. AsyncSequence & Intermediate Task
 - [ ] 3.1 Getting to know AsyncSequence
 - [ ] 3.2 Getting started with AsyncSequence
@@ -92,6 +94,8 @@ Part 2: Asynchronous Sequences
 - [ ] 3.8 Challenges
 - [ ] 3.9 Key points
 
+<br>
+
 - [ ] 4. Custom Asynchronous Sequences With AsyncStream
 - [ ] 4.1 Getting started with the Blabber app
 - [ ] 4.2 Digging into AsyncSequence, AsyncIteratorProtocol and AsyncStream
@@ -101,6 +105,8 @@ Part 2: Asynchronous Sequences
 - [ ] 4.6 Challenges
 - [ ] 4.7 Key points
 
+<br>
+
 - [ ] 5. Intermediate async/await & CheckedContinuation
 - [ ] 5.1 Introducing continuations
 - [ ] 5.2 Creating continuations manually
@@ -108,6 +114,8 @@ Part 2: Asynchronous Sequences
 - [ ] 5.4 Wrapping callback APIs with continuation
 - [ ] 5.5 Challenges
 - [ ] 5.6 Key points
+
+<br>
 
 - [ ] 6. Testing Asynchronous Code
 - [ ] 6.1 Capturing network calls under test
@@ -118,6 +126,8 @@ Part 2: Asynchronous Sequences
 - [ ] 6.6 Using async let to produce effects and observe them at the same time
 - [ ] 6.7 Speeding up asynchronous tests
 - [ ] 6.8 Key points
+
+<br>
 
 - [ ] 7. Concurrent Code With TaskGroup
 - [ ] 7.1 Introducing TaskGroup
@@ -133,6 +143,8 @@ Part 2: Asynchronous Sequences
 - [ ] 7.11 Group error handling
 - [ ] 7.12 Using the Result type with TaskGroup
 - [ ] 7.13 Key points
+
+<br>
 
 - [ ] 8. Getting Started With Actors
 - [ ] 8.1 Understanding thread-safe code
@@ -150,6 +162,8 @@ Part 2: Asynchronous Sequences
 - [ ] 8.13 Sharing the actor
 - [ ] 8.14 Key points
 
+<br>
+
 - [ ] 9. Global Actors
 - [ ] 9.1 Getting to meet GlobalActor
 - [ ] 9.2 Continuing with the EmojiArt project
@@ -165,6 +179,8 @@ Part 2: Asynchronous Sequences
 - [ ] 9.12 Purging the in-memory cache
 - [ ] 9.13 Challenges
 - [ ] 9.14 Key points
+
+<br>
 
 - [ ] 10. Actors in a Distributed System
 - [ ] 10.1 Going from local to distributed
@@ -184,6 +200,8 @@ Part 2: Asynchronous Sequences
 - [ ] 10.15 Retrying failed tasks
 - [ ] 10.16 Key points
 - [ ] 10.17 Where to go from here?
+
+<br>
 
 - [ ] 11. Conclusion
 
