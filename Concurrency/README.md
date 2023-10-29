@@ -4,6 +4,12 @@
 
 스위프트 5.5 | iOS 15 | Xcode 13.4
 
+스터디 날짜
+
+- [x] 10.27 (금) 온라인 OT 진행
+
+- [ ] 11.02 (목) 오프라인 예정 section 1 스크립트 다 보고 올 것 
+
 목차
 
 Part 1: Asynchronous Code
