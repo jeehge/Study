@@ -42,12 +42,12 @@ Part 2: Asynchronous Sequences
 ## Before You Begin
 ### Section 0: 6 chapters
 
-- [x] [i. What You Need](#i.-what-you-need)
-- [x] [ii. Book Source Code & Forums](#ii.-book-source-code&forums)
-- [x] [iii. Dedications](#iii.-dedications)
+- [x] [i. What You Need](#what-you-need)
+- [x] [ii. Book Source Code & Forums](#book-source-code-&-forums)
+- [x] [iii. Dedications](#dedications)
 - [x] iv. About the Team
 - [x] v. Acknowledgments
-- [x] [vi. Introduction](#vi.-introduction)
+- [x] [vi. Introduction](#introduction)
 
 <br>
 
@@ -212,7 +212,7 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-## i. What You Need
+## What You Need
 
 이 책을 학습하기 위해 다음이 필요합니다:
 - macOS Monterey (12.0) 이상 실행되는 Mac.
@@ -223,7 +223,7 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-## ii. Book Source Code&Forums
+## Book Source Code & Forums
 이 책의 자료 다운로드 위치
 
 이 책의 자료는 Github 저장소에서 복제하거나 다운로드할 수 있습니다. : [https://github.com/raywenderlich/mcon-materials/tree/editions/1.0](https://github.com/raywenderlich/mcon-materials/tree/editions/1.0)
@@ -234,7 +234,7 @@ Forums
 
 <br>
 
-## iii. Dedications
+## Dedications
 
 ```
   “Dedicated to my daughter and family. Warm thanks to everyone on the extended team that made this book possible.”
@@ -243,7 +243,7 @@ Forums
 
 <br>
 
-## vi. Introduction
+## Introduction
 
 Swift 5.5에 소개된 놀랍고 새로운 concurrency API를 소개하는 Modern Concurrency in Swift에 오신 것을 환영합니다.
 
