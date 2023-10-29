@@ -42,12 +42,12 @@ Part 2: Asynchronous Sequences
 ## Before You Begin
 ### Section 0: 6 chapters
 
-- [x] [i. What You Need](##wath-you-need)
-- [x] [ii. Book Source Code & Forums](#book-source-code-&-forums)
-- [x] [iii. Dedications](#dedications)
+- [x] [i. What You Need](https://github.com/jeehge/Study/blob/master/Concurrency/Section0)
+- [x] [ii. Book Source Code & Forums](https://github.com/jeehge/Study/blob/master/Concurrency/Section0)
+- [x] [iii. Dedications](https://github.com/jeehge/Study/blob/master/Concurrency/Section0)
 - [x] iv. About the Team
 - [x] v. Acknowledgments
-- [x] [vi. Introduction](#introduction)
+- [x] [vi. Introduction](https://github.com/jeehge/Study/blob/master/Concurrency/Section0)
 
 <br>
 
