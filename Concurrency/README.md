@@ -42,12 +42,12 @@ Part 2: Asynchronous Sequences
 ## Before You Begin
 ### Section 0: 6 chapters
 
-- [x] [i. What You Need](##i.-what-you-need)
-- [x] [ii. Book Source Code & Forums](##ii.-book-source-code&forums)
-- [x] [iii. Dedications](##iii.-dedications)
+- [x] [i. What You Need](#i.-what-you-need)
+- [x] [ii. Book Source Code & Forums](#ii.-book-source-code&forums)
+- [x] [iii. Dedications](#iii.-dedications)
 - [x] iv. About the Team
 - [x] v. Acknowledgments
-- [x] [vi. Introduction](vi.-introduction)
+- [x] [vi. Introduction](#vi.-introduction)
 
 <br>
 
