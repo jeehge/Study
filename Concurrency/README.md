@@ -54,7 +54,7 @@ Part 2: Asynchronous Sequences
 ## Section I: Modern Concurrency in Swift
 ### Section 1: 11 chapters
 
-- [ ] 1. Why Modern Swift Concurrency?
+- [x] [1. Why Modern Swift Concurrency?](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
 - [ ] 1.1 Understanding asynchronous and concurrent code
 - [ ] 1.2 Introducing the modern Swift concurrency model
 - [ ] 1.3 Running the book server
