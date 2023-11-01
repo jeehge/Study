@@ -30,4 +30,30 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 나중에 chapter의 실용적인 부분에서는  `async/await` 구문을 사용해보고 멋진 asynchronous error-handling을 추가하여 실제 프로젝트를 수행할 것입니다.
 
 
-# 1-1. Understanding asynchronous and concurrent code
+# 1-1. Understanding asynchronous and concurrent code 비동기 및 동기 코드 이해
+
+대부분의 코드는 코드 편집기에서 작성된 것과 같은 방식으로 실행됩니다. 위에서 아래로, 기능의 시작 부분에서 시작하여 줄 단위로 끝까지 진행됩니다.
+
+이를 통해 주어진 코드 라인이 실행되는 시기를 쉽게 결정할 수 있습니다. 단순히 이전 코드 라인을 따릅니다. 함수 호출에 대해서도 마찬가지입니다. 코드가 동시에 실행되면 실행이 순차적으로 발생합니다.
+
+동기적 맥락에서 코드는 하나의 CPU 코어의 하나의 실행 스레드에서 실행됩니다. 
+
+단일 차선 도로에서 자동차와 같은 동기식 기능을 상상할 수 있으며, 한 차량이 근무 중인 구급차와 같이 우선 순위가 높은 경우 나머지 차량을 "jump up" 하여 더 빠르게 운전할 수 없습니다.
+
+반면 iOS 앱과 Cocoa 기반 maOS 앱은 본질적으로 비동기적입니다.
+
+비동기 실행을 사용하면 사용자 입력, 네트워크 연결 등 여러 가지 이벤트에 따라 하나의 thread에서 다른 프로그램 조작을 순서대로 실행할 수 있고 때로는 여러 thread에서 동시에 실행할 수도 있습니다.
+
+특히 여러 비동기 함수가 동일한 thread를 사용해야 하는 경우네느 비동기적인 맥락에서 함수가 실행되는 순서를 정확히 말하기가 어렵습니다.
+
+신호등이 있는 도로와 교통질서가 필요한 곳에서 운전하는 것처럼, 기능은 때때로 차례가 될 때까지 기다리거나 녹색 빛이 진행될 때까지 멈춰야합니다.
+
+신호등이있는 도로와 트래픽이 필요한 곳에서 운전하는 것처럼, 기능은 때때로 차례가 계속 될 때까지 기다리거나 녹색 빛이 진행될 때까지 멈추어야합니다.
+
+비동기 호출의 한 예는 네트워크 요청을 하고 웹 서버가 응답할 때 실행할 완료 폐쇄를 제공하는 것이고, 
+
+완료 콜백을 실행하기 위해 대기하는 동안 앱은 다른 잡무를 수행하는 시간을 사용합니다.
+
+To intentionally run parts of your program in parallel, you use concurrent APIs. Some APIs support executing a fixed number of tasks at the same time; others start a concurrent group and allow an arbitrary number of concurrent tasks.
+This also causes a myriad of concurrency-related problems. For example, different parts of the program might block each other’s execution, or you might encounter the much-loathed data-races, where two or more functions simultaneously access the same variable, crashing the app or unexpectedly corrupting your app’s state.
+However, when used with care, concurrency can help your program run faster by executing different functions simultaneously on multiple CPU cores, the same way careful drivers can move much faster on a multi-lane freeway.
