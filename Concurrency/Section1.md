@@ -70,6 +70,7 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 그러나 주의 깊게 사용할 때 동시성은 여러 CPU 코어에서 동시에 다른 기능을 실행함으로써 프로그램을 더 빠르게 실행할 수 있도록 도와주며, 이는 주의 깊은 운전자들이 다차선 고속도로에서 훨씬 더 빠르게 이동할 수 있게 해줍니다.
 
+<br>
 
 # Challenges
 
@@ -107,3 +108,24 @@ Note that the starter already includes an environment `presentationMode` ready
 If everything goes well, when you stop the server while watching the live updates in the app, LittleJohn will automatically dismiss the updates screen and go back to the list of symbols.
 
 If you get stuck in the challenge or if something doesn’t work as you expect, be sure to check the solution in this chapter’s materials.
+
+<br>
+
+# Key points
+
+- Swift 5.5 introduces a **new concurrency model** that solves many of the existing concurrency issues, like thread explosion, priority inversion, and loose integration with the language and the runtime.
+    
+    Swift 5.5는 hread explosion, 우선 순위 반전, 언어 및 런타임과의 느슨한 통합 등 기존의 많은 동시성 문제를 해결하는 새로운 동시성 모델을 소개합니다.
+    
+- The `async` keyword defines a function as asynchronous. `await` lets you wait in a non-blocking fashion for the result of the asynchronous function.
+    
+    `async` 키워드는 함수를 비동기로 정의합니다. `await`를 사용하면 non-blocking 방식으로 비동기 함수의 결과를 기다릴 수 있습니다.
+    
+- Use the `task(priority:_:)` view modifier as an `onAppear(_:)` alternative when you want to run asynchronous code.
+    
+    비동기 코드를 실행하려는 경우 `task(priority:_:)` **view modifier를 `onAppear(_:)` 대안으로 사용합니다.
+    
+- You can naturally loop over an asynchronous sequence over time by using a `for try await` loop syntax.
+    
+    `for try await` 루프 구문을 사용하여 시간이 지남에 따라 비동기 시퀀스를 자연스럽게 뒤집을 수 있습니다.
+
