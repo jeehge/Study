@@ -75,12 +75,16 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 # **Handling cancellation errors**
 
 Sometimes you don’t care if one of your suspended tasks gets canceled. Other times — like the current situation with that pesky alert box — you’d like to do something special when the runtime cancels a task.
+때로는 중단 된 작업 중 하나가 취소더라도 신경쓰지 않습니다. 어떤 경우(현재 상황과 같은 성가신 알림 상자)에는 런타임이 작업을 취소할 때 특별한 작업을 수행하고자 할 때도 있습니다.
 
 Scroll to the `task { ... }` modifier in `TickerView`. Here, you catch all the errors and store their messages for display. However, to avoid the runtime warning in your console, you have to handle cancellation differently than other errors.
+`TickerView`의 `task { ... }` modifier로 스크롤합니다. 여기서는 오류를 모두 잡고 메시지를 저장하여 표시합니다. 그러나 콘솔에서 런타임 경고를 방지하려면 다른 오류와 다르게 취소를 처리해야 합니다.
 
 Newer asynchronous APIs like `Task.sleep(nanoseconds:)` throw a `CancellationError`. Other APIs that throw custom errors have a dedicated cancellation error code, like `URLSession`.
+`Task.sleep(nanoseconds:)`과 같은 새로운 비동기 API는 `CancellationError`를 생성합니다. 다른 사용자 정의 오류를 생성하는 API는 `URLSession`과 같이 전용 취소 오류 코드를 가집니다.
 
 Replace the `catch` block with the following code:
+`catch` 블록을 다음 코드로 바꿉니다:
 
 ```swift
 } catch {
@@ -95,15 +99,19 @@ Replace the `catch` block with the following code:
 ```
 
 The new `catch` block checks if the thrown error is a `URLError` with the `cancelled` error code. If it is, you return without presenting the message onscreen.
+새로운 `catch` 블록은 thrown erro r가 `cancelled` 에러 코드의 `URLError`인지 확인합니다. 그러면 화면에 메시지를 표시하지 않고 돌아갑니다.
 
 You get a `URLError` from the ongoing `URLSession` that fetches the live updates. If you use other modern APIs, they might throw a `CancellationError` instead.
+진행 중인 `URLSession`에서 실시간 업데이트를 가져오는 `URLError`가 발생합니다. 다른 최신 API를 사용하면 `CancellationError`가 발생할 수 있습니다.
 
 Run the app one more time and confirm that this last change fixes the behavior and you don’t get the runtime warning anymore.
+앱을 한 번 더 실행하고 이 마지막 변경으로 동작이 수정되는지 확인하면 런타임 경고가 더 이상 표시되지 않습니다.
 
 Now, you’ve finished working on LittleJohn. Congratulations, you completed the first project in this book!
+이제 LittleJohn 작업을 마쳤습니다. 축하합니다. 이 책의 첫 번째 프로젝트를 완료했습니다!
 
 Stick around if you’d like to work through a challenge on your own. Otherwise, turn the page and move on to learning about `async`/`await` and `Task` in more detail!
-
+혼자 힘으로 해보고 싶다면 도전을 해보세요. 그렇지 않으면, 페이지를 넘겨서 `async`/`await`과 `Task`에 대해 더 자세히 알아보세요!
 
 <br>
 
