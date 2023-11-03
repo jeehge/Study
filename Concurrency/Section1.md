@@ -147,10 +147,13 @@ Next, in `TickerView`, add a new view modifier that observes the number of obse
 ```
 
 Note that the starter already includes an environment `presentationMode` ready to use.
+시동 장치에는 사용할 수 있는 환경 `presentationMode`'가 이미 포함되어 있습니다.
 
 If everything goes well, when you stop the server while watching the live updates in the app, LittleJohn will automatically dismiss the updates screen and go back to the list of symbols.
+모든 일이 잘 진행되면 앱에서 라이브 업데이트를 보다가 서버를 중지하면 LittleJohn이 자동으로 업데이트 화면을 종료하고 기호 목록으로 돌아갑니다.
 
 If you get stuck in the challenge or if something doesn’t work as you expect, be sure to check the solution in this chapter’s materials.
+문제가 해결되지 않거나 문제가 예상대로 되지 않으면 이 장의 자료에서 해결책을 확인해야 합니다.
 
 <br>
 
