@@ -1,0 +1,15 @@
+- Swift 5.5 introduces a **new concurrency model** that solves many of the existing concurrency issues, like thread explosion, priority inversion, and loose integration with the language and the runtime.
+    
+    Swift 5.5는 hread explosion, 우선 순위 반전, 언어 및 런타임과의 느슨한 통합 등 기존의 많은 동시성 문제를 해결하는 새로운 동시성 모델을 소개합니다.
+    
+- The `async` keyword defines a function as asynchronous. `await` lets you wait in a non-blocking fashion for the result of the asynchronous function.
+    
+    `async` 키워드는 함수를 비동기로 정의합니다. `await`를 사용하면 non-blocking 방식으로 비동기 함수의 결과를 기다릴 수 있습니다.
+    
+- Use the `task(priority:_:)` view modifier as an `onAppear(_:)` alternative when you want to run asynchronous code.
+    
+    비동기 코드를 실행하려는 경우 `task(priority:_:)` **view modifier를 `onAppear(_:)` 대안으로 사용합니다.
+    
+- You can naturally loop over an asynchronous sequence over time by using a `for try await` loop syntax.
+    
+    `for try await` 루프 구문을 사용하여 시간이 지남에 따라 비동기 시퀀스를 자연스럽게 뒤집을 수 있습니다.
