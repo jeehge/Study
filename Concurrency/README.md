@@ -64,8 +64,8 @@ Part 2: Asynchronous Sequences
 - [ ] 1.7 Using asynchronous sequences
 - [ ] 1.8 Canceling tasks in structured concurrency
 - [ ] 1.9 Handling cancellation errors
-- [ ] 1.10 Challenges
-- [ ] 1.11 Key points
+- [x] [1.10 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Challenges.md)
+- [x] [1.11 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Keypoints.md)
 
 <br>
 
