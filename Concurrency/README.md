@@ -55,17 +55,17 @@ Part 2: Asynchronous Sequences
 ### Section 1: 11 chapters
 
 - [x] [1. Why Modern Swift Concurrency?](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [ ] 1.1 Understanding asynchronous and concurrent code
-- [ ] 1.2 Introducing the modern Swift concurrency model
-- [ ] 1.3 Running the book server
-- [ ] 1.4 Getting started with LittleJohn
-- [ ] 1.5 Writing your first async/await
-- [ ] 1.6 Using async/await in SwiftUI
-- [ ] 1.7 Using asynchronous sequences
-- [ ] 1.8 Canceling tasks in structured concurrency
-- [ ] 1.9 Handling cancellation errors
-- [x] [1.10 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Challenges.md)
-- [x] [1.11 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Keypoints.md)
+- [ ] [1.1 Understanding asynchronous and concurrent code](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.2 Introducing the modern Swift concurrency model](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.3 Running the book server](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.4 Getting started with LittleJohn](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.5 Writing your first async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.6 Using async/await in SwiftUI](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.7 Using asynchronous sequences](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.8 Canceling tasks in structured concurrency](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [ ] [1.9 Handling cancellation errors](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [x] [1.10 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [x] [1.11 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
 
 <br>
 
