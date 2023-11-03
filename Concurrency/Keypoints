@@ -1,3 +1,5 @@
+# Key points
+
 - Swift 5.5 introduces a **new concurrency model** that solves many of the existing concurrency issues, like thread explosion, priority inversion, and loose integration with the language and the runtime.
     
     Swift 5.5는 hread explosion, 우선 순위 반전, 언어 및 런타임과의 느슨한 통합 등 기존의 많은 동시성 문제를 해결하는 새로운 동시성 모델을 소개합니다.
