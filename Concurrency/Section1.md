@@ -72,6 +72,47 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 <br>
 
+여기부터
+# Canceling tasks in structured concurrency
+
+As mentioned earlier, one of the big leaps for concurrent programming with Swift is that modern, concurrent code executes in a structured way. Tasks run in a strict hierarchy, so the runtime knows who’s the parent of a task and which features new tasks should inherit.
+
+For example, look at the `task(_:)` modifier in `TickerView`. Your code calls `startTicker(_:)` asynchronously. In turn, `startTicker(_:)` asynchronously *awaits* `URLSession.bytes(from:delegate:)`, which returns an async sequence that you iterate over:
+
+![스크린샷 2023-11-04 오전 1.08.58.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a6336d23-5979-4fc9-8601-bf521f9d5335/57eceb68-152c-4cc0-8f99-640df544feed/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-04_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.08.58.png)
+
+At each suspension point — that is, every time you see the `await` keyword — the thread could potentially change. Since you start the entire process inside `task(_:)`, the async task is the parent of all those other tasks, regardless of their execution thread or suspension state.
+
+The `task(_:)` view modifier in SwiftUI takes care of canceling your asynchronous code when its view goes away. Thanks to structured concurrency, which you’ll learn much more about later in this book, all asynchronous tasks are also canceled when the user navigates out of the screen.
+
+![스크린샷 2023-11-04 오전 1.09.13.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a6336d23-5979-4fc9-8601-bf521f9d5335/beb761a4-49c8-49cf-b554-f465baaf1cb5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-04_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.09.13.png)
+
+To verify how this works in practice, navigate to the updates screen and look at the Xcode console to check that you see the debug prints from `LittleJohnModel.startTicker(_:)`:
+
+```
+Updated: 2021-08-12 18:24:12 +0000
+Updated: 2021-08-12 18:24:13 +0000
+Updated: 2021-08-12 18:24:14 +0000
+Updated: 2021-08-12 18:24:15 +0000
+Updated: 2021-08-12 18:24:16 +0000
+Updated: 2021-08-12 18:24:17 +0000
+Updated: 2021-08-12 18:24:18 +0000
+
+```
+
+Now, tap **Back**. `TickerView` disappears and the `task(_:)` view modifier’s task is canceled. This cancels all child tasks, including the call to `LittleJohnModel.startTicker(_:)`. As a result, the debug logs in the console stop as well, verifying that all execution ends!
+
+You’ll notice, however, an additional message in the console that looks something like:
+
+```csharp
+[Presentation] Attempt to present <SwiftUI.PlatformAlertController: 0x7f8051888000> on ... whose view is not in the window hierarchy.
+
+```
+
+SwiftUI is logging an issue with your code trying to present an alert after you dismiss the ticker view. This happens because some of the inner tasks throw a cancellation error when the runtime cancels your call to `model.startTicker(selectedSymbols)`.
+
+<br>
+
 # **Handling cancellation errors**
 
 Sometimes you don’t care if one of your suspended tasks gets canceled. Other times — like the current situation with that pesky alert box — you’d like to do something special when the runtime cancels a task.
