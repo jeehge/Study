@@ -69,3 +69,41 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 이로 인해 수많은 동시성 관련 문제가 발생하기도 합니다. 예를 들어, 프로그램의 서로 다른 부분이 서로의 실행을 차단하거나 둘 이상의 함수가 동일한 변수에 동시에 액세스하여 앱이 다운되거나 예기치 않게 앱의 상태가 손상되는, 혐오스러운 데이터 레이스와 마주칠 수 있습니다.
 
 그러나 주의 깊게 사용할 때 동시성은 여러 CPU 코어에서 동시에 다른 기능을 실행함으로써 프로그램을 더 빠르게 실행할 수 있도록 도와주며, 이는 주의 깊은 운전자들이 다차선 고속도로에서 훨씬 더 빠르게 이동할 수 있게 해줍니다.
+
+
+# Challenges
+
+### Challenge: Adding extra error handling
+
+There’s one edge case that the app still doesn’t handle graciously: What if the server becomes unavailable while the user is observing the price updates?
+앱이 여전히 처리하지 못하는 엣지 케이스가 하나 있습니다. 사용자가 price 업데이트를 observing 하는 동안 서버를 사용할 수 없게 되면 어떻게 됩니까?
+
+You can reproduce this situation by navigating to the prices screen, then stopping the server by pressing **Control-C** in the terminal window.
+price 화면으로 이동한 후 단말기 창에서 **Control-C**를 눌러 서버를 중지하면 이 상황을 재현할 수 있습니다.
+
+No error messages pop up in the app because there is no error, per se. In fact, the response sequence simply completes when the server closes it. In this case, your code continues to execute with no error, but it produces no more updates.
+오류가 없기 때문에 앱에 오류 메시지가 표시되지 않습니다. 실제로 서버가 닫을 때 응답 시퀀스가 완료됩니다. 이 경우 코드는 오류 없이 계속 실행되지만 더 이상의 업데이트는 발생하지 않습니다.
+
+In this challenge, you’ll add code to reset `LittleJohnModel.tickerSymbols` when the async sequence ends and then navigate out of the updates screen.
+이 챌린지에서는 비동기 시퀀스가 종료되면 `LittleJohnModel.tickerSymbols`를 리셋하기 위해 코드를 추가한 후 업데이트 화면을 벗어나야 합니다.
+
+In `LittleJohnModel.startTicker(_:)`, after the `for` loop, append code to set `tickerSymbols` to an empty array if the async sequence unexpectedly ends. Don’t forget to make this update using `MainActor`.
+`LittleJohnModel.startTicker(_:)`에서 `for` 루프 뒤에 코드를 추가하여 비동기 시퀀스가 예기치 않게 종료되면 `tickerSymbols`를 빈 배열로 설정합니다. `MainActor`를 사용하여 업데이트하는 것도 잊지 마십시오.
+
+Next, in `TickerView`, add a new view modifier that observes the number of observed ticker symbols and dismisses the view if the selection resets:
+다음으로 `TickerView`에서 관찰된 티커 기호의 수를 관찰하고 선택 항목이 재설정되면 뷰를 무시하는 새로운 뷰 수정자를 추가합니다:
+
+```swift
+.onChange(of: model.tickerSymbols.count) { newValue in
+  if newValue == 0 {
+    presentationMode.wrappedValue.dismiss()
+  }
+}
+
+```
+
+Note that the starter already includes an environment `presentationMode` ready to use.
+
+If everything goes well, when you stop the server while watching the live updates in the app, LittleJohn will automatically dismiss the updates screen and go back to the list of symbols.
+
+If you get stuck in the challenge or if something doesn’t work as you expect, be sure to check the solution in this chapter’s materials.
