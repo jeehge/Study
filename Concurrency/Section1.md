@@ -72,6 +72,41 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 <br>
 
+# **Handling cancellation errors**
+
+Sometimes you don’t care if one of your suspended tasks gets canceled. Other times — like the current situation with that pesky alert box — you’d like to do something special when the runtime cancels a task.
+
+Scroll to the `task { ... }` modifier in `TickerView`. Here, you catch all the errors and store their messages for display. However, to avoid the runtime warning in your console, you have to handle cancellation differently than other errors.
+
+Newer asynchronous APIs like `Task.sleep(nanoseconds:)` throw a `CancellationError`. Other APIs that throw custom errors have a dedicated cancellation error code, like `URLSession`.
+
+Replace the `catch` block with the following code:
+
+```swift
+} catch {
+  if let error = error as? URLError,
+    error.code == .cancelled {
+    return
+  }
+
+  lastErrorMessage = error.localizedDescription
+}
+
+```
+
+The new `catch` block checks if the thrown error is a `URLError` with the `cancelled` error code. If it is, you return without presenting the message onscreen.
+
+You get a `URLError` from the ongoing `URLSession` that fetches the live updates. If you use other modern APIs, they might throw a `CancellationError` instead.
+
+Run the app one more time and confirm that this last change fixes the behavior and you don’t get the runtime warning anymore.
+
+Now, you’ve finished working on LittleJohn. Congratulations, you completed the first project in this book!
+
+Stick around if you’d like to work through a challenge on your own. Otherwise, turn the page and move on to learning about `async`/`await` and `Task` in more detail!
+
+
+<br>
+
 # Challenges
 
 ### Challenge: Adding extra error handling
