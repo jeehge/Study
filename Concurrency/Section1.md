@@ -52,7 +52,7 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 비동기 호출의 한 예는 네트워크 요청을 하고 웹 서버가 응답할 때 실행할 완료 폐쇄를 제공하는 것이고, 
 
-완료 콜백을 실행하기 위해 대기하는 동안 앱은 다른 잡무를 수행하는 시간을 사용합니다.
+완료 콜백을 실행하기 위해 대기하는 동안 앱은 다른 작업를 수행하는 시간을 사용합니다.
 
 To intentionally run parts of your program in parallel, you use concurrent APIs. Some APIs support executing a fixed number of tasks at the same time; others start a concurrent group and allow an arbitrary number of concurrent tasks.
 This also causes a myriad of concurrency-related problems. For example, different parts of the program might block each other’s execution, or you might encounter the much-loathed data-races, where two or more functions simultaneously access the same variable, crashing the app or unexpectedly corrupting your app’s state.
