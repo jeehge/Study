@@ -38,7 +38,9 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 동기적 맥락에서 코드는 하나의 CPU 코어의 하나의 실행 스레드에서 실행됩니다. 
 
-단일 차선 도로에서 자동차와 같은 동기식 기능을 상상할 수 있으며, 한 차량이 근무 중인 구급차와 같이 우선 순위가 높은 경우 나머지 차량을 "jump up" 하여 더 빠르게 운전할 수 없습니다.
+단일 차선 도로에서 자동차와 같은 동기식 기능을 상상할 수 있으며, 한 차량이 근무 중인 구급차와 같이 우선 순위가 높은 경우 나머지 차량을 "jump over" 하여 더 빠르게 운전할 수 없습니다.
+
+(차선이 하나인 곳에 자동차가 순서대로 있는 모습)
 
 반면 iOS 앱과 Cocoa 기반 maOS 앱은 본질적으로 비동기적입니다.
 
@@ -50,10 +52,18 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 신호등이있는 도로와 트래픽이 필요한 곳에서 운전하는 것처럼, 기능은 때때로 차례가 계속 될 때까지 기다리거나 녹색 빛이 진행될 때까지 멈추어야합니다.
 
+(자동차 신호대기 이미지)
+
 비동기 호출의 한 예는 네트워크 요청을 하고 웹 서버가 응답할 때 실행할 완료 폐쇄를 제공하는 것이고, 
 
 완료 콜백을 실행하기 위해 대기하는 동안 앱은 다른 작업를 수행하는 시간을 사용합니다.
 
-To intentionally run parts of your program in parallel, you use concurrent APIs. Some APIs support executing a fixed number of tasks at the same time; others start a concurrent group and allow an arbitrary number of concurrent tasks.
-This also causes a myriad of concurrency-related problems. For example, different parts of the program might block each other’s execution, or you might encounter the much-loathed data-races, where two or more functions simultaneously access the same variable, crashing the app or unexpectedly corrupting your app’s state.
-However, when used with care, concurrency can help your program run faster by executing different functions simultaneously on multiple CPU cores, the same way careful drivers can move much faster on a multi-lane freeway.
+(순서도 이미지)
+
+프로그램의 일부를 의도적으로 병렬로 실행하려면 동시 API를 사용합니다. 
+
+어떤 API는 고정된 수의 작업을 동시에 실행할 수 있도록 지원하고, 다른 API는 동시 그룹을 시작하여 임의 수의 동시 작업을 허용합니다.
+
+이로 인해 수많은 동시성 관련 문제가 발생하기도 합니다. 예를 들어, 프로그램의 서로 다른 부분이 서로의 실행을 차단하거나 둘 이상의 함수가 동일한 변수에 동시에 액세스하여 앱이 다운되거나 예기치 않게 앱의 상태가 손상되는, 혐오스러운 데이터 레이스와 마주칠 수 있습니다.
+
+그러나 주의 깊게 사용할 때 동시성은 여러 CPU 코어에서 동시에 다른 기능을 실행함으로써 프로그램을 더 빠르게 실행할 수 있도록 도와주며, 이는 주의 깊은 운전자들이 다차선 고속도로에서 훨씬 더 빠르게 이동할 수 있게 해줍니다.
