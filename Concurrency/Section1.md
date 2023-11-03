@@ -1,4 +1,4 @@
-# 1. Why Modern Swift Concurrency?
+### 1. Why Modern Swift Concurrency?
 
 애플이 비동기식 프레임워크에 대해 큰 관심을 보인 것은 2009년 Mac OS X 스노우 레오파드와 함께 GCD(Grand Central Dispatch)가 나왔을 때 입니다.
 
@@ -30,7 +30,7 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 나중에 chapter의 실용적인 부분에서는  `async/await` 구문을 사용해보고 멋진 asynchronous error-handling을 추가하여 실제 프로젝트를 수행할 것입니다.
 
 
-# 1-1. Understanding asynchronous and concurrent code 비동기 및 동기 코드 이해
+### 1-1. Understanding asynchronous and concurrent code 비동기 및 동기 코드 이해
 
 대부분의 코드는 코드 편집기에서 작성된 것과 같은 방식으로 실행됩니다. 위에서 아래로, 기능의 시작 부분에서 시작하여 줄 단위로 끝까지 진행됩니다.
 
