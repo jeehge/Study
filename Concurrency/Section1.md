@@ -32,7 +32,8 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 나중에 chapter의 실용적인 부분에서는  `async/await` 구문을 사용해보고 멋진 asynchronous error-handling을 추가하여 실제 프로젝트를 수행할 것입니다.
 
 
-### 1-1. Understanding asynchronous and concurrent code 비동기 및 동기 코드 이해
+# 1-1. Understanding asynchronous and concurrent code 
+비동기 및 동기 코드 이해
 
 대부분의 코드는 코드 편집기에서 작성된 것과 같은 방식으로 실행됩니다. 위에서 아래로, 기능의 시작 부분에서 시작하여 줄 단위로 끝까지 진행됩니다.
 
@@ -72,7 +73,53 @@ Swift 5.5는 이러한 기능을 지원하기 위해 새로운 언어 구문과 
 
 <br>
 
-여기부터
+# **Introducing the modern Swift concurrency model**
+
+concurrency model 소개
+
+The new concurrency model is tightly integrated with the language syntax, the Swift runtime and Xcode. It abstracts away the notion of threads for the developer. Its key new features include:
+새로운 concurrency model은 언어 문법이 swift runtime과 xcdoe와 긴밀하게 연결되어 있습니다. 개발자를 위한 thread의 개념을 추상화합니다. 주요한 새로운 기능은 다음과 같습니다 :
+
+1. A cooperative thread pool.
+2. `async`/`await` syntax.
+3. Structured concurrency.
+4. Context-aware code compilation.
+
+With this high-level overview behind you, you’ll now take a deeper look at each of these features.
+이 high-level overview를 통해 이제 이러한 기능을 자세히 살펴보겠습니다.
+
+### 1. A cooperative thread pool
+
+The new model transparently manages a pool of threads to ensure it doesn’t exceed the number of CPU cores available. This way, the runtime doesn’t need to create and destroy threads or constantly perform expensive thread switching. Instead, your code can suspend and, later on, resume very quickly on any of the available threads in the pool.
+새로운 모델은 사용 가능한 CPU 코어의 수를 초과하지 않도록 스레드 풀을 투명하게 관리합니다. 이렇게 하면 런타임에서 스레드를 생성하고 파괴하거나 값비싼 스레드 전환을 지속적으로 수행할 필요가 없습니다. 대신 코드가 풀의 사용 가능한 스레드에서 일시 중단되었다가 나중에 아주 빠르게 재개될 수 있습니다. 
+
+### 2. async/await syntax
+
+Swift’s new `async`/`await` syntax lets the compiler and the runtime know that a piece of code might suspend and resume execution one or more times in the future. The runtime handles this for you seamlessly, so you don’t have to worry about threads and cores.
+스위프트의 새로운 `async`/`await` 문법을 통해 컴파일러와 런타임은 코드 조각이 미래에 한 번 이상 실행을 중단했다가 재개할 수 있음을 알 수 있습니다. 런타임은 이를 원활하게 처리하므로 스레드와 코어에 대해 걱정할 필요가 없습니다.
+
+ As a wonderful bonus, the new language syntax often removes the need to weakly or strongly capture `self` or other variables because you don’t need to use escaping closures as callbacks.
+새로운 언어 문법을 사용하면 escaping closure를 콜백으로 사용할 필요가 없기 때문에 종종 `self` 나 다른 변수를 weak 또는 strong 표시할 필요가 없어집니다.
+
+### 3. Structured concurrency
+
+Each asynchronous task is now part of a hierarchy, with a parent task and a given priority of execution. This hierarchy allows the runtime to cancel all child tasks when a parent is canceled. Furthermore, it allows the runtime to *wait* for all children to complete before the parent completes. It’s a tight ship all around.
+
+This hierarchy provides a huge advantage and a more obvious outcome, where high-priority tasks will run before any low-priority tasks in the hierarchy.
+
+### 4. Context-aware code compilation
+
+The compiler keeps track of whether a given piece of code *could* run asynchronously. If so, it won’t let you write potentially unsafe code, like mutating shared state.
+컴파일러는 주어진 코드 조각이 비동기적으로 실행될 수 있는지 여부를 추적합니다. 만약 그렇다면, 공유 상태를 변형시키는 것과 같이 잠재적으로 안전하지 않은 코드를 쓸 수 없게 됩니다.
+
+This high level of compiler awareness enables elaborate new features like **actors**, which differentiate between synchronous and asynchronous access to their state at compile time and protects against inadvertently corrupting data by making it harder to write unsafe code.
+이러한 high level의 컴파일러 인식은 **actors**와 같은 정교한 새로운 기능을 가능하게 합니다. **actors**는 컴파일 시 상태에 대한 동기식 및 비동기식 액세스를 구별하고 안전하지 않은 코드를 쓰기 어렵게 함으로써 의도치 않게 데이터가 손상되는 것을 방지합니다.
+
+With all those advantages in mind, you’ll move on to writing some code with the new concurrency features right away and see how it feels for yourself!
+이러한 장점을 모두 염두에 두고 새로운 concurrency 기능이 포함된 코드를 바로 작성하고 직접 어떤 느낌인지 확인할 수 있습니다!
+
+<br>
+
 # Canceling tasks in structured concurrency
 
 As mentioned earlier, one of the big leaps for concurrent programming with Swift is that modern, concurrent code executes in a structured way. Tasks run in a strict hierarchy, so the runtime knows who’s the parent of a task and which features new tasks should inherit.
