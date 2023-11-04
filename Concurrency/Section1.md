@@ -215,3 +215,97 @@ You’ll learn about `async`/`await` in greater detail in Chapter 2, “Gettin
 > 
 
 Note. 웹 서버는 무수히 많은 상태 코드로 대응할 수 있습니다. 이 책이 모든 것을 다 다루는 것은 아닙니다. 더 알고 싶다면 이 목록을 확인하세요 : [HTTP status codes](https://bit.ly/2YzI2ww).
+
+<br>
+
+### **Using async/await in SwiftUI**
+
+SwiftUI에서 async/await 사용
+
+Press **Command-B** to compile the project and verify you correctly added all the code so far, but don’t run it just yet. Next, open **SymbolListView.swift**, where you’ll find the SwiftUI code for the symbol list screen.
+**Command-B**를 눌러 프로젝트를 컴파일하고 지금까지의 모든 코드를 올바르게 추가했는지 확인하지만 아직 실행하지 마십시오. 다음으로 **SymbolListView.swift**를 열면 symbol 목록 화면에 대한 SwiftUI 코드가 나타납니다.
+
+The essential part here is the `ForEach` that displays the `symbols` in a list onscreen. You need to call `LittleJohnModel.availableSymbols()`, which you just created, and assign its result to `SymbolListView.symbols` to get everything to work together.
+여기서 가장 중요한 부분은 화면에 `symbol`을 나열하는 `ForEach` 입니다. 방금 만든 `LittleJohnModel.availableSymbols()`에 호출해서 `SymbolListView.symbols`에 그 결과를 할당하면 모든 것이 함께 작동합니다.
+
+Inside `SymbolListView.body`, find the `.padding(.horizontal)` view modifier. Add the following code immediately below it:
+`SymbolListView.body` 안에서 `.padding(.horizontal)` view modifier를 찾습니다. 바로 아래에 다음 코드를 추가합니다.
+
+```swift
+.onAppear {
+  try await model.availableSymbols()
+}
+```
+
+If you’re paying attention to Xcode, you’ll notice that the method `availableSymbols()` is grayed out in the code’s autocompletion:
+xcode에 주의를 기울인다면 `availableSymbols()`가 코드의 자동 완성에서 회색으로 표시됩니다.
+
+You’ll also see the compiler rightfully complain:
+또한 컴파일러가 정당하게 불만을 제기할 수 있습니다:
+
+```
+Invalid conversion from throwing function of type '() async throws -> Void' to non-throwing function type '() -> Void'
+```
+
+Xcode tells you that `onAppear(...)` runs code synchronously; however, you’re trying to call an asynchronous function in that non-concurrent context.
+xcode는 `onAppear(...)`가 코드를 동기적으로 실행한다는 것을 알려주지만, 비동기적인 상황에서 비동기 함수를 호출하려고 하는 것입니다. 
+
+Luckily, you can use the `.task(priority:_:)` view modifier instead of `onAppear(...)`, which will allow you to call asynchronous functions right away.
+다행히 `onAppear(...)` 대신 `.task(priority:_:)`  view modifier 를 사용하면 비동기 함수를 바로 호출할 수 있습니다.
+
+Remove `onAppear(...)` and replace it with:
+`onAppear(...)` 를 제거하고 다음 항목으로 바꿉니다:
+
+```swift
+.task {
+  guard symbols.isEmpty else { return }
+}
+```
+
+`task(priority:_:)` allows you to call asynchronous functions and, similarly to `onAppear(_:)`, is called when the view appears onscreen. That’s why you start by making sure you don’t have symbols already.
+`task(priority:_:)`를 사용하면 비동기 함수를 호출할 수 있고, 화면에 화면이 나타나면 `onAppear(_:)` 와 마찬가지로 호출하기 대문에 이미 symbol가 없는지 확인하는 것부터 시작합니다.
+
+Now, to call your new async function, append the following inside the `task { ... }` modifier:
+이제 새 비동기 함수를 호출하면 `task { ... }` modifier 안에 다음을 추가합니다.
+
+```swift
+do {
+  symbols = try await model.availableSymbols()
+} catch {
+
+}
+```
+
+As before, you use both `try` and `await` to signify that the method might either throw an error or asynchronously return a value. You assign the result to `symbols`, and … that’s all you need to do.
+이전과 마찬가지로 `try` 와 `await` 를 모두 사용하여 메서드가 오류를 던지거나 값을 비동기적으로 반환할 수 있음을 나타냅니다. 결과를 `symbol`에 할당하면 됩니다.
+
+You’ll notice the `catch` portion is still empty. You’ll definitely want to handle the erroneous case where `availableSymbols` can’t provide a valid response.
+`catch` 부분은 아직 비어 있습니다. `availableSymbols`에서 제대로 된 응답을 할 수 없는 잘못된 경우를 처리해야 합니다.
+
+The UI in the starter project has already been wired to display an alert box if you update `lastErrorMessage`, so you’ll use that functionality here. Add the following line inside the empty `catch` block:
+starter project의 UI는 `lastErrorMessage`를 업데이트하면 alert box 가 표시되도록 이미 유선으로 연결되어 있으므로 여기서 해당 기능을 사용합니다. 빈 `catch` 블록 안에 다음 줄을 추가합니다:
+
+```swift
+lastErrorMessage = error.localizedDescription
+```
+
+Swift catches the error, regardless of which thread throws it. You simply write your error handling code as if your code is entirely synchronous. Amazing!
+어떤 thread가 오류를 던지든 상관없이 스위프트가 오류를 잡아냅니다. 코드가 완전히 동기화된 것처럼 오류 처리 코드를 작성하면 됩니다. 놀랍습니다!
+
+Quickly check that the server is still running in your Terminal, then build and run the app.
+터미널에서 서버가 아직 실행 중인지 빠르게 확인한 다음 앱을 빌드하고 실행합니다.
+
+As soon as the app launches, you’ll briefly see an activity indicator and then a list of stock symbols:
+앱이 실행되는 즉시 활동 표시기와 주식 심볼 목록이 표시됩니다.
+
+Awesome! Your next task is to test that the asynchronous error handling works as expected. Switch to Terminal and press **Control-C** to stop the book server.
+대단합니다! 다음 작업은 비동기 오류 처리가 예상대로 작동하는지 테스트하는 것입니다. 터미널로 전환하고  **Control-C** 눌러서 book server를 중지합니다.
+
+Run your project one more time. Now, your `catch` block will handle the error and assign it to `lastErrorMessage`. Then, the SwiftUI code will pick it up and an alert box will pop up:
+프로젝트를 한 번 더 실행합니다. 이제 `catch` 블록에서 오류를 처리하여 `lastErrorMessage` 에 할당합니다. 그러면 SwiftUi 코드가 해당 오류를 수신하고 경고 팝업이 나타납니다.
+
+Writing modern Swift code isn’t that difficult after all, is it?
+I get it if you’re excited about how few lines you needed here for your networking. To be honest, I’m excited, too; I really needed to restrain myself from ending every sentence with an exclamation mark!
+modern Swift 코드를 쓰는 것이 그렇게 어렵지 않죠?
+
+(감탄)
