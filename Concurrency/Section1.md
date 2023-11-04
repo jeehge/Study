@@ -120,6 +120,71 @@ With all those advantages in mind, you’ll move on to writing some code with th
 
 <br>
 
+# **Running the book server**
+
+book server 실행
+
+Throughout the rest of this chapter, you’ll create a fully-fledged stock trading app with live price monitoring called **LittleJohn**.
+이 장의 나머지 부분에서는 **LittleJohn**이라는 실시간 가격을 모니터링 할 수 있는 본격적인 주식 거래앱을 만들 것 입니다. 
+
+You’ll work through the code at a *quick pace*, with a somewhat brief explanation of the APIs. Enjoy the process and don’t worry about the mechanics right now. You’ll go into the nitty-gritty details at length in the coming chapters.
+API에 대한 간단한 설명과 함께 빠른 속도로 코드를 작성해 봅시다. 프로세스를 즐기고 지금 당장 기계적인 부분에 대해 걱정하지 마십시오. 다음 장에서 자세한 내용을 설명합니다.
+
+First things first: Most of the projects in this book need access to a web API to fetch JSON data, download images and more. The book comes with its own server app, called the **book server** for short, that you need to run in the background at all times while working through the chapters.
+첫번째 사항 : 이 책의 대부분의 프로젝트는 JSON 데이터를 가져오고 이미지를 다운로드하는 웹 API에 대한 액세스가 필요합니다. 이 책은 챕터를 작업하는 동안 항상 백그라운드에서 실행해야 하는 **book server**라고 불리는 자체 서버 앱과 함께 제공됩니다.
+
+Open your Mac’s Terminal app and navigate to the **00-book-server** folder in the book materials repository. Start the app by entering:
+Mac’s Terminal 앱을 열고 자료 저장소의 **00-book-server** 폴더로 이동합니다. 다음을 입력하여 앱을 시작합니다.
+
+```
+swift run
+```
+
+The first time you run the server, it will download a few dependencies and build them — which might take a minute or two. You’ll know the server is up and running when you see the following message:
+서버를 처음 실행하면 몇 개의 종속성을 다운로드하여 구축합니다. 1~2분 정도 걸릴 수 있습니다. 다음 메시지가 나타나면 서버가 가동 중임을 알 수 있습니다 :
+
+```csharp
+[ NOTICE ] Server starting on http://127.0.0.1:8080
+```
+
+To double-check that you can access the server, launch your favorite web browser and open the following address: http://localhost:8080/hello.
+서버에 액세스할 수 있는지 다시 확인하려면 즐겨찾기 웹 브라우저를 실행하고 다음 주소( http://localhost:8080/hello)를 엽니다.
+
+This contacts the book server running on your computer, which will respond with the current date:
+컴퓨터에서 실행 중인  book server 에 연락하여 현재 날짜로 응답 받습니다.
+
+("Hello! Oct 10, 2021 at 08:50:51" 출력되는 이미지)
+
+Later, when you’ve finished working on a given project and want to stop the server, switch to your Terminal window and press **Control-C** to end the server process.
+나중에 지정된 프로젝트 작업을 완료하고 서버를 중지하려면 터미널 창으로 전환하고 **Control-C** 를 눌러 서버 프로세스를 종료합니다.
+
+> Note: The server itself is a Swift package using the Vapor framework, but this book won’t cover that code. If you’re curious, you’re welcome to open it in Xcode and read through it. Additionally, you can learn all about using Vapor by working through Server-Side Swift with Vapor.
+> 
+
+Note. 서버 자체는 Vapor 프레임워크를 사용하는 스위프트 패키지지만 이 책에서는 해당 코드를 다루지 않습니다. 궁금하다면 xcode로 열어서 읽어보셔도 좋습니다. 또한 Server-Side Swift with Vapor를 통해 사용에 대한 모든 것을 배울 수 있습니다.
+
+<br>
+
+# **Getting started with LittleJohn**
+
+LittleJohn 부터 시작하기
+
+As with all projects in this book, LittleJohn’s SwiftUI views, navigation, and data model are already wired up and ready for you. It’s a simple ticker app that displays selected “stock prices” live:
+이 책의 모든 프로젝트와 마찬가지로 LittleJohn의 SwiftUI의 화면, 네비게이션 및 데이터 모델은 이미 연결되어 있으며 선택한 “stock prices”를 실시간으로 보여주는 간단한 앱입니다 :
+
+> Note: The server sends random numbers to the app. Don’t read anything into any upward or downward trends of these fictitious prices!
+> 
+
+Note. 서버는 앱에 임의의 숫자를 보냅니다. 이러한 가상의 가격의 상승 또는 하락 추세를 어떤 것도 읽지 마십시오!
+
+As mentioned earlier, simply *go with the flow* in this chapter and enjoy working on the app. Don’t worry if you don’t entirely understand every detail and line of code. You’ll revisit everything you do here in later chapters, where you’ll learn about all the APIs in greater detail.
+앞서 언급했듯이, 이 장에서 간단히 흐름에 따라 작업하고 앱 작업을 즐기십시오. 모든 세부 사항과 코드 라인을 완전히 이해하지 못하더라도 걱정하지 마십시오. 여기서 수행하는 모든 작업은 나중에 다시 확인할 수 있으며, 모든 API에 대해 자세히 배울 수 있습니다.
+
+The first thing you need to do is to add some asynchronous code to the main app screen.
+먼저 메인 앱 화면에 비동기 코드를 추가해야 합니다.
+
+<br>
+
 # Canceling tasks in structured concurrency
 
 As mentioned earlier, one of the big leaps for concurrent programming with Swift is that modern, concurrent code executes in a structured way. Tasks run in a strict hierarchy, so the runtime knows who’s the parent of a task and which features new tasks should inherit.
