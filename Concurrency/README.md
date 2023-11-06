@@ -8,7 +8,7 @@
 
 - [x] 10.27 (금) 온라인 OT 진행
 
-- [ ] 11.05 (일) 온라인 예정 section 1 스크립트 다 보고 올 것 
+- [x] 11.05 (일) 온라인 예정 section 1 스크립트 다 보고 올 것 
 
 목차
 
@@ -69,22 +69,22 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-- [ ] 2. Getting Started With async/await
-- [ ] 2.1 Pre-async/await asynchrony
-- [ ] 2.2 Separating code into partial tasks
-- [ ] 2.3 Controlling a task’s lifetime
-- [ ] 2.4 Getting started
-- [ ] 2.5 A bird’s eye view of async/await
-- [ ] 2.6 Getting the list of files from the server
-- [ ] 2.7 Getting the server status
-- [ ] 2.8 Grouping asynchronous calls
-- [ ] 2.9 Asynchronously downloading a file
-- [ ] 2.10 Running async requests from a non-async context
-- [ ] 2.11 A quick detour through Task
-- [ ] 2.12 Routing code to the main thread
-- [ ] 2.13 Updating the download screen’s progress
-- [ ] 2.14 Challenges
-- [ ] 2.15 Key points
+- [ ] [2. Getting Started With async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.1 Pre-async/await asynchrony](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.2 Separating code into partial tasks](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.3 Controlling a task’s lifetime](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.4 Getting started](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.5 A bird’s eye view of async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.6 Getting the list of files from the server](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.7 Getting the server status](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.8 Grouping asynchronous calls](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.9 Asynchronously downloading a file](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.10 Running async requests from a non-async context](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.11 A quick detour through Task](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.12 Routing code to the main thread](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.13 Updating the download screen’s progress](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.14 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
+- [ ] [2.15 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md)
 
 <br>
 
