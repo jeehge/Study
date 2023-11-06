@@ -71,8 +71,8 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-- [ ] [2. Getting Started With async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#key-points)
-- [ ] [2.1 Pre-async/await asynchrony](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#pre-asyncawait-asynchrony)
+- [x] [2. Getting Started With async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#key-points)
+- [x] [2.1 Pre-async/await asynchrony](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#pre-asyncawait-asynchrony)
 - [ ] [2.2 Separating code into partial tasks]()
 - [ ] [2.3 Controlling a task’s lifetime]()
 - [ ] [2.4 Getting started]()
