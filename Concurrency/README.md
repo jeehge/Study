@@ -56,16 +56,16 @@ Part 2: Asynchronous Sequences
 
 - [x] [1. Why Modern Swift Concurrency?](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#1-why-modern-swift-concurrency)
 - [x] [1.1 Understanding asynchronous and concurrent code](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#understanding-asynchronous-and-concurrent-code)
-- [x] [1.2 Introducing the modern Swift concurrency model](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.3 Running the book server](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.4 Getting started with LittleJohn](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.5 Writing your first async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.6 Using async/await in SwiftUI](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.7 Using asynchronous sequences](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.8 Canceling tasks in structured concurrency](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.9 Handling cancellation errors](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.10 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
-- [x] [1.11 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md)
+- [x] [1.2 Introducing the modern Swift concurrency model](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#introducing-the-modern-swift-concurrency-model)
+- [x] [1.3 Running the book server](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#running-the-book-server)
+- [x] [1.4 Getting started with LittleJohn](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#getting-started-with-littlejohn)
+- [x] [1.5 Writing your first async/await]()
+- [x] [1.6 Using async/await in SwiftUI](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#getting-started-with-littlejohn)
+- [x] [1.7 Using asynchronous sequences]()
+- [x] [1.8 Canceling tasks in structured concurrency](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#canceling-tasks-in-structured-concurrency)
+- [x] [1.9 Handling cancellation errors](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#handling-cancellation-errors)
+- [x] [1.10 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#challenges)
+- [x] [1.11 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#challenges)
 
 <br>
 
