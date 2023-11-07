@@ -74,7 +74,7 @@ Part 2: Asynchronous Sequences
 - [x] [2. Getting Started With async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section1.md#key-points)
 - [x] [2.1 Pre-async/await asynchrony](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#pre-asyncawait-asynchrony)
 - [x] [2.2 Separating code into partial tasks](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#separating-code-into-partial-tasks)
-- [ ] [2.3 Controlling a task’s lifetime]()
+- [x] [2.3 Controlling a task’s lifetime](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#controlling-a-tasks-lifetime)
 - [ ] [2.4 Getting started]()
 - [ ] [2.5 A bird’s eye view of async/await]()
 - [ ] [2.6 Getting the list of files from the server]()
