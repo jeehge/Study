@@ -116,3 +116,30 @@ The code above has about the same number of lines as the earlier example, but th
 **Task** 는 비동기 컨텍스트에서 지정된 클로저를 실행하므로 컴파일러는 해당 클로저에 쓰기에 안전한(또는 안전하지 않은) 코드를 알 수 있습니다.
 - Finally, you give the runtime an opportunity to suspend or cancel your code every time you call an asynchronous function by using the **await** keyword. This lets the system constantly change the priorities in the current task queue.
 마지막으로 **await** 키워드를 사용하여 비동기 함수를 호출할 때마다 런타임에 코드를 일시 중단하거나 취소할 수 있는 기회를 제공하므로 현재 작업 대기열의 우선순위를 계속 변경할 수 있습니다.
+
+<br>
+
+### **Separating code into partial tasks**
+
+코드를 partial task로 분리
+Above, you saw that “the code might suspend at each `await`” — but what does that mean? To optimize shared resources such as CPU cores and memory, Swift *splits up* your code into logical units called **partial tasks**, or **partials**. These represent parts of the code you’d like to run asynchronously.
+위에서 “코드가 `await` 할 때마다 일시 중단될 수 있습니다.”라는 것을 보았습니다. 그러나 이것을 의미하는 것은 무엇일까요? CPU 코어 및 메모리와 같은 공유 리소스를 최적화하기 위해 스위프트 코드를 **partial tasks 또는** **partials** 라고 불리는 논리적 단위로 분리합니다. 이는 비동기적으로 실행할 코드의 일부를 나타냅니다.
+
+The Swift runtime schedules each of these pieces separately for asynchronous execution. When each partial task completes, the system decides whether to continue with your code or to execute another task, depending on the system’s load and the priorities of the pending tasks.
+스위프트 런타임은 비동기 실행을 위해 각 스레드를 개별적으로 스케줄링합니다. 각 partial task가 완료되면 시스템은 시스템의 로드 및 보류 중인 task의 우선 순위에 따라 코드를 계속 수행할 지 또는 다른 task를 실행할 지 결정합니다.
+
+That’s why it’s important to remember that each of these `await`-annotated partial tasks might run on a different thread at the system’s discretion. Not only can the thread change, but you shouldn’t make assumptions about the app’s state after an `await`; although two lines of code appear one after another, they might execute some time apart. Awaiting takes an arbitrary amount of time, and the app state might change significantly in the meantime.
+그렇기 때문에 `await` 주석이 달린 각각의 partial task는 시스템의 재량에 따라 서로 다른 스레드에서 실행될 수 있음을 기억해야 합니다. 스레드가 바뀔 수 있을 뿐만 아니라 `await` 후의 앱 상태에 대한 가정을 해서는 안되며, 코드 두 줄이 차례로 나타나더라도 일정 시간 간격이 떨어져 실행될 수 있습니다. 대기는 임의의 시간이 소요되고 그 사이에 앱 상태가 크게 변할 수 있습니다.
+
+To recap, `async`/`await` is a simple syntax that packs a lot of punch. It lets the compiler guide you in writing safe and solid code, while the runtime optimizes for a well-coordinated use of shared system resources.
+요약하자면 `async`/`await` 는 많은 구멍을 포장하는 간단한 구문입니다. 이를 통해 컴파일러는 안전하고 견고한 코드를 작성하여 안내할  수 있으며 런타임은 공유 시스템 리소스의 잘 조정된 사용을 최적화합니다. 
+
+#### Executing partial tasks
+
+partial task 실행
+
+As opposed to the closure syntax mentioned at the beginning of this chapter, the modern concurrency syntax is light on ceremony. The keywords you use, such as `async`, `await` and `let`, clearly express your intent. The foundation of the concurrency model revolves around breaking asynchronous code into partial tasks that you execute on an **Executor**.
+이 장의 앞 부분에서 언급한 클로저와는 달리 최신의 concurrency 구문은 형식적으로 가볍습니다. `async`, `await` 그리고 `let` 과 같은 당신이 사용하는 키워드는 당신의 의도를 명확하게 표현합니다.  concurrency model 의 기본은 비동기 코드를 **Executor** 에서 실행하는 부분적인 작업으로 분해하는 것을 중심으로 합니다.
+
+Executors are similar to GCD queues, but they’re more powerful and lower-level. Additionally, they can quickly run tasks and completely hide complexity like order of execution, thread management and more.
+Executor는 GCD queeue와 비슷하지만 더 강력하고 하위 레벨입니다. 또한 작업을 빠르게 실행하고 실행 순서, 스레드 관리 등의 복잡성을 완벽하게 숨길 수 있습니다.
