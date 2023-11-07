@@ -143,3 +143,35 @@ As opposed to the closure syntax mentioned at the beginning of this chapter, the
 
 Executors are similar to GCD queues, but they’re more powerful and lower-level. Additionally, they can quickly run tasks and completely hide complexity like order of execution, thread management and more.
 Executor는 GCD queeue와 비슷하지만 더 강력하고 하위 레벨입니다. 또한 작업을 빠르게 실행하고 실행 순서, 스레드 관리 등의 복잡성을 완벽하게 숨길 수 있습니다.
+
+<br>
+
+### **Controlling a task’s lifetime**
+task 수명 제어
+
+One essential new feature of modern concurrency is the system’s ability to manage the lifetime of the asynchronous code.
+최신의 concurrency의 중요한 새로운 특징 중 하나는 비동기 코드의 수명을 관리하는 시스템의 능력입니다.
+
+A huge shortcoming of existing multi-threaded APIs is that once an asynchronous piece of code starts executing, the system cannot graciously reclaim the CPU core until the code decides to give up control. This means that even after a piece of work is no longer needed, it still consumes resources and performs its work for no real reason.
+기존 멀티 스레드 API의 큰 단점은 비동기 코드가 실행되기 시작하면 해당 코드가 컨트롤을 포기하기로 결정할 때까지 시스템이 CPU 코어를 친절하게 회수할 수 없다는 것입니다. 즉, 작업이 더이상 필요하지 않은 후에도 아무런 이유없이 리소스를 소모하고 작업을 수행한다는 것입니다.
+
+A good example of this is a service that fetches content from a remote server. If you call this service twice, the system doesn’t have any automatic mechanism to reclaim resources that the first, now-unneeded call used, which is an unnecessary waste of resources.
+원격 서버에서 컨텐츠를 가져오는 서비스가 좋은 예시입니다. 이 서비스를 두 번 호출하면 시스템에 처음에 불필요한 호출로 사용한 리소스를 회수하는 자동 매커니즘이 없으므로 불필요한 리소스 낭비가 발생합니다.
+
+The new model breaks your code into partials, providing suspension points where you check in with the runtime. This gives the system the opportunity to not only suspend your code but to **cancel it** altogether, at its discretion.
+새로운 모델은 코드를 부분적으로 분할하여 런타임에 체크인할 때 일시 중단 지점을 제공합니다. 이를 통해 시스템은 코드를 일시 중단할 뿐만 아니라 **cancel**도 임의로 수행할 수 있습니다.
+
+Thanks to the new asynchronous model, when you cancel a given task, the runtime can walk down the async hierarchy and cancel all the child tasks as well.
+새로운 비동기 모델 덕분에 주어진 작업을 취소하면 런타임이 비동기 계층 구조를 탐색하고 모든 하위 작업도 취소할 수 있습니다.
+
+But what if you have a hard-working task performing long, tedious computations without any suspension points? For such cases, Swift provides APIs to detect if the current task has been canceled. If so, you can manually give up its execution.
+만약 당신이 어떤 중단점도 없이 길고 지루한 계산들을 열심히 수행하는 작업이 있다면 어떨까요? 이러한 경우 스위프트는 현재 작업이 취소되었는지 감지하기 위해 API를 제공합니다. 그렇다면, 당신은 수동으로 작업의 실행을 포기할 수있습니다. 
+
+Finally, the suspension points also offer an **escape route** for errors to bubble up the hierarchy to the code that catches and handles them.
+마지막으로 중단점은 오류를 포착하고 처리하는 코드로 계층 구조를 확장하는 오류에 대한 **escape route도 제공합니다.** 
+
+The new model provides an error-handling infrastructure similar to the one that synchronous functions have, using modern and well-known **throwing functions**. It also optimizes for quick memory release as soon as a task throws an error.
+새로운 모델은 현대적이고 잘 알려진 **throwing functions**를 사용하여 동기 함수와 유사한 에러 처리 인프라를 제공하며, 작업에서 에러가 발생하는 즉시 신속한 메모리 해제를 위해 최적화됩니다.
+
+You already see that the recurring topics in the modern Swift concurrency model are safety, optimized resource usage and minimal syntax. Throughout the rest of this chapter, you’ll learn about these new APIs in detail and try them out for yourself.
+최신 스위프트 concurrency model 에서 반복되는 주제는 안정성, 최적화된 리소스 사용 및 최소 구분입니다. 이 장의 나머지 부분에서 새로운 API에 대해 자세히 알아보고 직접 사용해 보십시오
