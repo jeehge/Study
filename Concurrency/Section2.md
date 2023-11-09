@@ -189,8 +189,6 @@ Open the starter version of SuperStorage in this chapter’s materials, under *
 Like all projects in this book, **SuperStorage**’s SwiftUI views, navigation and data model are already wired up and ready to go. This app has more UI code compared to **LittleJohn**, which you worked on in the previous chapter, but it provides more opportunities to get your hand dirty with some asynchronous work.
 이 책의 모든 프로젝트와 마찬가지로 **SuperStorage** 의 SwiftUI 뷰, 네비게이션 및 데이터 모델은 이미 연결되어 있으며, 이 앱은 이전 장에서 작업한 **LittleJohn** 에 비해 UI 코드가 더 많지만, 비동기 작업으로 손을 더럽힐 수 있는 기회가 더 많습니다.  
 
-![스크린샷 2023-11-05 오전 10.42.05.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a6336d23-5979-4fc9-8601-bf521f9d5335/b9d6a334-f383-43b3-becb-94faed500e5d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.42.05.png)
-
 > Note: The server returns mock data for you to work with; it is not, in fact, a working cloud solution. It also lets you reproduce slow downloads and erroneous scenarios, so don’t mind the download speed. There’s nothing wrong with your machine.
 > 
 
