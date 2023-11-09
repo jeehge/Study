@@ -11,7 +11,6 @@ Before that, though, you’ll spend a moment learning about pre-Swift 5.5 concur
 그러나 그 전에 새로운 `async`/`await` 문법이 아닌 스위프트 5.5 이전의 동시성에 대해 잠시 배우게 됩니다.
 
 ### **Pre-async/await asynchrony**
-
 사전 async/await 비동기
 
 Up until Swift 5.5, writing asynchronous code had many shortcomings. Take a look at the following example:
@@ -120,8 +119,8 @@ The code above has about the same number of lines as the earlier example, but th
 <br>
 
 ### **Separating code into partial tasks**
-
 코드를 partial task로 분리
+
 Above, you saw that “the code might suspend at each `await`” — but what does that mean? To optimize shared resources such as CPU cores and memory, Swift *splits up* your code into logical units called **partial tasks**, or **partials**. These represent parts of the code you’d like to run asynchronously.
 위에서 “코드가 `await` 할 때마다 일시 중단될 수 있습니다.”라는 것을 보았습니다. 그러나 이것을 의미하는 것은 무엇일까요? CPU 코어 및 메모리와 같은 공유 리소스를 최적화하기 위해 스위프트 코드를 **partial tasks 또는** **partials** 라고 불리는 논리적 단위로 분리합니다. 이는 비동기적으로 실행할 코드의 일부를 나타냅니다.
 
@@ -175,3 +174,27 @@ The new model provides an error-handling infrastructure similar to the one that 
 
 You already see that the recurring topics in the modern Swift concurrency model are safety, optimized resource usage and minimal syntax. Throughout the rest of this chapter, you’ll learn about these new APIs in detail and try them out for yourself.
 최신 스위프트 concurrency model 에서 반복되는 주제는 안정성, 최적화된 리소스 사용 및 최소 구분입니다. 이 장의 나머지 부분에서 새로운 API에 대해 자세히 알아보고 직접 사용해 보십시오
+
+<br>
+
+### **Getting started**
+시작하기
+
+**SuperStorage** is an app that lets you browse files you’ve stored in the cloud and download them for local, on-device preview. It offers three different “subscription plans”, each with its own download options: “Silver”, “Gold” and “Cloud 9”.
+**SuperStorage**는 클라우드에 저장한 파일을 탐색하고 다운로드하여 로컬 온디바이스 미리보기를 할 수 있는 앱입니다. 이 앱은 “Silver”, “Gold” and “Cloud 9”의 세 가지 구독 플랜을 제공하며, 각각의 다운로드 옵션이 있습니다.
+
+Open the starter version of SuperStorage in this chapter’s materials, under **projects/starter**.
+이 장의 자료인 **projects/starter** 에서 SuperStorage 의 스타터 버전을 엽니다.
+
+Like all projects in this book, **SuperStorage**’s SwiftUI views, navigation and data model are already wired up and ready to go. This app has more UI code compared to **LittleJohn**, which you worked on in the previous chapter, but it provides more opportunities to get your hand dirty with some asynchronous work.
+이 책의 모든 프로젝트와 마찬가지로 **SuperStorage** 의 SwiftUI 뷰, 네비게이션 및 데이터 모델은 이미 연결되어 있으며, 이 앱은 이전 장에서 작업한 **LittleJohn** 에 비해 UI 코드가 더 많지만, 비동기 작업으로 손을 더럽힐 수 있는 기회가 더 많습니다.  
+
+![스크린샷 2023-11-05 오전 10.42.05.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a6336d23-5979-4fc9-8601-bf521f9d5335/b9d6a334-f383-43b3-becb-94faed500e5d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-11-05_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.42.05.png)
+
+> Note: The server returns mock data for you to work with; it is not, in fact, a working cloud solution. It also lets you reproduce slow downloads and erroneous scenarios, so don’t mind the download speed. There’s nothing wrong with your machine.
+> 
+
+Note. 서버는 사용자가 작업할 수 있도록 모의 데이터를 반환합니다. 사실 클라우드 솔루션이 아닙니다. 느린 다운로드와 잘못된 시나리오를 재현할 수 있음으로 다운로드 속도에 신경 쓰지 마십시오. 컴퓨터에는 아무 문제가 없습니다.
+
+While working on SuperStorage in this and the next chapter, you’ll create async functions, design some concurrent code, use async sequences and more.
+이 장과 다음장에서 SuperStorage를 작업하는 동안 비동기 기능을 만들고, 동시 코드를 설계하고, 비동기 시퀀스를 사용하는 등의 작업을 수행하게 됩니다.
