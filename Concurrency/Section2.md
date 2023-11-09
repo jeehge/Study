@@ -196,3 +196,58 @@ Note. 서버는 사용자가 작업할 수 있도록 모의 데이터를 반환�
 
 While working on SuperStorage in this and the next chapter, you’ll create async functions, design some concurrent code, use async sequences and more.
 이 장과 다음장에서 SuperStorage를 작업하는 동안 비동기 기능을 만들고, 동시 코드를 설계하고, 비동기 시퀀스를 사용하는 등의 작업을 수행하게 됩니다.
+
+<br>
+
+### **A bird’s eye view of async/await**
+
+async/await 조감도
+
+`async`/`await` has a few different flavors depending on what you intend to do:
+`async`/`await` 는 사용자의 의도에 따라 몇 가지 다른 맛이 있습니다:
+
+- To declare a function as asynchronous, add the `async` keyword before `throws` or the return type. Call the function by prepending `await` and, if the function is throwing, `try` as well. Here’s an example:
+함수를 비동기로 선언하려면 `throws` 또는 return type 앞에 `async` 키워드를 추가합니다. `await` 을 붙여서 함수를 호출하고 함수가 throwing 일 경우 `try` 도 호출합니다. 다음은 예입니다:
+
+```swift
+func myFunction() async throws -> String {
+  ...
+}
+
+let myVar = try await myFunction()
+
+```
+
+- To make a computed property asynchronous, simply add `async` to the getter and access the value by prepending `await`, like so:
+계산된 속성을 비동기로 만들려면 다음과 같이 getter에 `async` 를 추가하고 `await`를 붙여 값에 액세스 하기만 하면 됩니다:
+
+```swift
+var myProperty: String {
+  get async {
+    ...
+  }
+}
+
+print(await myProperty)
+
+```
+
+- For closures, add `async` to the signature:
+클로저인 경우 기호에 `async` 붙입니다:
+
+```swift
+func myFunction(worker: (Int) async -> Int) -> Int {
+  ...
+}
+
+myFunction {
+  return await computeNumbers($0)
+}
+
+```
+
+Now that you’ve had a quick overview of the `async`/`await` syntax, it’s time to try it for yourself.
+이제 `async`/`await` 구문에 대해 간략히 살펴 보았으니 직접 사용해보시기 바랍니다.
+
+<br>
+
