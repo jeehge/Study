@@ -83,7 +83,7 @@ Part 2: Asynchronous Sequences
 - [x] [2.9 Asynchronously downloading a file](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#asynchronously-downloading-a-file)
 - [x] [2.10 Running async requests from a non-async context](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#running-async-requests-from-a-non-async-context)
 - [x] [2.11 A quick detour through Task](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#a-quick-detour-through-task)
-- [ ] [2.12 Routing code to the main thread]()
+- [x] [2.12 Routing code to the main thread](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#routing-code-to-the-main-thread)
 - [ ] [2.13 Updating the download screen’s progress]()
 - [ ] [2.14 Challenges]()
 - [ ] [2.15 Key points]()
