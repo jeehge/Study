@@ -586,3 +586,85 @@ Take a moment to appreciate that the same `async`, `await` and `let` syntax
 동일한 `async`, `await` 그리고 `let` 구문을 사용하면 non-blocking 비동기 코드를 일련의 비동기 코드를 일련의 병렬로 실행할 수 있음을 알 수 있습니다. 정말 놀라운 API 디자인입니다!
 
 <br>
+
+### **Asynchronously downloading a file**
+비동기적으로 파일 다운로드
+
+Open **SuperStorageModel.swift** and scroll to the method called `download(file:)`. The starter code in this method creates the endpoint URL for downloading files. It returns empty data to make the starter project compile successfully.
+**SuperStorageModel.swift** 를 열고 `download(file:)` 메서드로 스크롤합니다. 이 메서드의 스타터 코드는 파일을 다운로드하기 위한 엔드포인트 URL을 생성합니다. 빈 데이터를 반환하여 스타터 프로젝트를 성공적으로 컴파일합니다. 
+
+`SuperStorageModel` includes two methods to manage the current app downloads:
+`SuperStorageModel` 은 현재 앱 다운로드를 관리하는 두 가지 방법을 포함됩니다:
+
+- **addDownload(name:)**: Adds a new file to the list of ongoing downloads.
+**addDownload(name:)**: 진행중인 다운로드 목록에 새 파일을 추가합니다.
+- **updateDownload(name:progress:)**: Updates the given file’s progress.
+**updateDownload(name:progress:)**: 지정된 파일의 진행상황을 업데이트합니다.
+
+You’ll use these two methods to update the model and the UI.
+이 두 가지 방법을 사용하여 모델과 UI를 업데이트 합니다. 
+
+#### Downloading the data
+데이터 다운로드
+
+To perform the actual download, add the following code directly before the `return` line in `download(file:)`:
+실제 다운로드를 수행하려면 `download(file:)` 의 `return` 행 바로 앞에 다음 코드를 추가합니다:
+
+```swift
+addDownload(name: file.name)
+
+let (data, response) = try await
+  URLSession.shared.data(from: url, delegate: nil)
+
+updateDownload(name: file.name, progress: 1.0)
+```
+
+`addDownload(name:)` adds the file to the published `downloads` property of the model class. `DownloadView` uses it to display the ongoing download statuses onscreen.
+`addDownload(name:)` 는 모델 클래스의 공개된 `downloads` 프로퍼티에 파일을 추가합니다. `DownloadView` 는 이 파일을 사용하여 현재 진행 중인 다운로드 상태를 화면에 표시합니다. 
+
+Then, you fetch the file from the server. Finally, you update the progress to `1.0` to indicate the download finished.
+그런 다음 서버에서 파일을 가져옵니다. 마지막으로 진행 상황을 `1.0` 으로 업데이트하여 다운로드가 완료되었음을 나타냅니다. 
+
+#### Adding server error handling
+서버 오류 처리 추가 중
+
+To handle any possible server errors, also append the following code before the `return` statement:
+발생 가능한 서버 오류를 처리하려면 `return` 문 앞에 다음 코드를 추가해야 합니다:
+
+```swift
+guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+  throw "The server responded with an error."
+}
+```
+
+Finally, replace `return Data()` with:
+마지막으로, `return Data()` 를 다음으로 바꿉니다. 
+
+```swift
+return data
+```
+
+Admittedly, emitting progress updates here is not very useful because you jump from 0% directly to 100%. However, you’ll improve this in the next chapter for the premium subscription plans — Gold and Cloud 9.
+여기서 진행률 업데이트를 실행하는 것은 0%에서 100%로 바로 이동하기 때문에 그다지 유용하지 않습니다. 하지만 다음 장에서 프리미엄 구독 계획인 Gold 와 Cloud 9 에 대해 이를 향상시킬 것입니다.
+
+For now, open **DownloadView.swift**. Scroll to the code that instantiates the file details view, `FileDetails(...)`, then find the closure parameter called `downloadSingleAction`.
+일단 **DownloadView.swift** 를 열고 파일 상세 보기를 인스턴스화하는 코드인 `FileDetails(...)` 로 스크롤한 후 `downloadSingleAction` 이라는 클로저 파라미터를 찾습니다.
+
+This is the action for the leftmost button — the cheapest download plan in the app.
+이것은 앱에서 가장 저렴한 다운로드 요금제인 가장 왼쪽 버튼에 대한 조치입니다.
+
+So far, you’ve only used `.task()` in SwiftUI code to run async calls. But how would you await `download(file:)` inside the `downloadSingleAction` closure, which doesn’t accept async code?
+지금까지는 SwiftUI 코드의 `.task()` 만 사용하여 비동기 호출을 실행 했는데 비동기 코드를 허용하지 않는 `downloadSingleAction` 의  `download(file:)` 클로저 안에서 어떻게 다운로드를 기다릴까요?
+
+Add this inside the closure to double-check that the closure expects synchronous code:
+클로저 내부에 이 정보를 추가하여 클로저에 동기 코드가 예상되는지 다시 확인합니다:
+
+```swift
+fileData = try await model.download(file: file)
+```
+
+The error states that your code is asynchronous — it’s of type `() async throws -> Void` — but the parameter expects a synchronous closure of type `() -> Void`.
+오류는 코드가 `() async throws -> Void` 을 나타내지만 매개 변수는  `() -> Void` 유형의 동기 클로저를 예상합니다. 
+
+One viable solution is to change `FileDetails` to accept an asynchronous closure. But what if you don’t have access to the source code of the API you want to use? Fortunately, there is another way.
+`FileDetails`을 비동기 클로저를 허용하도록 변경하는 것도 한 방법입니다.  하지만 사용하고자 하는 API 의 소스코드에 접근할 수 없는 경우에는 어떻게 할까요? 다행히 다른 방법이 있습니다.
