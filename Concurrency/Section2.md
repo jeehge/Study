@@ -754,3 +754,79 @@ Remember, you learned that every use of `await` is a suspension point, and you
 
 You need to **explicitly** route any UI-driving code back to the main thread.
 UI 구동 코드를 메인 스레드로 다시 라우팅하려면 **explicitly** 해야 합니다.
+
+<br>
+
+### **Routing code to the main thread**
+
+메인 스레드로 코드 라우팅
+One way to ensure your code is on the main thread is calling `MainActor.run()`, as you did in the previous chapter. The call looks something like this (no need to add this to your code):
+코드가 메인 스레드에 있는지 확인하는 한 가지 방법은 이전 장에서 했던 것처럼 `MainActor.run()` 을 호출하는 것입니다. 호출은 다음과 같습니다. (코드에 이를 추가할 필요가 없음):
+
+```swift
+await MainActor.run {
+  ... your UI code ...
+}
+```
+
+`MainActor` is a type that runs code on the main thread. It’s the modern alternative to the well-known `DispatchQueue.main`, which you might have used in the past.
+`MainActor` 는 메인 스레드에서 코드를 실행하는 타입입니다. 과거에 사용했을지도 모르는 잘 알려진 `DispatchQueue.main` 의 현대적인 대안입니다. 
+
+While it gets the job done, using `MainActor.run()` too often results in code with many closures, making it hard to read. A more elegant solution is to use the `@MainActor` annotation, which lets you automatically route calls to given functions or properties to the main thread.
+작업은 완료되지만 `MainActor.run()` 을 너무 자주 사용하면 코드가 닫히고 읽기가 어려워집니다. 보다 우아한 해결책은 주어진 함수나 속성에 자동으로 호출을 전달하는 `@MainActor` 주석을 사용하는 것입니다. 
+
+#### Using @MainActor
+@MainActor 사용
+
+In this chapter, you’ll annotate the two methods that update `downloads` to make sure those changes happen on the main UI thread.
+이 장에서는 메인 UI 스레드에서 변경 사항이 발생하는지 확인하기 위해 `downloads` 를 업데이트하는 두 가지 방법에 대해 설명합니다. 
+
+Open **SuperStorageModel.swift** and prepend `@MainActor` to the definition of `addDownload(file:)`:
+**SuperStorageModel.swift** 를 열고 `addDownload(file:)` 정의에 `@MainActor` 를 붙입니다:
+
+```swift
+@MainActor func addDownload(name: String)
+```
+
+Do the same for `updateDownload(name:progress:)`:
+`updateDownload(name:progress:)` 에 대해서도 동일하게 수행합니다:
+
+```swift
+@MainActor func updateDownload(name: String, progress: Double)
+
+```
+
+Any calls to those two methods will automatically run on the main actor — and, therefore, on the main thread.
+이 두 가지 메서드에 대한 호출은 main actor 에서 자동으로 실행되며 따라서 main actor 에서 실행됩니다. 
+
+#### Running the methods asynchronously
+
+메소드를 비동기적으로 실행
+
+Offloading the two methods to a specific actor (the main actor or any other actor) requires that you call them asynchronously, which gives the runtime a chance to suspend and resume your call on the correct actor.
+두 가지 방법을 특정 actor (main actor 또는 다른 actor)에 오프로드하려면 해당 방법을 비동기적으로 호출해야 하므로 런타임에서 해당 actor 에 대한 호출을 일시 중단하고 다시 시작할 수 있습니다. 
+
+Scroll to `download(file:)` and fix the two compile errors.
+`download(file:)` 로 스크롤하여 두 컴파일 오류를 수정합니다.
+
+Replace the synchronous call to `addDownload(name: file.name)` with:
+동기 호출을 `addDownload(name: file.name)` 로 대체합니다:
+
+```swift
+await addDownload(name: file.name)
+```
+
+Then, prepend `await` when calling `updateDownload`:
+그런 다음 `updateDownload` 를 호출할 때 `await` 상태로 둡니다:
+
+```swift
+await updateDownload(name: file.name, progress: 1.0)
+
+```
+
+That clears up the compile errors. Build and run. This time, the UI updates smoothly with no runtime warnings.
+그러면 컴파일 오류가 해결됩니다. Build and run. 이번에는 런타임 경고 없이 UI가 부드럽게 업데이트됩니다. 
+
+> Note: To save space on your machine, the server always returns the same image.
+> 
+Note. 컴퓨터의 공간을 절약하기 위해 서버는 항상 동일한 이미지를 반환합니다.
