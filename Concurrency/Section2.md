@@ -668,3 +668,23 @@ The error states that your code is asynchronous — it’s of type `() async th
 
 One viable solution is to change `FileDetails` to accept an asynchronous closure. But what if you don’t have access to the source code of the API you want to use? Fortunately, there is another way.
 `FileDetails`을 비동기 클로저를 허용하도록 변경하는 것도 한 방법입니다.  하지만 사용하고자 하는 API 의 소스코드에 접근할 수 없는 경우에는 어떻게 할까요? 다행히 다른 방법이 있습니다.
+
+<br>
+
+### Running async requests from a non-async context
+비동기 컨텍스트에서 비동기 요청 실행
+
+While still in **DownloadView.swift**, replace `fileData = try await model.download(file: file)` with:
+**DownloadView.swift** 에 있는 동안, `fileData = try await model.download(file: file)` 을 다음과 같이 바꿉니다:
+
+```swift
+Task {
+  fileData = try await model.download(file: file)
+}
+
+```
+
+It seems like the compiler is happy with this syntax! But wait, what is this `Task` type you used here?
+컴파일러가 이 구문에 만족하는 것 같군요! 그런데 잠깐, 여기서 사용한 이 `Task` 유형은 뭘까요?
+
+
