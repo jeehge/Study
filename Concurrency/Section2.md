@@ -687,4 +687,70 @@ Task {
 It seems like the compiler is happy with this syntax! But wait, what is this `Task` type you used here?
 컴파일러가 이 구문에 만족하는 것 같군요! 그런데 잠깐, 여기서 사용한 이 `Task` 유형은 뭘까요?
 
+<br>
 
+### **A quick detour through Task**
+Task를 통한 빠른 우회
+
+`Task` is a type that represents a **top-level asynchronous task**. Being top-level means it can *create* an asynchronous context — which can start from a synchronous context.
+`Task` 는  **top-level asynchronous task** 를 나타내는 유형입니다. top-level 이라는 것은 비동기 컨텍스트를 만들 수 있으며 이는 동기식 컨텍스트에서 시작할 수 있습니다. 
+
+Long story short, any time you want to run asynchronous code from a synchronous context, you need a new `Task`.
+간단히 말하면, 동기적인 컨텍스트에서 비동기 코드를 실행하려면 언제든지 새로운 `Task` 가 필요합니다. 
+
+You can use the following APIs to manually control a task’s execution:
+다음 API를 사용하여 작업의 실행을 수동으로 제어할 수 있습니다:
+
+- **Task(priority:operation)**: Schedules `operation` for asynchronous execution with the given priority. It inherits defaults from the current synchronous context.
+**Task(priority:operation)**: 주어진 우선순위로 비동기 실행을 위해 `operation` 을 스케줄링 합니다. 현재 동기 컨텍스트에서 기본값을 상속합니다.
+- **Task.detached(priority:operation)**: Similar to `Task(priority:operation)`, except that it doesn’t inherit the defaults of the calling context.
+**Task.detached(priority:operation)**: 호출 컨텍스트의 기본값을 상속하지 않는다는 점을 제외하고는  `Task(priority:operation)` 과 유사합니다.
+- **Task.value**: Waits for the task to complete, then returns its value, similarly to a promise in other languages.
+**Task.value**: 다른 언어의 약속과 유사하게 작업이 완료될 때까지 기다린 다음 값을 반환합니다.
+- **Task.isCancelled**: Returns `true` if the task was canceled since the last suspension point. You can inspect this boolean to know when you should stop the execution of scheduled work.
+**Task.isCancelled**: 마지막 중단 지점 이후 작업이 취소된 경우 `true` 를 반환합니다. 이 값을 검사하면 예약된 작업의 실행을 언제 중지해야 하는지 알 수 있습니다.
+- **Task.checkCancellation()**: Throws a `CancellationError` if the task is canceled. This lets the function use the error-handling infrastructure to yield execution.
+**Task.checkCancellation()**: 작업이 취소된 경우 `CancellationError` 를 발생시킵니다. 이를 통해 오류 처리 구조를 사용하여 함수를 실행할 수 있습니다.
+- **Task.sleep(nanoseconds:)**: Makes the task sleep for at least the given number of nanoseconds, but doesn’t block the thread while that happens.
+**Task.sleep(nanoseconds:)**: 지정된 나노 세컨드 수 이상 동안 작업을 절전 모드로 전환하지만, 이 동안에는 스레드를 차단하지 않습니다.
+
+In the previous section, you used `Task(priority:operation:)`, which created a new asynchronous task with the `operation` closure and the given `priority`. By default, the task inherits its priority from the current context — so you can usually omit it.
+이전 세션에서 `Task(priority:operation:)` 를 사용하여 `operation` 클로저 및 주어진 `priority` 를 사용하여 새로운 비동기 작업을 생성했습니다. 기본적으로 작업은 현재 컨텍스트에서 우선 순위를 물려 받으므로 일반적으로 생략할 수 있습니다. 
+
+You need to specify a priority, for example, when you’d like to create a low-priority task from a high-priority context or vice versa.
+우선 순위가 높은 컨텍스트에서 우선 순위가 낮은 task를 생성하거나 그 반대의 경우와 같이 우선 순위를 지정해야 합니다. 
+
+Don’t worry if this seems like a lot of options. You’ll try out many of these throughout the book, but for now, let’s get back to the SuperStorage app.
+이것이 여러 가지 선택 사항으로 보이더라도 걱정하지 마십시오. 책 전체에 걸쳐 이 중 많은 것을 시도해 보겠지만 지금은 SuperStorage 앱으로 들어가 보겠습니다. 
+
+#### Creating a new task on a different actor
+다른 actor에 새 task 만들기
+
+In the scenario above, `Task` runs on the actor that called it. To create the same task without it being a part of the actor, use `Task.detached(priority:operation:)`.
+위 시나리오에서 `Task` 는 자신을 호출한 actor 에게 실행됩니다. actor 의 일부가 아닌 동일한 작업을 생성하려면 `Task.detached(priority:operation:)` 을 사용합니다. 
+
+> Note: Don’t worry if you don’t know what actors are yet. This chapter mentions them briefly because they’re a core concept of modern concurrency in Swift. You’ll dig deeper into actors later in this book.
+> 
+
+Note. 아직 actor 들이 뭔지 모르더라도 걱정하지 마세요. 스위프트의 최신 컨커런시의 핵심 개념이기 때문에 이 장에서는 간략하게 언급합니다. 이 책의 후반부에서 actor 들에 대해 더 자세히 알아보겠습니다. 
+
+For now, remember that when your code creates a `Task` from the main thread, that task will run on the main thread, too. Therefore, you know you can update the app’s UI safely.
+지금은 코드가 메인 스레드에서 `Task` 를 생성할 때 해당 작업은 메인 스레드에서도 실행되므로 앱의 UI를 안전하게 업데이트할 수 있다는 것을 알고 있습니다. 
+
+Build and run one more time. Select one of the JPEG files and tap the **Silver plan** download button. You’ll see a progress bar and, ultimately, a preview of the image.
+한 번 더 빌드하고 실행합니다. JPEG 파일 중 하나를 선택하고 **Silver plan** 다운로드 버튼을 누르면 진행 표시줄이 나타나고 이미지의 미리보기가 나타납니다. 
+
+However, you’ll notice that the progress bar glitches and sometimes only fills up halfway. That’s a hint that you’re updating the UI from a background thread.
+그러나 진행 표시줄이 깜박이고 중간 정도만 채워지는 경우가 있습니다. 이는 백그라운드 스레드에서 UI를 업데이트하고 있음을 암시합니다. 
+
+And just as in the previous chapter, there’s a log message in Xcode’s console and a friendly purple warning in the code editor:
+그리고 이전 장에서와 마찬가지로 xcode 의 콘솔에는 로그 메시지가 코드 편집기에는 친절한 보라색 경고가 표시됩니다:
+
+But why? You create your new async `Task` from your UI code on the main thread — and now *this* happens!
+그런데 왜 그럴까요? 메인 스레드의 UI 코드에서 새로운 비동기 `Task` 를 생성하면 이제 이것이 발생합니다. 
+
+Remember, you learned that every use of `await` is a suspension point, and your code might resume on a different thread. The first piece of your code runs on the main thread because the task initially runs on the main actor. But after the first `await`, your code can execute on *any* thread.
+`await` 의 모든 사용이 중단점이며 코드가 다른 스레드에서 재개될 수 있음을 알게 되었습니다. 작업이 처음에는 main actor 에게 실행되기 때문에 코드의 첫 번째 조각은 메인 스레드에서 실행됩니다. 하지만 첫 번째 `await` 이후에는 아무런 스레드에서 코드를 실행할 수 있습니다. 
+
+You need to **explicitly** route any UI-driving code back to the main thread.
+UI 구동 코드를 메인 스레드로 다시 라우팅하려면 **explicitly** 해야 합니다.
