@@ -80,7 +80,7 @@ Part 2: Asynchronous Sequences
 - [x] [2.6 Getting the list of files from the server](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#getting-the-list-of-files-from-the-server)
 - [x] [2.7 Getting the server status](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#getting-the-server-status)
 - [x] [2.8 Grouping asynchronous calls](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#grouping-asynchronous-calls)
-- [ ] [2.9 Asynchronously downloading a file]()
+- [x] [2.9 Asynchronously downloading a file](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#asynchronously-downloading-a-file)
 - [ ] [2.10 Running async requests from a non-async context]()
 - [ ] [2.11 A quick detour through Task]()
 - [ ] [2.12 Routing code to the main thread]()
