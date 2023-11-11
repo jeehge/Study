@@ -522,8 +522,6 @@ do {
 An `async let` binding allows you to create a local constant that’s similar to the concept of promises in other languages. **Option-Click** `files` to bring up Quick Help:
 `async let` binding 을 사용하면 다른 언어의 개념과 유사한 상태를 만들 수 있습니다. **Option-Click** `files` 을 클릭하여 빠른 도움말을 표시합니다:
 
-!https://assets.alexandria.raywenderlich.com/books/5686df272ebe17522460d1e9df428b11e20e4b9082093262998ce29c90d9c99c/images/56d3105748340b3d907b0e3b246e887f/original.png
-
 The declaration explicitly includes `async let`, which means you can’t access the value without an `await`.
 선언문에는 `await` 없이는 값에 접근할 수 없음을 의미하는 `async let` 이 명시적으로 포함되어 있습니다.
 
@@ -563,8 +561,6 @@ let (filesResult, statusResult) = try await (files, status)
 
 And what are `filesResult` and `statusResult`? **Option-Click** `filesResults` to check for yourself:
 그리고 `filesResult` 와 `statusResult` 란 무엇입니까? **Option-Click** `filesResults` 를 클릭하여 직접 확인합니다:
-
-!https://assets.alexandria.raywenderlich.com/books/5686df272ebe17522460d1e9df428b11e20e4b9082093262998ce29c90d9c99c/images/6619293cbd9ad32f49693ded64f8b2f9/original.png
 
 This time, the declaration is simply a `let` constant, which indicates that by the time you can access `filesResult` and `statusResult`, both requests have finished their work and provided you with a final result.
 이번 선언은 단순히 `let` 으로 `filesResult` 와 `statusResult` 에 접근할 수 있을 때까지 두 요청 모두 작업을 완료하고 최종 결과를 제공했음을 나타냅니다. 
