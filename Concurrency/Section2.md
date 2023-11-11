@@ -251,3 +251,156 @@ Now that you’ve had a quick overview of the `async`/`await` syntax, it’s t
 
 <br>
 
+### **Getting the list of files from the server**
+서버에서 파일 목록 가져오기
+
+Your first task is to add a method to the app’s model that fetches a list of available files from the web server in JSON format. This task is almost identical to what you did in the previous chapter, but you’ll cover the code in more detail.
+첫 번째 작업은 웹 서버에서 사용 가능한 파일 목록을 JSON 형식으로 가져오는 메소드를 앱의 모델에 추가하는 것 입니다. 이 작업은 이전 장에서 수행한 작업과 거의 동일하지만 코드에 대해 더 자세히 다루게 됩니다. 
+
+Open **SuperStorageModel.swift** and add a new method anywhere inside `SuperStorageModel`:
+**SuperStorageModel.swift** 파일 내 어느 곳에서나 새 메서드를 추가합니다: 
+
+```swift
+func availableFiles() async throws -> [DownloadFile] {
+  guard let url = URL(string: "http://localhost:8080/files/list") else {
+    throw "Could not create the URL."
+  }
+}
+```
+
+Don’t worry about the compiler error Xcode shows; you’ll finish this method’s body momentarily.
+xcode가 보여주는 컴파일러 오류에 대해 걱정하지 마십시오. 이 메서드는 본문을 잠시 후에 완료할 수 있습니다.
+
+You annotate the method with `async throws` to make it a **throwing, asynchronous function**. This tells the compiler and the Swift runtime how you plan to use it:
+당신은 **throwing, asynchronous function** 로 만들기 위해 `async throws` 로 메소드에 코드를 달았습니다. 이것은 컴파일러와 스위프트 런타임에 당신이 그것을 어떻게 사용할 것인지를 알려줍니다:
+
+- The compiler makes sure you don’t call this function from synchronous contexts where the function can’t suspend and resume the task.
+컴파일러는 함수가 작업을 일시 중단하고 재개할 수 없는 동기적인 컨텍스트에서 이 함수를 호출하지 않도록 합니다.
+- The runtime uses the new cooperative thread pool to schedule and execute the method’s partial tasks.
+런타임은 새 협력 스레드 풀을 사용하여 메서드의 부분 작업을 예약하고 실행합니다.
+
+In the method, you fetch a list of decodable `DownloadFile`s from a given `url`. Each `DownloadedFile` represents one file available in the user’s cloud.
+이 방법에서는 특정 `url`에서 디코딩 가능한 `DownloadFile` 목록을 가져옵니다. 각각의 `DownloadedFile` 은 사용자의 클라우드에서 사용 가능한 하나의 파일을 나타냅니다.
+
+#### Making the server request
+
+서버 요청하기
+At the end of the method’s body, add this code to execute the server request:
+메서드 본문 끝에 다음 코드를 추가하여 서버 요청을 실행합니다:
+
+```swift
+let (data, response) = try await
+  URLSession.shared.data(from: url)
+
+```
+
+You use the shared `URLSession` to asynchronously fetch the data from the given URL. It’s vital that you do this asynchronously because doing so lets the system use the thread to do other work while it waits for a response. It doesn’t block others from using the shared system resources.
+공유 `URLSession` 을 사용하여 주어진 URL에서 데이터를 비동기적으로 가져옵니다. 이렇게 하면 시스템이 응답을 기다리는 동안 스레드를 사용하여 다른 작업을 수행할 수 있기 때문에 비동기적으로 수행하는 것이 중요합니다. 다른 사용자가 공유 시스템 리소스를 사용하는 것을 막지 않습니다.
+
+Each time you see the `await` keyword, think **suspension point**. `await` means the following:
+`await` 키워드를 볼 때마다 `await` 가 following 을 의미하는 **suspension point** 를 생각합니다.
+
+- The current code will suspend execution.
+현재 코드 실행을 중지합니다.
+- The method you await will execute either immediately or later, depending on the system load. If there are other pending tasks with higher priority, it might need to wait.
+대기 중인 메서드는 시스템 로드에 따라 즉시 실행되거나 나중에 실행됩니다. 우선 순위가 더 높은 다른 보류 중인 작업이 있으면 기다려야 할 수도 있습니다.
+- If the method or one of its child tasks throws an error, that error will bubble up the call hierarchy to the nearest `catch` statement.
+메서드 또는 하위 작업 중 하나에 오류가 발생하면 해당 오류는 호출 계층을 가장 가까운 `catch` 문으로 흘려보낸다.
+
+Using `await` funnels each and every asynchronous call through the central dispatch system in the runtime, which:
+`await` 을 사용하면 런타임에 중앙 디스패치 시스템을 통해 모든 비동기 호출을 전송합니다.
+
+- Prioritizes jobs.
+- Propagates cancellation.
+- Bubbles up errors.
+- And more.
+
+  
+#### Verifying the response status
+
+응답 여부 확인
+Once the asynchronous call completes successfully and returns the server response data, you can verify the response status and decode the data as usual. Add the following code at the end of `availableFiles()`:
+비동기 호출이 성공적으로 완료되어 서버 응답 데이터를 반환하면 응답 상태를 확인하고 평소와 같이 데이터를 디코딩할 수 있습니다. `availableFiles()` 끝에 다음 코드를 추가합니다:
+
+```swift
+guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+  throw "The server responded with an error."
+}
+
+guard let list = try? JSONDecoder()
+  .decode([DownloadFile].self, from: data) else {
+  throw "The server response was not recognized."
+}
+
+```
+
+You first inspect the response’s HTTP status code to confirm it’s indeed **HTTP 200 OK**. Then, you use a `JSONDecoder` to decode the raw `Data` response to an array of `DownloadFile`s.
+먼저 응답의 HTTP 상태 코드를 검사하여 **HTTP 200 OK** 임을 확인한 다음, `JSONDecoder` 를 사용하여 `DownloadFile` 배열의 원시 데이터 응답을 디코딩합니다.
+
+#### Returning the list of files
+
+파일 목록 반환
+Once you decode the JSON into a list of `DownloadFile` values, you need to return it as the asynchronous result of your function. How simple is it to do that? Very.
+일단 JSON을 `DownloadFile` 값의 목록으로 디코딩하면 함수의 비동기 결과로 반환해야 합니다. 얼마나 간단합니까? 매우 간단합니다.
+
+Simply add the following line to the end of `availableFiles()`:
+`availableFiles()` 끝에 다음 행을 추가하기만 하면 됩니다.
+
+```swift
+return list
+```
+
+While the execution of the method is entirely *asynchronous*, the code reads entirely *synchronously* which makes it relatively easy to maintain, read through and reason about.
+메소드의 실행은 전적으로 비동기적이지만 코드는 전적으로 동기적으로 읽으므로 유지보수, 읽기 및 추론이 비교적 용이합니다.
+
+#### Displaying the list
+
+목록 표시
+You can now use this new method to feed the file list on the app’s main screen. Open **ListView.swift** and add one more view modifier directly after `.alert(...)`, near the bottom of the file:
+이제 이 새로운 방법을 사용하여 앱의 메인 화면에서 파일 목록을 제공할 수 있습니다. **ListView.swift** 를 열고 파일 하단에 `.alert(...)` 바로 뒤에 view modifier를 하나 더 추가합니다:
+
+```swift
+.task {
+  guard files.isEmpty else { return }
+
+  do {
+    files = try await model.availableFiles()
+  } catch {
+    lastErrorMessage = error.localizedDescription
+  }
+}
+
+```
+
+As mentioned in the previous chapter, `task` is a view modifier that allows you to execute asynchronous code when the view appears. It also handles canceling the asynchronous execution when the view disappears.
+앞 장에서 언급한 바와 같이 `task` 는 뷰가 나타나면 비동기 코드를 실행할 수 있도록 해주는 view modifier 입니다. 또한 뷰가 사라지면 비동기 실행을 취소할 수 있도록 처리합니다.
+
+In the code above, you:
+위의 코드는:
+
+1. Check if you already fetched the file list; if not, you call `availableFiles()` to do that.
+파일 목록을 이미 가져왔는지 확인하고, 가져오지 않는다면 `availableFiles()` 를 호출하여 이를 수행합니다.
+2. Catch and store any errors in `lastErrorMessage`. The app will then display the error message in an alert box.
+`lastErrorMessage` 오류를 파악하여 저장하면 오류 메시지가 알림창에 표시됩니다. 
+
+#### Testing the error handling
+
+오류 처리 테스트
+If the book server is still running from the previous chapter, stop it. Then, build and run the project. Your code inside `.task(...)` will catch a networking error, like so:
+북 서버가 이전 장에서 계속 실행 중이면 중지하고 프로젝트를 빌드하고 실행합니다. `.task(...)` 의 코드에서 네트워킹 오류가 발생합니다. 
+
+Asynchronous functions propagate errors up the call hierarchy, just like synchronous Swift code. If you ever wrote Swift code with asynchronous error handling before `async`/`await`‘s arrival, you’re undoubtedly ecstatic about the new way to handle errors.
+비동기 함수는 동기 스위프트 코드처럼 오류를 호출 계층 위로 전파합니다. 만약 당신이 비동기 오류 처리와 함께 스위프트 코드를 `async`/`await` 이 도착하기 전에 작성했다면, 당신은 의심할 여지 없이 오류를 처리하는 새로운 방법에 열광하게 될 것입니다.
+
+#### Viewing the file list
+
+파일 목록 보기
+
+Now, start the book server. If you haven’t already done that, navigate to the server folder **00-book-server** in the book materials-repository and enter `swift run`. The detailed steps are covered in Chapter 1, “Why Modern Swift Concurrency?”.
+이제 북서버를 시작합니다. 아직 시작하지 않았다면 북 자료 저장소에 있는 서버 폴더 **00-book-server** 로 이동하여 `swift run` 을 입력하면 됩니다. 자세한 단계는 1장 “Why Modern Swift Concurrency?” 에서 설명합니다.
+
+Restart the SuperStorage app and you’ll see a list of files:
+SuperStorage 앱을 다시 시작하면 파일 목록이 나타납니다:
+
+Notice there are a few TIFF and JPEG images in the list. These two image formats will give you various file sizes to play with from within the app.
+목록에 TIFF 와 JPEG 이미지가 몇 개 있습니다. 이 두 가지 이미지 형식은 앱 내에서 사용할 수 있는 다양한 파일 크기를 제공합니다.
