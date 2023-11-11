@@ -830,3 +830,27 @@ That clears up the compile errors. Build and run. This time, the UI updates smoo
 > Note: To save space on your machine, the server always returns the same image.
 > 
 Note. 컴퓨터의 공간을 절약하기 위해 서버는 항상 동일한 이미지를 반환합니다.
+
+<br>
+
+### **Updating the download screen’s progress**
+다운로드 화면 진행 상황 업데이트
+
+Before you wrap up this chapter, there’s one loose end to take care of. If you navigate back to the file list and select a different file, the download screen keeps displaying the progress from your previous download.
+이 장을 마무리하기 전에 처리해야 할 문제가 하나 있습니다. 파일 목록으로 돌아가서 다른 파일을 선택하면 다운로드 화면에 이전 다운로드의 진행 상황이 계속 표시됩니다. 
+
+You can fix this quickly by resetting the model in `onDisappear(...)`. Open **DownloadView.swift** and add one more modifier to `body`, just below `toolbar(...)`:
+이 문제는 `onDisappear(...)` 에서 모델을 재설정하면 빠르게 해결할 수 있습니다. **DownloadView.swift**  를 열고 `toolbar(...)` 바로 아래에 있는 `body` 에 modifier 를 하나 더 추가합니다:
+
+```swift
+.onDisappear {
+  fileData = nil
+  model.reset()
+}
+```
+
+In here, you reset the file data and invoke `reset()` on the model too, which clears the download list.
+여기서 파일 데이터를 재설정하고 모델에서도 `reset()` 을 호출하면 다운로드 목록이 지워집니다. 
+
+That’s it, you can now preview multiple files one after the other, and the app keeps behaving.
+그게 다입니다, 이제 여러 파일을 차례로 미리 볼 수 있고 앱은 계속 동작합니다.
