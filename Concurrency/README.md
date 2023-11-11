@@ -85,8 +85,8 @@ Part 2: Asynchronous Sequences
 - [x] [2.11 A quick detour through Task](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#a-quick-detour-through-task)
 - [x] [2.12 Routing code to the main thread](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#routing-code-to-the-main-thread)
 - [x] [2.13 Updating the download screen’s progress](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#updating-the-download-screens-progress)
-- [ ] [2.14 Challenges]()
-- [ ] [2.15 Key points]()
+- [x] [2.14 Challenges](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#challenges)
+- [x] [2.15 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#key-points)
 
 <br>
 
