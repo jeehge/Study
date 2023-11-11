@@ -472,3 +472,121 @@ Build and run. 파일 목록 하단에 서버 사용량 데이터가 표시됩�
 
 Everything works great so far, but there’s a hidden optimization opportunity you might have missed. Can you guess what it is? Move on to the next section for the answer.
 지금까지는 모든 것이 잘 작동하지만, 여러분이 놓쳤을 수도 있는 최적화 기회가 숨겨져 있습니다. 무엇인지 알아맞힐 수 있는 최적화 기회가 숨겨져 있습니다. 무엇인지 알 수 있습니까? 다음 섹션으로 이동하여 답을 알아봅시다.
+
+<br>
+
+### **Grouping asynchronous calls**
+비동기 호출 그룹화
+
+Revisit the code currently inside the `task` modifier:
+현재 `task` modifier 안에 있는 코드를 다시 확인합니다:
+
+```swift
+files = try await model.availableFiles()
+status = try await model.status()
+```
+
+Both calls are asynchronous and, in theory, could happen at the same time. However, by explicitly marking them with `await`, the call to `status()` doesn’t start until the call to `availableFiles()` completes.
+두 호출 모두 비동기식이며 이론적으로는 동시에 발생할 수 있습니다. 그러나 `await` 로 명시적으로 표시하면 `availableFiles()` 호출이 완료될 때까지 `status()` 호출이 시작되지 않습니다.
+
+Sometimes, you need to perform sequential asynchronous calls — like when you want to use data from the first call as a parameter of the second call.
+때로는 첫 번째 호출의 데이터를 두 번째 호출의 매개 변수로 사용하려는 경우와 같이 순차적 비동기 호출을 수행해야 합니다. 
+
+This isn’t the case here, though!
+하지만 여기서는 그렇지 않아요!
+
+For all you care, both server calls can be made *at the same time* because they don’t depend on each other. But how can you await *both* calls without them blocking each other? Swift solves this problem with a feature called **structured concurrency**, via the `async let` syntax.
+상관없이, 두 서버 호출은 서로 의지하지 않기 때문에 동시에 걸릴 수 있습니다. 하지만 어떻게 서로 차단하지 않고 둘 다 호출을 기다릴 수 있을까요? 스위프트는 `async let` 구문을 통해 **structured concurrency** 이라는 기능으로 이 문제를 해결합니다.
+
+#### Using async let
+비동기 사용
+
+Swift offers a special syntax that lets you group several asynchronous calls and await them all together.
+스위프트는 여러 비동기 호출을 그룹화하여 모두 대기할 수 있는 특별한 구문을 제공합니다. 
+
+Remove all the code inside the `task` modifier and use the special `async let` syntax to run two concurrent requests to the server:
+`task` modifier 안의 모든 코드를 제거하고 특수한 `async let` 구문을 사용하여 서버에 대한 두 개의 동시 요청을 실행합니다:
+
+```swift
+guard files.isEmpty else { return }
+
+do {
+  async let files = try model.availableFiles()
+  async let status = try model.status()
+} catch {
+  lastErrorMessage = error.localizedDescription
+}
+
+```
+
+An `async let` binding allows you to create a local constant that’s similar to the concept of promises in other languages. **Option-Click** `files` to bring up Quick Help:
+`async let` binding 을 사용하면 다른 언어의 개념과 유사한 상태를 만들 수 있습니다. **Option-Click** `files` 을 클릭하여 빠른 도움말을 표시합니다:
+
+!https://assets.alexandria.raywenderlich.com/books/5686df272ebe17522460d1e9df428b11e20e4b9082093262998ce29c90d9c99c/images/56d3105748340b3d907b0e3b246e887f/original.png
+
+The declaration explicitly includes `async let`, which means you can’t access the value without an `await`.
+선언문에는 `await` 없이는 값에 접근할 수 없음을 의미하는 `async let` 이 명시적으로 포함되어 있습니다.
+
+The `files` and `status` bindings promise that either the values of the specific types or an error will be available later.
+`files` 과 `status` 바인딩은 특정 유형의 값 또는 오류를 나중에 사용할 수 있음을 약속합니다. 
+
+To read the binding results, you need to use `await`. If the value is already available, you’ll get it immediately. Otherwise, your code will suspend at the `await` until the result becomes available:
+바인딩 결과를 읽으려면 `await` 을 사용해야 합니다. 값이 이미 사용 가능하면 즉시 얻을 수 있습니다. 그렇지 않으면 결과가 사용 가능해질 때까지 코드가 `await` 에서 일시 중단됩니다. 
+
+> Note: An async let binding feels similar to a promise in other languages, but in Swift, the syntax integrates much more tightly with the runtime. It’s not just syntactic sugar but a feature implemented into the language.
+> 
+Note. 비동기 바인딩은 다른 언어의 약속과 유사하게 느껴지지만 스위프트에서는 구문이 런타임과 훨씬 더 긴밀하게 통합됩니다. 이는 단순히 구문이 아니라 언어에 구현된 특징입니다.
+
+#### Extracting values from the two requests
+두 요청에서 값 추출
+
+Looking at the last piece of code you added, there’s a *small detail* you need to pay attention to: The async code in the two calls starts executing right away, *before* you call `await`. So `status` and `availableFiles` run in parallel to your main code, inside the `task` modifier.
+마지막으로 추가한 코드를 보면 주의해야 할 작은 세부사항이 있습니다. 두 호출의 비동기 코드는 즉시 실행되기 시작합니다. `await` 호출하기 전에 `task` modifier 안에서 `status` 와 `availableFiles` 가 메인 코드와 병렬로 실행됩니다. 
+
+To group concurrent bindings and extract their values, you have two options:
+동시 바인딩을 그룹화하고 해당 값을 추출하려면 다음 두 가지 옵션이 있습니다:
+
+- Group them in a collection, such as an array.
+배열과 같은 집합으로 그룹화 합니다.
+- Wrap them in parentheses as a tuple and then destructure the result.
+괄호 안에 튜플로 싼 다음 결과를 구조화합니다.
+
+The two syntaxes are interchangeable. Since you have only two bindings, you’ll use the tuple syntax here.
+두 구문은 서로 교환할 수 있습니다. 바인딩이 두 개뿐이므로 여기서는 튜플 구문을 사용합니다. 
+
+Add this code at the end of the `do` block:
+다음 코드를 `do` 블록 끝에 추가합니다:
+
+```swift
+let (filesResult, statusResult) = try await (files, status)
+```
+
+And what are `filesResult` and `statusResult`? **Option-Click** `filesResults` to check for yourself:
+그리고 `filesResult` 와 `statusResult` 란 무엇입니까? **Option-Click** `filesResults` 를 클릭하여 직접 확인합니다:
+
+!https://assets.alexandria.raywenderlich.com/books/5686df272ebe17522460d1e9df428b11e20e4b9082093262998ce29c90d9c99c/images/6619293cbd9ad32f49693ded64f8b2f9/original.png
+
+This time, the declaration is simply a `let` constant, which indicates that by the time you can access `filesResult` and `statusResult`, both requests have finished their work and provided you with a final result.
+이번 선언은 단순히 `let` 으로 `filesResult` 와 `statusResult` 에 접근할 수 있을 때까지 두 요청 모두 작업을 완료하고 최종 결과를 제공했음을 나타냅니다. 
+
+At this point in the code, if an `await` didn’t throw in the meantime, you know that all the concurrent bindings resolved successfully.
+코드의 이 시점에서, `await` 이 그 사이에 던져지지 않았다면, 모든 동시 바인딩이 성공적으로 해결되었음을 알 수 있습니다. 
+
+#### Updating the view
+뷰 업데이트 중
+
+Now that you have both the file list and the server status, you can update the view. Add the following two lines at the end of the `do` block:
+이제 파일 목록과 서버 상태가 모두 확보되었으므로 뷰를 업데이트할 수 있습니다. `do` 블록 끝에 다음 두 줄을 추가합니다:
+
+```swift
+self.files = filesResult
+self.status = statusResult
+```
+
+Build and run. This time, you execute the server requests in parallel, and the UI becomes ready for the user a little faster than before.
+Build and run. 이번에는 서버 요청을 병렬로 실행하면 UI가 이전 보다 조금 빠르게 사용자를 위한 준비가 됩니다. 
+
+Take a moment to appreciate that the same `async`, `await` and `let` syntax lets you run non-blocking asynchronous code serially and *also* in parallel. That’s some amazing API design right there!
+동일한 `async`, `await` 그리고 `let` 구문을 사용하면 non-blocking 비동기 코드를 일련의 비동기 코드를 일련의 병렬로 실행할 수 있음을 알 수 있습니다. 정말 놀라운 API 디자인입니다!
+
+<br>
