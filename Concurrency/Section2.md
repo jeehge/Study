@@ -854,3 +854,41 @@ In here, you reset the file data and invoke `reset()` on the model too, which 
 
 That’s it, you can now preview multiple files one after the other, and the app keeps behaving.
 그게 다입니다, 이제 여러 파일을 차례로 미리 볼 수 있고 앱은 계속 동작합니다.
+
+<br>
+
+### **Challenges**
+
+#$## Challenge: Displaying a progress view while downloading
+과제 : 다운로드 중 진행 상황 보기 표시
+
+In `DownloadView`, there’s a state property called `isDownloadActive`. When you set this property to `true`, the file details view displays an activity indicator next to the filename.
+`DownloadView` 에서  `isDownloadActive` 라는 상태 속성이 있습니다. 이 속성을 `true` 로 설정하면 파일 세부 정보 보기에 파일 이름 옆에 액티비티 인디케이터가 표시됩니다. 
+
+For this challenge, your goal is to show the activity indicator when the file download starts and hide it again when the download ends.
+이 문제를 해결하려면 파일 다운로드가 시작되면 activity indicator 를 표시하고 다운로드가 끝나면 다시 숨깁니다. 
+
+Be sure to also hide the indicator when the download throws an error. Check the **projects/challenges** folder for this chapter in the chapter materials to compare your solution with the suggested one.
+다운로드에서 오류가 발생할 때도 ctivity indicator 를 숨겨야 합니다. 챕터 자료에서 이 장에 대한 **projects/challenges** 폴더를 확인하여 제안된 솔루션과 비교해 보십시오.
+
+<br>
+
+### **Key points**
+
+- Functions, computed properties and closures marked with **async** run in an asynchronous context. They can suspend and resume one or more times.
+**async**로 표시된 함수, 계산된 속성 및 클로저는 비동기적인 컨텍스트에서 실행됩니다. 이들은 일시 중단 및 다시 시작을 한 번 이상 반복할 수 있습니다.
+- **await** *yields* the execution to the central async handler, which decides which pending job to execute next.
+**await** 은 ****중앙 비동기 핸들러에 대한 실행은 다음에 실행할 작업을 결정합니다.
+- An **async let** binding promises to provide a value or an error later on. You access its result using `await`.
+**async let** 바인딩은 나중에 값 또는 오류를 제공할 것을 약속하며, `await` 을 사용하여 해당 결과에 접근합니다.
+- **Task()** creates an asynchronous context for running on the current actor. It also lets you define the task’s priority.
+**Task()** 는 현재 actor 에서 실행하기 위한 비동기 컨텍스트를 생성합니다. 또한 작업의 우선순위를 정의할 수 있습니다.
+- Similar to `DispatchQueue.main`, **MainActor** is a type that executes blocks of code, functions or properties on the main thread.
+**MainActor** 는 `DispatchQueue.main` 과 유사하게 메인 스레드에서 코드, 함수 또는 속성의 블록을 실행하는 유형입니다.
+
+This chapter gave you a deeper understanding of how you can create, run and wait for asynchronous tasks and results using the new Swift concurrency model and the `async`/`await` syntax.
+이 장에서는 새로운 스위프트 동시성 모델과 `async`/`await` 구문을 사용하여 비동기 작업 및 결과를 생성하고 실행하고 기다리는 방법에 대해 자세히 이해할 수 있습니다. 
+
+You might’ve noticed that you only dealt with asynchronous pieces of work that yield a *single* result. In the next chapter, you’ll learn about `AsyncSequence`, which can emit multiple results for an asynchronous piece of work. See you there!
+비동기적인 작업만 다루면 하나의 결과가 나오는 것을 알 수 있습니다. 다음 장에서는 비동기적인 작업에 대해 여러 결과를 낼 수 있는 `AsyncSequence` 에 대해 배울 것입니다. 거기서 만나요!
+
