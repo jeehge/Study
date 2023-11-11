@@ -78,7 +78,7 @@ Part 2: Asynchronous Sequences
 - [x] [2.4 Getting started](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#getting-started)
 - [x] [2.5 A bird’s eye view of async/await](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#a-birds-eye-view-of-asyncawait)
 - [x] [2.6 Getting the list of files from the server](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#getting-the-list-of-files-from-the-server)
-- [ ] [2.7 Getting the server status]()
+- [x] [2.7 Getting the server status](https://github.com/jeehge/Study/blob/master/Concurrency/Section2.md#getting-the-server-status)
 - [ ] [2.8 Grouping asynchronous calls]()
 - [ ] [2.9 Asynchronously downloading a file]()
 - [ ] [2.10 Running async requests from a non-async context]()
