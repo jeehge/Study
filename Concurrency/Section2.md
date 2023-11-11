@@ -404,3 +404,71 @@ SuperStorage 앱을 다시 시작하면 파일 목록이 나타납니다:
 
 Notice there are a few TIFF and JPEG images in the list. These two image formats will give you various file sizes to play with from within the app.
 목록에 TIFF 와 JPEG 이미지가 몇 개 있습니다. 이 두 가지 이미지 형식은 앱 내에서 사용할 수 있는 다양한 파일 크기를 제공합니다.
+
+<br>
+
+### **Getting the server status**
+
+서버 상태 가져오기
+
+Next, you’ll add one more asynchronous function to the app’s model to fetch the server’s status and get the user’s usage quota.
+다음으로 당신은 서버의 상태를 가져오고 사용자의 사용 할당량을 얻기 위해 앱의 모델에 비동기 기능을 하나 더 추가할 것입니다.
+
+Open **SuperStorageModel.swift** and add the following method to the class:
+**SuperStorageModel.swift** 를 열고 다음 메서드를 클래스에 추가합니다:
+
+```swift
+func status() async throws -> String {
+  guard let url = URL(string: "http://localhost:8080/files/status") else {
+    throw "Could not create the URL."
+  }
+}
+
+```
+
+A successful server response returns the status as a text message, so your new function asynchronously returns a `String` as well.
+서버 응답이 성공하면 상태가 텍스트 메시지로 반환되므로 새 함수는 `String` 도 비동기적으로 반환됩니다.
+
+As you did before, add the code to asynchronously get the response data and verify the status code:
+이전과 마찬가지로 코드를 추가하여 비동기적으로 응답 데이터를 얻고 상태 코드를 확인합니다:
+
+```swift
+let (data, response) = try await
+  URLSession.shared.data(from: url, delegate: nil)
+
+guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+  throw "The server responded with an error."
+}
+
+```
+
+Finally, decode the response and return the result:
+마지막으로 응답을 디코딩한 후 결과를 반환합니다:
+
+```swift
+return String(decoding: data, as: UTF8.self)
+
+```
+
+The new method is now complete and follows the same pattern as `availableFiles()`.
+새로운 방법은 이제 완성되었으며 `availableFiles()` 와 같은 패턴을 따릅니다.
+
+### Showing the service status
+
+서비스 상태 표시
+
+For your next task, you’ll use `status()` to show the server status in the file list.
+다음 작업에서는 `status()` 를 사용하여 파일 목록에 서버 상태를 표시합니다.
+
+Open **ListView.swift** and add this code inside the `.task(...)` view modifier, after assigning `files`:
+**ListView.swift** 를 열고 `files` 를 할당한 후 `.task(...)` view modifier 안에 이 코드를 추가합니다:
+
+```swift
+status = try await model.status()
+```
+
+Build and run. You’ll see some server usage data at the bottom of the file list:
+Build and run. 파일 목록 하단에 서버 사용량 데이터가 표시됩니다:
+
+Everything works great so far, but there’s a hidden optimization opportunity you might have missed. Can you guess what it is? Move on to the next section for the answer.
+지금까지는 모든 것이 잘 작동하지만, 여러분이 놓쳤을 수도 있는 최적화 기회가 숨겨져 있습니다. 무엇인지 알아맞힐 수 있는 최적화 기회가 숨겨져 있습니다. 무엇인지 알 수 있습니까? 다음 섹션으로 이동하여 답을 알아봅시다.
