@@ -95,7 +95,7 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-- [ ] 3. AsyncSequence & Intermediate Task
+- [x] [3. AsyncSequence & Intermediate Task](https://github.com/jeehge/Study/blob/master/Concurrency/Section3.md#3asyncsequence--intermediate-taskwritten-by-marin-todorov)
 - [ ] 3.1 Getting to know AsyncSequence
 - [ ] 3.2 Getting started with AsyncSequence
 - [ ] 3.3 Canceling tasks
