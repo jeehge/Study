@@ -1,3 +1,5 @@
+### 3. AsyncSequence & Intermediate TaskWritten by Marin Todorov
+
 Throughout this book, you’ll use async sequences to make your life easier when it comes to asynchronous programming. Async sequences make consuming asynchronous results as simple as iterating over a Swift sequence.
 이 책 전체에서 비동기 시퀀스를 사용하여 비동기 프로그래밍과 관련하여 생활을 더 쉽게 도와줄 겁니다. 비동기 시퀀스를 사용하면 스위프트 시퀀스를 반복하는 것만큼 간단하게 비동기 결과를 사용할 수 있습니다.
 
