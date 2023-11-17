@@ -14,7 +14,9 @@
 
 앞으로 만나서 1시간 빡씨게 공부하고 스터디 진행하기로 
 
-- [ ] 11.17 (금) 챌린지 2 해와서 설명하기. section 3 스크립트 대충 보고 오기 8시 <- 위치 공유해야함
+- [x] 11.17 (금) 챌린지 2 해와서 설명하기. section 3 스크립트 대충 보고 오기 8시 <- 위치 공유해야함
+
+- [ ] 11.28 (화) section 4 함께 보고 공부하기
 
 
 목차
@@ -96,7 +98,7 @@ Part 2: Asynchronous Sequences
 <br>
 
 - [x] [3. AsyncSequence & Intermediate Task](https://github.com/jeehge/Study/blob/master/Concurrency/Section3.md#3asyncsequence--intermediate-taskwritten-by-marin-todorov)
-- [ ] 3.1 Getting to know AsyncSequence
+- [x] [3.1 Getting to know AsyncSequence](https://github.com/jeehge/Study/blob/master/Concurrency/Section3.md#getting-to-know-asyncsequence)
 - [ ] 3.2 Getting started with AsyncSequence
 - [ ] 3.3 Canceling tasks
 - [ ] 3.4 Canceling an async task
