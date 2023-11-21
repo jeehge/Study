@@ -111,7 +111,7 @@ Part 2: Asynchronous Sequences
 <br>
 
 - [x] [4. Custom Asynchronous Sequences With AsyncStream](https://github.com/jeehge/Study/blob/master/Concurrency/Section4.md#4custom-asynchronous-sequences-with-asyncstream)
-- [ ] [4.1 Getting started with the Blabber app](https://github.com/jeehge/Study/blob/master/Concurrency/Section4.md#getting-started-with-the-blabber-app)
+- [x] [4.1 Getting started with the Blabber app](https://github.com/jeehge/Study/blob/master/Concurrency/Section4.md#getting-started-with-the-blabber-app)
 - [ ] 4.2 Digging into AsyncSequence, AsyncIteratorProtocol and AsyncStream
 - [ ] 4.3 Creating an asynchronous timer with AsyncStream
 - [ ] 4.4 Adding an asynchronous stream to NotificationCenter
