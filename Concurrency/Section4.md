@@ -99,3 +99,58 @@ guard let data = first.data(using: .utf8),
 
 Here, you convert the text line to `Data` and then try to decode it to a `ServerStatus`. The starter project includes a `ServerStatus` data model containing a single property called `activeUsers`. This is how the server tells you how many users are in the chat at the moment.
 여기서 텍스트 라인을 `Data` 로 변환한 다음 `ServerStatus` 로 디코딩을 시도합니다. 시작 프로젝트에는 단일 속성인 `activeUsers` 가 포함된 `ServerStatus` 데이터 모델이 포함됩니다. 서버가 현재 대화에 참여하고 있는 사용자 수를 알려주는 방식입니다.
+
+#### Storing and using the chat information
+채팅 정보 저장 및 이용
+
+To store this information, add the following code immediately after the decoding:
+이 정보를 저장하려면 디코딩 직후에 다음 코드를 추가하세요:
+
+```swift
+messages.append(
+  Message(
+    message: "\(status.activeUsers) active users"
+  )
+)
+```
+
+`messages` is a published property on `BlabberModel` that contains the messages displayed onscreen. Most `Message` values are user messages posted in chat. They contain a specific user and date, but in this case, you use a convenience initializer that only accepts the message, as the initial status is considered a **system message**.
+`messages` 는 `BlabberModel` 에 게시된 속성으로 화면에 표시되는 메시지를 담고 있습니다. 대부분의 `Message` 값은 채팅에서 게시되는 사용자 메시지입니다. 특정 사용자와 날짜가 포함되어 있지만 이 경우 초기 상태를 **system message**로 간주하기 때문에 메시지만 받아들이는 편의 초기화를 사용합니다. 
+
+To use the server status you fetched, you create a new system message that says **X active users** and add it to the messages array.
+가져 온 서버 상태를 사용하려면 X 활성 사용자라는 새 시스템 메시지를 생성하고 이를 메시지 배열에 추가합니다. 
+
+After the initial status, the server sends an ever-growing list of chat messages, each on its own line.
+초기 상태 이후에 서버는 점점 늘어나는 채팅 메시지 목록을 각 줄에 하나씩 보냅니다.
+
+This is similar to what you’ve done in previous chapters. You can abandon the iterator that you just used because the number of items you are expecting is now open-ended.
+이는 이전 장에서 수행한 작업과 유사합니다. 이제 기대하는 항목 수가 무제한이므로 방금 사용한 반복문을 버릴 수 있습니다. 
+
+Next, move on to consuming the rest of the stream with a `for await` loop:
+다음으로 `for await` 문을 사용하여 나머지 스트림을 소비합니다:
+
+```swift
+for try await line in stream.lines {
+  if let data = line.data(using: .utf8),
+    let update = try? JSONDecoder().decode(Message.self, from: data) {
+    messages.append(update)
+  }
+}
+```
+
+You iterate over each response line and try to decode it as a `Message`. If the decoding succeeds, you add the new message to `messages`. Just like before, your UI will immediately reflect the change.
+각 응답 라인을 반복하고 `Message`로 디코딩 하려고 합니다. 디코딩에 성공하면 `messages` 에 새 메시지를 추가합니다. 이전과 마찬가지로 UI에 변경 사항이 즉시 반영됩니다. 
+
+Now, the final piece of the app’s core is in place. Build and run. Give Blabber a try by entering a user name and tapping the enter button on the right-hand side of the login screen:
+이제 앱 핵심의 마지막 부분이 완성되었습니다. 빌드하고 실행하세요. 사용자 이름을 입력하고 로그인 화면 오른쪽에 있는 Enter 버튼을 눌러 Blabber 를 사용해 보세요.
+
+The app reads the first message from the server, then displays the server status at the top of the chat screen. Enter one or more messages in the text field at the bottom, then send them off to the server. You’ll see them pop right back onscreen, meaning the server received them and then sent them back to you:
+앱은 서버에서 첫 번째 메시지를 읽은 다음 채팅 화면 상단에 서버 상태를 표시합니다. 하단의 텍스트 필드에 하나 이상의 메시지를 입력한 다음 서버로 보냅니다. 화면에 바로 다시 나타나는 것을 볼 수 있습니다. 즉, 서버가 이를 수신한 다음 사용자에게 다시 보냈음을 의미합니다. 
+
+Don’t be alarmed if some unexpected messages appear too, as in the screenshot above. This is just the chat bot Bottley trying to jump into the discussion.
+위 스크린샷처럼 예상치 못한 메시지가 나타나더라도 놀라지 마세요. 이것은 바로 대화에 뛰어들려고 하는 채팅봇 Bottley 입니다. 
+
+When you get bored of talking to Bottley, who isn’t the best conversationalist, you can launch more simulators and start a conversation between your alter egos, instead:
+최고의 대화가가 아닌 Bottley와 대화하는 것이 지루해지면 더 많은 시뮬레이터를 실행하고 분신 간에 대화를 시작할 수 있습니다.
+
+Well, look at that — you already have a somewhat functioning chat app at your fingertips. How cool!
