@@ -154,3 +154,100 @@ When you get bored of talking to Bottley, who isn’t the best conversationalist
 최고의 대화가가 아닌 Bottley와 대화하는 것이 지루해지면 더 많은 시뮬레이터를 실행하고 분신 간에 대화를 시작할 수 있습니다.
 
 Well, look at that — you already have a somewhat functioning chat app at your fingertips. How cool!
+
+<br>
+
+### Digging into AsyncSequence, AsyncIteratorProtocol and AsyncStream
+AsyncSequence, AsynclteratorProtocol 및 AsyncStream 자세히 알아보기
+
+In the previous section, you learned that an asynchronous sequence lets you access its elements via its iterator. In fact, defining the element type of the sequence and providing an iterator are the *only* requirements of the `AsyncSequence` protocol:
+이전 섹션에서는 비동기 시퀀스를 사용하면 iterator 를 통해 해당 요소에 접근할 수 있다는 것을 배웠습니다. 실제로 시퀀스의 요소 유형을 정의하고 iterator를 제공하는 것이 `AsyncSequence` 프로토콜의 유일한 요구사항입니다.
+
+```swift
+protocol AsyncSequence {
+  ...
+  func makeAsyncIterator() -> Self.AsyncIterator
+}
+
+```
+
+There are no further requirements regarding *how* you produce the elements, no constraints on the type lifetime — nothing. In fact, quite the opposite: Open `AsyncSequence`‘s [documentation](https://developer.apple.com/documentation/swift/asyncsequence); you’ll see that the protocol comes with a long list of methods, similar to those offered by `Sequence`:
+elements를 어떻게 만드는 지에 대해서는 추가 요구사항이 없으며, lifetime 타입에 대한 제약도 없습니다. - 사실, 정반대입니다. `AsyncSequence` [문서](https://developer.apple.com/documentation/swift/asyncsequence)를 열면, 이 프로토콜은 `Sequence` 에서 제공하는 것과 비슷한 긴 메서드 목록과 함께 제공된다는 것을 알게 될 것입니다. 
+
+```swift
+func contains(_:) -> Bool
+func allSatisfy(_:) -> Bool
+func first(where:) -> Self.Element?
+func min() -> Self.Element?
+func max() -> Self.Element?
+...
+```
+
+The iterator also powers `for await` loops, which you’re probably already quite familiar with at this point.
+iterator 는 `for await` 루프에도 사용할 수 있으며, 이 시점에서 이미 잘 알고 있을 것입니다.
+
+You don’t need to limit yourself to the most obvious use cases. Here are just a few examples of different sequences that you might easily create on your own:
+가장 확실한 사용 사례로 자신을 제한할 필요는 없습니다. 다음은 직접 쉽게 만들 수 있는 몇 가지 다른 시퀀스의 예입니다:
+
+By adopting `AsyncSequence`, you can take advantage of the default implementations of the protocol, for free: `prefix(while:)`, `contains()`, `min()`, `max()` and so on.
+`AsyncSequence` 를 채택하여 프로토콜의 기본 구현을 무료로 이용할 수 있습니다. `prefix(while:)`, `contains()`, `min()`, `max()` 등등
+
+The sequence’s iterator must conform to `AsyncIteratorProtocol`, which is also very minimal. It has only one requirement — an `async` method that returns the next element in the sequence:
+시퀀스의 iterator 는 매우 최소화된 `AsyncIteratorProtocol`을 준수해야 합니다. 시퀀스의 다음 요소를 반환하는 `async` 메서드인 한 가지 요구 사항만 있습니다:
+
+```swift
+protocol AsyncIteratorProtocol {
+  ...
+  func next() async throws -> Self.Element?
+}
+```
+
+#### Simple async sequences
+
+단순 비동기 시퀀스
+What would a simple implementation of an asynchronous sequence look like?
+비동기 시퀀스의 간단한 구현은 어떤 모습일까요?
+
+Below is an example of a typewriter — an asynchronous sequence that “types” a phrase adding a character every second. Don’t add this code to the project; just review it:
+다음은 typewriter 의 예입니다. typewriter 는 매 초마다 문자를 추가하는 문구를 입력하는 비동기 시퀀스입니다. 이 코드를 프로젝트에 추가하지 마시고 검토만 해보세요:
+
+```swift
+struct Typewriter: AsyncSequence {
+  typealias Element = String
+
+  let phrase: String
+
+  func makeAsyncIterator() -> TypewriterIterator {
+    return TypewriterIterator(phrase)
+  }
+}
+```
+
+The type has a `phrase` to type out, which you pass to the iterator. The iterator looks like this:
+유형에는 타자를 칠 수 있는 `phrase` 가 있으며, 이것은 iterator 에게 전달합니다. iterator 는 다음과 같습니다: 
+
+```swift
+struct TypewriterIterator: AsyncIteratorProtocol {
+  typealias Element = String
+
+  let phrase: String
+  var index: String.Index
+
+  init(_ phrase: String) {
+    self.phrase = phrase
+    self.index = phrase.startIndex
+  }
+
+  mutating func next() async throws -> String? {
+    guard index < phrase.endIndex else {
+      return nil
+    }
+    try await Task.sleep(nanoseconds: 1_000_000_000)
+
+    let result = String(phrase[phrase.startIndex...index])
+    index = phrase.index(after: index)
+    return result
+  }
+}
+```
+
