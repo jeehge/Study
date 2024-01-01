@@ -18,7 +18,9 @@
 
 - [x] 11.28 (화) section 4 함께 보고 공부하기
 
-- [ ] 12.26(화) section 4 다시!
+- [x] 12.26(화) section 4 다시!
+
+- [ ] 24.01.03(수) section 5
 
 
 목차
@@ -123,7 +125,7 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-- [ ] 5. Intermediate async/await & CheckedContinuation
+- [x] [5. Intermediate async/await & CheckedContinuation](https://github.com/jeehge/Study/blob/master/Concurrency/Section5.md#5-intermediate-asyncawait--checkedcontinuation)
 - [ ] 5.1 Introducing continuations
 - [ ] 5.2 Creating continuations manually
 - [ ] 5.3 Wrapping the delegate pattern
