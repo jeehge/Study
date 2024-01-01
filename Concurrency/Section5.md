@@ -1,5 +1,5 @@
-# 5. Intermediate async/await & CheckedContinuation**
-async/await & CheckedContinuation
+# 5. Intermediate async/await & CheckedContinuation
+async/await & CheckedContinuation 중간
 
 In the previous chapter, you worked through creating custom asynchronous sequences. At this point, you should already feel right at home when it comes to using `AsyncSequence` and `AsyncStream`.
 
