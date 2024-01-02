@@ -126,7 +126,7 @@ Part 2: Asynchronous Sequences
 <br>
 
 - [x] [5. Intermediate async/await & CheckedContinuation](https://github.com/jeehge/Study/blob/master/Concurrency/Section5.md#5-intermediate-asyncawait--checkedcontinuation)
-- [ ] 5.1 Introducing continuations
+- [x] [5.1 Introducing continuations](https://github.com/jeehge/Study/blob/master/Concurrency/Section5.md#introducing-continuations)
 - [ ] 5.2 Creating continuations manually
 - [ ] 5.3 Wrapping the delegate pattern
 - [ ] 5.4 Wrapping callback APIs with continuation
