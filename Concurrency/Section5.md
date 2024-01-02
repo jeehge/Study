@@ -1,4 +1,4 @@
-# 5. Intermediate async/await & CheckedContinuation
+### 5. Intermediate async/await & CheckedContinuation
 async/await & CheckedContinuation 중간
 
 In the previous chapter, you worked through creating custom asynchronous sequences. At this point, you should already feel right at home when it comes to using `AsyncSequence` and `AsyncStream`.
@@ -11,3 +11,4 @@ You saw that wrapping existing APIs, like `NotificationCenter`, is very powerfu
 In this chapter, you’ll continue working in the same direction. You’ll look into more ways to reuse existing code to the fullest by leveraging Swift’s superpowered concurrency features.
 
 이 장에서는 같은 방향으로 계속 작업을 진행할 것입니다. 스위프트의 강력한 동시성 기능을 활용하여 기존 코드를 최대한 활용하는 방법에 대해 더 자세히 알아볼 것입니다.
+
