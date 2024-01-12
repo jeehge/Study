@@ -46,3 +46,84 @@ This all happens behind the scenes when you use `async` functions. You can als
 Manually creating continuations allows you to migrate your existing code gradually to the new concurrency model.
 
 continuation 을 수동으로 생성하면 기존 코드를 새로운 동시성 모델로 점진적으로 마이그레이션할 수 있습니다.
+
+
+<br>
+<hr>
+
+따로노트
+
+Continuation 
+
+- continuation은 주어진 포인트에 프로그램의 상태를 추적하는 객체이다.
+
+- 각각의 비동기 작업 단위를 그것을 위한 전체 스레드 하나를 만드는 것 대신에 continuation에 작업을 할당한다.
+
+- 이것이 concurrency model이 작업을 하드웨어 가용성에 기반해 더 효율적으로 작업하게 한다.
+
+- 이것이 CPU 코어만큼만 스레드를 만들게 하고, 스레드들 사이의 변환이 아닌 continuation 사이에서 전환하게 한다.
+
+ 
+? await한 작업이 완료되고 원래 코드가 다시 resume 되는 것은 어떻게 작동하는가?
+
+(resume : Task가 suspension point에서 정상적으로 돌아오도록 하여 계속 대기 중인 Task를 다시 시작한다.)
+
+: 코드가 suspend될 때 그 시점의 전체적인 상태를 캡쳐한 continuation을 만든다. 다시 resume할 때 concurrency system이 그 continuation으로부터 상태를 다시 만든다. 그렇게 이어진다.
+
+? Continuation 객체는 무엇인가?
+
+- 프로그램 상태의 표현 CheckedContinuation, UnsafeContinuation이 있다.
+
+- 예전 비동기 패턴(completion, delegate 패턴)을 async, await 패턴으로 바꿀 때 사용할 수 있는 인터페이스
+
+? Continuation의 resume메서드를 딱 한 번만 호출해야 하는가?
+
+: 컴파일 시점에 이를 알려주진 않지만, 런타임 시점에 resume 메서드가 두 번 실행되면 에러가 발생한다.
+
+: WithUnsafeContinuation의 경우에는 에러 발생이 일어나지 않는다.
+
+: CheckedContinuation safety check를 continuation을 safely 사용했는지 runtime check하는 방식으로 진행한다.
+
+? Continuation의 resume메서드를 호출하지 않으면?
+
+: withCheckedContinuation의 경우 runtime에 에러가 발생한다.
+
+: withUnsafeContinuation의 경우 아무 것도 출력되지 않는다. 결코 resuming 안 하는 경우는 자원 leak, 무한정 task를 suspended 상태에 있게 한다. 
+
+: checkedContinuation은 resume을 아예 안 부르는 경우, 두 번 부르는 경우 둘 다 체크한다.
+
+
+?  UnsafeContinuation이 CheckedContinuation보다 더 빠른가?
+
+: 딱히 withCheckedContinuation과 withUnsafeContinuation 간의 실행 시간 차이를 느낄 수는 없었다.
+
+? WithCheckedContinuation은 무엇인가?
+
+: Continuation 객체를 얻을 수 있는 메서드
+
+- withCheckedContinuation, withCheckedThrowingContinuation이 있다.
+
+- withUnsafeContinuation, withUnsafeThrowingContinutaion이 있다.
+
+? withCheckedThrowingContinuation이 아닌 곳에서 에러를 던질 수 있는가?
+
+: func withCheckedContinuation<T>(function: String, _ body: (CheckedContinuation<T, **Never**>) → Void) async → T 형태이므로 func withCheckedThrowingContinuation<T>(function: String, _ body: (CheckedContinuation<T, **Error**>) → Void) async throws → T 가 아닌 곳에서 에러 던질 수 없다.
+
+? CheckedContinuation은 어떻게 safety check를 하는가?
+
+: UnsafeContinuation의 경우에 다른 스레드에서 실행된다.
+
+: withCheckedContinuation의 경우 종종 같은 스레드에서 실행되지만, 다른 스레드에서 실행 되기도 한다.
+
+
+
+
+참고자료
+
+* https://asong-study-record.tistory.com/193
+
+
+
+
+
+
