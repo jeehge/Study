@@ -50,7 +50,7 @@ Part 2: Asynchronous Sequences
 
 <br>
 
-[Modern Concurrency in Swift 디스크립션](https://www.kodeco.com/books/modern-concurrency-in-swift/v1.0/chapters/i-what-you-need)
+[Modern Concurrency in Swift 디스크립션](https://www.kodeco.com/books/modern-concurrency-in-swift/v2.0/chapters/i-what-you-need)
 
 ## Before You Begin
 ### Section 0: 6 chapters
