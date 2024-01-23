@@ -178,7 +178,7 @@ Part 2: Asynchronous Sequences
 - [ ] 8.11 Making safe methods nonisolated
 - [ ] 8.12 Designing more complex actors
 - [ ] 8.13 Sharing the actor
-- [ ] 8.14 Key points
+- [x] [8.14 Key points](https://github.com/jeehge/Study/blob/master/Concurrency/Section8.md#key-points)
 
 <br>
 
